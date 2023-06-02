@@ -28,7 +28,7 @@ body{
 }
 .button{
     top:10px;
-    margin-left:100px;
+    margin-left:20%;
     position:fixed;
     z-index:2;
 }
