@@ -9,14 +9,6 @@ body{
     /*max-width:800px;*/
 }
 
-/*.on{*/
-/*    align-items:center;*/
-/*    outline: none;*/
-/*    background-color: rgba(0, 0, 0, 0.100);*/
-/*    border: none;*/
-/*    width: 52px;*/
-/*    height:52px;*/
-/*}*/
 .menutop{
     z-index:2;
     height:60px;
