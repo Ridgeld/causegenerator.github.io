@@ -260,7 +260,7 @@ body{
 .calendar{
     width: 250px;
     height: 54px;
-    padding-left:10%;
+    padding-left:4%;
     margin-left:5%;
     align-items:center;
     display:flex;
@@ -303,7 +303,7 @@ body{
     align-items: center;
     display:flex;
     flex-direction:row;
-    border-radius:7px;
+    border-radius:7px 7px 0 0;
 }
 .second{
     width:100%;
@@ -312,7 +312,6 @@ body{
     align-items: center;
     display:flex;
     flex-direction:row;
-    border-radius:7px;
 }
 .third{
     width:100%;
@@ -321,7 +320,6 @@ body{
     align-items: center;
     display:flex;
     flex-direction:row;
-    border-radius:7px;
 }
 .fourth{
     width:100%;
@@ -330,7 +328,6 @@ body{
     align-items: center;
     display:flex;
     flex-direction:row;
-    border-radius:7px;
 }
 .fiveth{
     width:100%;
@@ -339,7 +336,6 @@ body{
     align-items: center;
     display:flex;
     flex-direction:row;
-    border-radius:7px;
 }
 .sixth{
     width:100%;
@@ -348,7 +344,7 @@ body{
     align-items: center;
     display:flex;
     flex-direction:row;
-    border-radius:7px;
+    border-radius:0 0 7px 7px;
 }
 .pdata{
     height:54px;
