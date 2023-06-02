@@ -33,7 +33,7 @@ body{
     z-index:2;
 }
 .causeplc{
-    margin-left: 40%;
+    margin-left: 15%;
     margin-top: 30px;
     position: relative;
     width: 300px;
@@ -71,7 +71,7 @@ body{
     font-size: 15px;
     font-weight:600;
     border: none;
-    margin-left:40%;
+    margin-left:15%;
     margin-top:10px;
     width: 340px;
     height:54px;
