@@ -81,7 +81,7 @@ body{
     padding-left:100px;
     border-radius: 11px 11px 11px 11px;
     outline: none;
-    background-image:url("image/backbut.png"); 
+    background-image:url("image/button.png"); 
     background-size: contain;
     background-repeat: no-repeat;
     color: #fff;
@@ -100,7 +100,7 @@ body{
 }
 #btn1:active{
     color: #313131;
-    background-image:url("image/backbutdark.png"); 
+    background-image:url("image/buttonactive.png"); 
     background-size: contain;
     background-repeat: no-repeat;
 }
