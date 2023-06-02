@@ -100,7 +100,7 @@ body{
     font-size: 15px;
     font-weight:600;
     border: none;
-    margin-left:6%;
+    margin-left:9%;
     margin-top:40px;
     width: 300px;
     height:54px;
@@ -126,7 +126,7 @@ body{
     font-size: 15px;
     font-weight:600;
     border: none;
-    margin-left:6%;
+    margin-left:9%;
     margin-top:17px;
     width: 300px;
     height:54px;
@@ -152,7 +152,7 @@ body{
     font-size: 15px;
     font-weight:600;
     border: none;
-    margin-left:6%;
+    margin-left:9%;
     margin-top:17px;
     width: 300px;
     height:54px;
@@ -260,7 +260,7 @@ body{
 .calendar{
     width: 250px;
     height: 54px;
-    padding-left:25px;
+    padding-left:10%;
     align-items:center;
     display:flex;
     background:#1D1D1D;
@@ -270,7 +270,7 @@ body{
 .data{
     color:#fff;
     width:150px;
-    margin-left:30px;
+    margin-left:10%;
     border: 0;
     outline: 0;
     background: transparent;
@@ -358,7 +358,7 @@ body{
     border-radius:11px;
     border: 0;
     outline: 0;
-    color:#fff;
+    color:#110F1F;
 }
 .pdata:active{
     background:#3F631C;
