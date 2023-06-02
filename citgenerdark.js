@@ -29,7 +29,7 @@ const textElement = document.getElementById('text');
 let selectedStrings = [];
 
 function getRandomString() {
-  fetch('path/to/file.txt')
+  fetch('citatadark.txt')
     .then(response => response.text())
     .then(data => {
       const lines = data.split('\n').filter(line => line.trim() !== '');
