@@ -1,9 +1,6 @@
 const text = document.getElementById("text");
 const button = document.getElementById("btn1");
 
-// button.addEventListener("click", function() {
-//   text.textContent = "Новый текстe";
-// });
 button.addEventListener("click", function() {
   fetch('citatadark.txt')
     .then(response => response.text())
