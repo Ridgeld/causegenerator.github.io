@@ -84,6 +84,4 @@ const siDiv = document.getElementById('si');
         fiDiv.textContent = "ДП";
         siDiv.textContent = "";
      }
-        
-
 });
