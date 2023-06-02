@@ -2,7 +2,7 @@ const text = document.getElementById("text");
 const button = document.getElementById("btn1");
 
 button.addEventListener("click", function() {
-  fetch('citatadark.txt')
+  fetch('citata.txt')
     .then(response => response.text())
     .then(data => {
       const lines = data.split('\n');
