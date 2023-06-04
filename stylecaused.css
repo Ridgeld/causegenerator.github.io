@@ -26,10 +26,15 @@ body{
     font-size:18px;
     font-weight: 600;
 }
+.container{
+    width:100%;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+}
 .button{
     top:10px;
-    margin-left:25%;
-    position:fixed;
+    margin-left:auto;
     z-index:2;
 }
 .causeplc{
