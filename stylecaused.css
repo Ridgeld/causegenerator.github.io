@@ -10,12 +10,11 @@ body{
 }
 
 .menutop{
-    z-index:2;
-    height:60px;
-    width:100%;
-    display:flex;
-    align-items: center;
     top:0; 
+    width:100%;
+    align-items: center;
+    display:flex;
+    flex-direction: row;
 }
 .image{
     margin-left:20px;
