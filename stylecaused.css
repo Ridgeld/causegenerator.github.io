@@ -37,7 +37,7 @@ body{
     z-index:2;
 }
 .causeplc{
-    margin-left: 5%;
+/*     margin-left: 5%; */
     margin-top: 30px;
     position: relative;
     width: 300px;
@@ -322,7 +322,7 @@ body{
 .word{
     margin-top:30px;
     padding-left:10px;
-    margin-left: 5%;
+/*     margin-left: 5%; */
 /*     margin-left:3%; */
     border:none;
     outline:0;
