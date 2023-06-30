@@ -322,7 +322,7 @@ body{
 .word{
     margin-top:10%;
     padding-left:10px;
-    margin-left:3%;
+/*     margin-left:3%; */
     border:none;
     outline:0;
     box-sizing: border-box;
@@ -340,6 +340,7 @@ body{
     font-weight:400;
 }
 .word:focus{
+    border-size:4px;
     outline:0;
     border-color:#76DB31;
 }
