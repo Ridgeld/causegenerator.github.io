@@ -1,5 +1,5 @@
 const wordInput = document.getElementById('word');
-const causeplcDiv = document.querySelector('.causeplc');
+const text = document.getElementById("text");
 
 wordInput.addEventListener('input', function() {
   const word = wordInput.value.toLowerCase();
@@ -15,5 +15,5 @@ wordInput.addEventListener('input', function() {
     output = 'Нет соответствующих слов';
   }
 
-  causeplcDiv.textContent = output;
+  text.textContent = output;
 });
