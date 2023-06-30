@@ -342,6 +342,6 @@ body{
 }
 .word:focus{
     border-size:4px;
-    outline:0;
+    outline:2px;
     border-color:#76DB31;
 }
