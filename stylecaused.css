@@ -448,7 +448,7 @@ body{
     height: 60px;
     padding-left: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: 14px;
     background: #2B2A2A;
     text-align: center;
