@@ -1,5 +1,5 @@
-const button = document.getElementById('down');
-const causeplcDiv = document.querySelector('.causeplc');
+const button = document.getElementById('down1');
+const downplcDiv = document.querySelector('.downplc');
 
 
 button.addEventListener('click', function() {
