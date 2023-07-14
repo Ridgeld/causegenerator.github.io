@@ -15,5 +15,5 @@ button.addEventListener('click', function() {
 
   document.body.removeChild(element);
   
-  causeplcDiv.style.height = '450px';
+  downplcDiv.style.height = '450px';
 });
