@@ -421,7 +421,7 @@ body{
 .wordin:focus{
     outline: 2px solid #76DB31;
 }
-#down{
+.down{
     border-radius: 11px 11px 11px 11px;
     outline: none;
     background: #76DB31;
@@ -434,7 +434,7 @@ body{
     height:30px;
     cursor: pointer;
 }
-#down:active{
+.down:active{
     color: #313131;
     background:#3F631C;
 }
