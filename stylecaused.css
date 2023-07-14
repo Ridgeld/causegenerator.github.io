@@ -449,3 +449,16 @@ body{
     border-radius: 14px;
     background: #2B2A2A
 }
+.up{
+    width:40px;
+    heigth: 40px;
+    margin-left:70px;
+    background-image:url("image/upbut.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.up:active{
+    background-image:url("image/upbutactive.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
