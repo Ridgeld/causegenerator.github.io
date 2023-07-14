@@ -422,8 +422,7 @@ body{
     outline: 2px solid #76DB31;
 }
 #down{
-    display: flex;
-    align-items: center;
+    possition: absolute;
     padding-left:100px;
     border-radius: 11px 11px 11px 11px;
     outline: none;
