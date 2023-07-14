@@ -10,6 +10,4 @@ buttonD1.addEventListener('click', function() {
   document.body.appendChild(element);
   element.click();
   document.body.removeChild(element);
-  
-
 });
