@@ -427,7 +427,7 @@ body{
     padding-left:100px;
     border-radius: 11px 11px 11px 11px;
     outline: none;
-    background: #76DB31;
+    background-color: #76DB31;
     color: #110F1F;
     font-size: 15px;
     font-weight:600;
@@ -440,6 +440,6 @@ body{
 }
 #down:active{
     color: #313131;
-    background:#3F631C;
+    background-color:#3F631C;
 }
     
