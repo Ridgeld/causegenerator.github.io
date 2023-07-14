@@ -447,13 +447,13 @@ body{
     width: 300px;
     height: 60px;
     padding-left: 10px;
-    display: flex;
     flex-direction: row;
     border-radius: 14px;
     background: #2B2A2A;
     text-align: center;
 }
 .tdown{
+    display: fles;
     color:#6E6E6E;
     font-size:15px;
     font-weight:Medium;
