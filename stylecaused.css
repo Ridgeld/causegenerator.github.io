@@ -450,20 +450,41 @@ body{
     background: #2B2A2A
 }
 .up{
-    width:40px;
-    heigth:40px;
-    margin-left:70px;
+    order-radius: 11px;
+    outline: none;
     background-image:url("image/upbut.png"); 
     background-size: contain;
     background-repeat: no-repeat;
+    border: none;
+    margin-left:100px;
+    margin-top:10px;
+    width: 40px;
+    height:40px;
+    cursor: pointer;
 }
 .up:active{
+    border-radius: 11px;
+    outline: none;
     background-image:url("image/upbutactive.png"); 
     background-size: contain;
     background-repeat: no-repeat;
+    border: none;
+    margin-left:100px;
+    margin-top:10px;
+    width: 40px;
+    height:40px;
+    cursor: pointer;
 }
 .upin{
+    border-radius: 11px;
+    outline: none;
     background-image:url("image/upbutin.png"); 
     background-size: contain;
     background-repeat: no-repeat;
+    border: none;
+    margin-left:100px;
+    margin-top:10px;
+    width: 40px;
+    height:40px;
+    cursor: pointer;
 }
