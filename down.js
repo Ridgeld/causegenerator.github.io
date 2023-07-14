@@ -1,8 +1,12 @@
-const button = document.getElementById('down1');
-const downplcDiv = document.querySelector('.downplc');
+const buttonD1 = document.getElementById('down1');
+const buttonU1 = document.querySelector('.up1');
+const plc1 = document.getElementById('plc1');
 
+buttonU1.addEventListener('click', function() {
+  plc1.style.heigth = '200px';
+}
 
-button.addEventListener('click', function() {
+buttonD1.addEventListener('click', function() {
   const fileName = 'prof.png';
   const filePath = 'image/prof.png';
   const element = document.createElement('a');
@@ -10,9 +14,7 @@ button.addEventListener('click', function() {
   element.download = fileName;
   element.style.display = 'none';
   document.body.appendChild(element);
-
   element.click();
-
   document.body.removeChild(element);
   
   downplcDiv.style.height = '450px';
