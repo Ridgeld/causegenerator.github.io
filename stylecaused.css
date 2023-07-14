@@ -453,7 +453,7 @@ body{
     text-align: center;
 }
 .tdown{
-    display: fles;
+    display: flex;
     color:#6E6E6E;
     font-size:15px;
     font-weight:Medium;
