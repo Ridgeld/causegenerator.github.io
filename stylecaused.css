@@ -423,6 +423,7 @@ body{
 }
 #down{
     possition: absolute;
+    text-align: center;
     padding-left:100px;
     border-radius: 11px 11px 11px 11px;
     outline: none;
