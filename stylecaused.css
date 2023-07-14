@@ -449,6 +449,7 @@ body{
     flex-direction: column;
     border-radius: 14px;
     background: #2B2A2A;
+    text-align: center;
 }
 .tdown{
     color:#6E6E6E;
