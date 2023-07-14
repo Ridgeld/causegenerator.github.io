@@ -400,8 +400,6 @@ body{
 .wordin{
     margin-top:30px;
     padding-left:10px;
-/*     margin-left: 5%; */
-/*     margin-left:3%; */
     border:none;
     outline:0;
     box-sizing: border-box;
@@ -422,9 +420,8 @@ body{
     outline: 2px solid #76DB31;
 }
 .down{
-    border-radius: 11px 11px 11px 11px;
+    border-radius: 11px;
     outline: none;
-    background: #76DB31;
     color: #110F1F;
     font-size: 15px;
     font-weight:600;
@@ -433,10 +430,14 @@ body{
     width: 150px;
     height:30px;
     cursor: pointer;
+    background-image:url("image/down.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .down:active{
-    color: #313131;
-    background:#3F631C;
+    background-image:url("image/downactive.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .downplc{
     margin-top: 30px;
@@ -447,44 +448,6 @@ body{
     display: flex;
     flex-direction: column;
     border-radius: 14px;
-    background: #2B2A2A
+    background: #2B2A2A;
 }
-.up{
-    order-radius: 11px;
-    outline: none;
-    background-image:url("image/upbut.png"); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-    margin-left:100px;
-    margin-top:10px;
-    width: 40px;
-    height:40px;
-    cursor: pointer;
-}
-.up:active{
-    border-radius: 11px;
-    outline: none;
-    background-image:url("image/upbutactive.png"); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-    margin-left:100px;
-    margin-top:10px;
-    width: 40px;
-    height:40px;
-    cursor: pointer;
-}
-.upin{
-    border-radius: 11px;
-    outline: none;
-    background-image:url("image/upbutin.png"); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-    margin-left:100px;
-    margin-top:10px;
-    width: 40px;
-    height:40px;
-    cursor: pointer;
-}
+
