@@ -419,11 +419,10 @@ body{
 }
 .down{
     possition: relative;
-    margin-top: 10px;
     border-radius: 11px;
     outline: none;
     border: none;
-    margin-left:10px;
+    margin-left:auto;
     width: 40px;
     height:40px;
     cursor: pointer;
