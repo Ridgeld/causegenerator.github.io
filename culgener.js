@@ -25,6 +25,8 @@ wordInput.addEventListener('input', function() {
     output = 'Заткнись, помолчи, ты мне мешаешь, я тебя не переношу';
   } else if (word === 'Максим') {
     output = 'У-у-у-ублюдский';
+  } else if (word === 'Бека') {
+    output = 'Депутат, красный медведь, "это на зубы!"';
   } else if (word === 'Глеб'){
     output = "My name is Gleb, I'm starosta!";
   } else {
