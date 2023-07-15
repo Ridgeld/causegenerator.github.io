@@ -37,7 +37,6 @@ body{
     z-index:2;
 }
 .causeplc{
-/*     margin-left: 5%; */
     margin-top: 30px;
     position: relative;
     width: 300px;
@@ -248,7 +247,6 @@ body{
     background-repeat: no-repeat;
 }
 .update{
-/*     margin-left: 5%; */
     margin-top: 20px;
     position: relative;
     width: 300px;
@@ -438,7 +436,6 @@ body{
     background-repeat: no-repeat;
 }
 .downplc{
-    display:flex;
     margin-top: 30px;
     position: relative;
     width: 300px;
