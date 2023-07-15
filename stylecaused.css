@@ -418,6 +418,7 @@ body{
     outline: 2px solid #76DB31;
 }
 .down{
+    possition: relative;
     margin-top: 10px;
     border-radius: 11px;
     outline: none;
@@ -447,6 +448,7 @@ body{
     text-align: center;
 }
 .tdown{
+    possition: relative;
     color:#6E6E6E;
     font-size:15px;
     font-weight:Medium;
