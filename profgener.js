@@ -3,7 +3,6 @@ const button = document.getElementById("btn1");
 
 button.addEventListener('click', () => {
     window.close();
-    window.location.close();
 });
 // button.addEventListener("click", function() {
 //   fetch('prof.txt')
