@@ -1,14 +1,14 @@
-const inputPeople = document.getElementById('people');
+const inputProcent = document.getElementById('procent');
 const inputMoney = document.getElementById('money');
 const text = document.getElementById("text");
 
 const button = document.getElementById("btn");
 
-button.addEventListener('click', () => {
-    const peopleValue = parseFloat(inputPeople.value);
+inputMoney.addEventListener('input', () => {
+    const procentValue = parseFloat(inputProcent.value);
     const moneyValue = parseFloat(inputMoney.value);
     
-    const result = (peopleValue * moneyValue) + ' сом';
+    const result = (moneyValue * procentValue) +' сом';
     text.textContent = result;
     alert(result);
 });
