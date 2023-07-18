@@ -4,11 +4,10 @@ const text = document.getElementById("text");
 
 const button = document.getElementById("btn");
 
-button.addEventListener("click", function() {
-    output = 2*2+" сом";
-    text.textContent = output;
+button.addEventListener('click', () => {
+    const peopleValue = parseFloat(inputPeople.value);
+    const moneyValue = parseFloat(inputMoney.value);
+    
+    const result = (peopleValue * moneyValue) + ' сом';
+    textDiv.textContent = result;
 });
-// inputMoney.addEventListener('input', function() {
-//     output = inputPeople*inputMoney+"сом";
-//     text.textContent = output;
-// });
