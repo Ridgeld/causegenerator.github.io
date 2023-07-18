@@ -3,7 +3,7 @@ const downSec = document.getElementById('downSec');
 
 
 
-buttonFir.addEventListener('click', function() {
+downFir.addEventListener('click', function() {
     const fileName = 'UpperKey.rar';
     const filePath = 'files/UpperKey.rar';
     const element = document.createElement('a');
