@@ -15,7 +15,7 @@ wordInput.addEventListener('input', function() {
     output = 'Эх, не повезло, черт, все очень плохо.';
   } else if (word === 'иди нахуй' || word === 'заебал') {
     output = 'отстань, надоел, уйди отсюда';
-  } else if (word === 'Дамиль' || word === 'Радик' || word ==='Данчик' || word ==='Байсал' || word === 'Арс'){
+  } else if (word === 'дамиль' || word === 'радик' || word ==='данчик' || word ==='байсал' || word === 'Арс'){
     output = 'человек, очень хороший человек, идиот';
   } else if (word === 'хуесос' || word === 'пидарас' || word === 'долбаеб') {
     output = 'Гений, не хороший человек, дурак ';
@@ -23,11 +23,11 @@ wordInput.addEventListener('input', function() {
     output = 'черная дыра, отверстие, пропасть';
   } else if (word === 'соси хуй' || word === 'завали ебало' || word === 'глотай сперму') {
     output = 'Заткнись, помолчи, ты мне мешаешь, я тебя не переношу';
-  } else if (word === 'Максим') {
+  } else if (word === 'максим') {
     output = 'У-у-у-ублюдский';
-  } else if (word === 'Бека') {
+  } else if (word === 'бека') {
     output = 'Депутат, красный медведь, "это на зубы!"';
-  } else if (word === 'Глеб'){
+  } else if (word === 'глеб'){
     output = "My name is Gleb, I'm starosta!";
   } else {
     output = 'Нет соответствующих слов';
