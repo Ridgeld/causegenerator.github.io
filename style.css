@@ -382,7 +382,7 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
 }
 .linkPlaceStart{
     margin-top: 50px;
-    width: 350px;
+    width: 320px;
     height: 40px;
     padding: 10px;
     display: flex;
