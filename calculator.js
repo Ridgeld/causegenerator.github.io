@@ -8,6 +8,6 @@ inputMoney.addEventListener('input', () => {
     const procentValue = parseFloat(inputProcent.value);
     const moneyValue = parseFloat(inputMoney.value);
     
-    const result = (moneyValue * procentValue) +' сом';
+    const result = (moneyValue +((moneyValue/100)*procentValue) +' сом';
     text.textContent = result;
 });
