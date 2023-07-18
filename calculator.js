@@ -10,4 +10,5 @@ button.addEventListener('click', () => {
     
     const result = (peopleValue * moneyValue) + ' сом';
     text.textContent = result;
+    alert(result);
 });
