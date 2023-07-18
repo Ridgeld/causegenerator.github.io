@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мега генератор</title>
+<!--<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">-->
+    <link rel="shortcut icon" type="image/png" href="images/icon.png"/>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="menutop">
+    <div class="icon"><img src="images/iconsite.png" widht="42" height="34" alt="ЛОГО"></div>
+    <div class="logo">МЕГА<br>ГЕНЕРАТОР</div>
+    <div class="page">Расписание</div>
+    <div class="button"><a href="menu.html" target="_self">
+        <img src="images/back.png" width="16" height="25" alt="Кнопка">
+    </a></div>
+</div>
+<div class="line"></div>
+<div class="container">
+    <div class="week"> 
+        <div class="eachDay">
+            <a class="day" id="PN">ПН</a>
+            <div class="lineViolet" id="line1"></div>
+        </div>
+        <div class="eachDay">
+            <a class="day" id="BT">ВТ</a>
+            <div class="lineViolet" id="line2"></div>
+        </div>
+        <div class="eachDay">
+            <a class="day" id="CP">СР</a>
+            <div class="lineViolet" id="line3"></div>
+        </div>
+        <div class="eachDay">
+            <a class="day" id="JT">ЧТ</a>
+            <div class="lineViolet" id="line4"></div>
+        </div>
+        <div class="eachDay">
+            <a class="day" id="HT">ПТ</a>
+            <div class="lineViolet" id="line5"></div>
+        </div>
+        <div class="eachDay">
+            <a class="day" id="CB">CБ</a>
+            <div class="lineViolet" id="line6"></div>
+        </div>
+    </div>
+    <table id="lessonTable">
+        <tr>
+            <td>1</td>
+            <th id="lesson1">Литература</th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <th id="lesson2">Литература</th>
+        </tr>
+        <tr>
+            <td>3</td>
+            <th id="lesson3">Литература</th>
+        </tr>
+        <tr>
+            <td>4</td>
+            <th id="lesson4">Литература</th>
+        </tr>
+        <tr>
+            <td>5</td>
+            <th id="lesson5">Литература</th>
+        </tr>
+        <tr id="preLast" class="hidden">
+            <td>6</td>
+            <th id="lesson6">Литература</th>
+        </tr>
+        <tr id="last" class="hidden">
+            <td>7</td>
+            <th id="lesson7">Литература</th>
+        </tr>
+    </table>
+    <script src="time.js"></script>
+</body>
+<footer>
+    <div class="footer-content"><p>DM 2023</p></div>
+      <!-- <p>&copy; DM 2023</p> -->
+</footer>
+</html>
