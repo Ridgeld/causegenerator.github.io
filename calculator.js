@@ -9,5 +9,5 @@ button.addEventListener('click', () => {
     const moneyValue = parseFloat(inputMoney.value);
     
     const result = (peopleValue * moneyValue) + ' сом';
-    textDiv.textContent = result;
+    text.textContent = result;
 });
