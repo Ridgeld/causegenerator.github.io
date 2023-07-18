@@ -7,7 +7,7 @@ const button = document.getElementById("btn");
 inputMoney.addEventListener('input', () => {
     const procentValue = parseFloat(inputProcent.value);
     const moneyValue = parseFloat(inputMoney.value);
-    
-    const result = (moneyValue +((moneyValue/100)*procentValue) +' сом';
+    const sto = 100;
+    const result = (moneyValue +((moneyValue/sto)*procentValue) +' сом';
     text.textContent = result;
 });
