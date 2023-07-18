@@ -1,5 +1,5 @@
-const inputPeople = document.getElementById('inputPeople');
-const inputMoney = document.getElementById('inputMoney');
+const inputPeople = document.getElementById('people');
+const inputMoney = document.getElementById('money');
 const text = document.getElementById("text");
 
 inputMoney.addEventListener('input', function() {
