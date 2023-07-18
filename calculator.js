@@ -10,5 +10,4 @@ inputMoney.addEventListener('input', () => {
     
     const result = (moneyValue * procentValue) +' сом';
     text.textContent = result;
-    alert(result);
 });
