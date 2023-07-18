@@ -72,17 +72,26 @@ footer{
 .image{
     margin-top: 30px;
 }
-.hello{
+.helloPar{
     margin-top: 20px;
-    background: #E3E3E3;
+    background: #E3E3E3; 
     border-radius: 20px;
-    width: 300px;
+    width: 330px;
     height: 120px;
     text-align: left;
     padding: 20px;
     word-wrap: break-word;
+    font-size: 18px;
+    font-weight: 600;
+    color:#111;
     font-size: 15px;
-    font-weight: 550;
+}
+.helloText{
+    margin-top: 10px;
+    text-align: left;
+    word-wrap: break-word;
+    font-size: 15px;
+    font-weight: 500;
     color:#111;
     font-size: 15px;
 }
