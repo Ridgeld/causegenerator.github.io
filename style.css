@@ -319,8 +319,18 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
 .hidden{
     display: none;
 }
-.downloadPlace{
+.downloadPlaceFir{
     margin-top: 50px;
+    width: 320px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    border-radius: 30px;
+    background: #E3E3E3;
+    align-items: center;
+}
+.downloadPlace{
+    margin-top: 10px;
     width: 320px;
     height: 40px;
     padding: 10px;
