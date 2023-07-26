@@ -36,7 +36,7 @@ footer{
     height: 590px;
 }
 .menutop{
-    position: fixed;
+    position: relative;
     top:0; 
     width:100%;
     align-items: center;
