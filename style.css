@@ -5,6 +5,8 @@
 }
 body{
     background: #F2F2F2; 
+    margin: 0;
+    padding: 0;
 }
 .bodyMenu{
     background: #E3E3E3;
@@ -12,7 +14,7 @@ body{
 footer{
     display: flex;
     width: 100%;
-    height: 25px;
+    height: 40px;
     text-align: center;
     justify-content: center;
 }
@@ -22,7 +24,7 @@ footer{
     position: absolute;
     align-items: center;
     position: fixed;
-/*     background-color: rgba(49, 49, 49, 0.05); */
+    background-color: rgba(49, 49, 49, 0.05);
 }
 .backFon{
     display: flex;
@@ -37,7 +39,7 @@ footer{
 }
 .menutop{
     position: relative;
-    top:0; 
+    top:5px; 
     width:100%;
     align-items: center;
     display:flex;
@@ -49,13 +51,13 @@ footer{
 .logo{
     padding-left:10px;
     color:#111;
-    font-size:16px;
+    font-size:18px;
     font-weight: 600;
 }
 .button{
     position: absolute;
     top:10px;
-    right:10px;
+    right:20px;
 }
 .line{
     background: #E3E3E3;
@@ -65,6 +67,7 @@ footer{
 }
 .container{
     width:100%;
+    height: 80vh;
     align-items: center;
     display:flex;
     flex-direction: column;
@@ -76,7 +79,7 @@ footer{
     margin-top: 20px;
     background: #E3E3E3; 
     border-radius: 20px;
-    width: 300px;
+    width: 330px;
     height: 120px;
     text-align: left;
     padding: 20px;
@@ -96,7 +99,7 @@ footer{
     font-size: 15px;
 }
 .butCon{
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
 }
@@ -110,7 +113,7 @@ footer{
     font-size: 15px;
     width: 150px;
     height: 40px;
-    margin-left: 15px;
+    margin-left: 30px;
     transition: background-color 0.3s ease-in-out;
 }
 .start:hover{
@@ -125,7 +128,7 @@ footer{
     font-size: 15px;
     width: 150px;
     height: 40px;
-    margin-right: 15px;
+    margin-right: 30px;
     transition: background-color 0.3s ease-in-out;
 }
 .quit:hover{
@@ -134,7 +137,7 @@ footer{
 .page{
     position: absolute;
     right: 0;
-    margin-right: 60px;
+    margin-right: 80px;
 
 }
 .place{
@@ -328,19 +331,9 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
 .hidden{
     display: none;
 }
-.downloadPlaceFir{
-    margin-top: 50px;
-    width: 320px;
-    height: 40px;
-    padding: 10px;
-    display: flex;
-    border-radius: 30px;
-    background: #E3E3E3;
-    align-items: center;
-}
 .downloadPlace{
-    margin-top: 10px;
-    width: 320px;
+    margin-top: 50px;
+    width: 350px;
     height: 40px;
     padding: 10px;
     display: flex;
@@ -375,6 +368,321 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
     color: #111;
     padding-left: 20px;
 }
+.gamePlaceNumber{
+    display: inline-flex;
+    height: 180px;
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 50px;
+    background: url("images/gameCover.png"), lightgray 50% / cover no-repeat;
+}
+.gamePlaceSnake{
+    display: inline-flex;
+    height: 180px;
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    background: url("images/snakeCover.png"), lightgray 50% / cover no-repeat;
+}
+.namePlace{
+    display: flex;
+    padding: 10px 15px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+.gameName{
+    display: flex;
+    width: 200px;
+    height: 35px;
+    padding: 0px 20px;
+    align-items: center;
+    border-radius: 20px;
+    background: rgba(133, 133, 133, 0.10);
+    backdrop-filter: blur(15px);
+    font-size: 15px;
+}
+.more{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+}
+.circle{
+    background: #111;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+.playPlace{
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+.buttonGame{
+    text-decoration: none;
+    display: flex;
+    width: 90px;
+    height: 25px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #5448C8;
+    color:#fff;
+}
+.buttonGame:hover{
+    background: #4D42BA;
+}
+.countPlace{
+    display: inline-flex;
+    width: 340px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+.count{
+    display: flex;
+    width: 200px;
+    height: 30px;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #E3E3E3;
+}
+.numberCount{
+    display: flex;
+    width: 40px;
+    height: 30px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #5448C8;
+    color:#fff;
+    font-size: 20px;
+}
+.numberPlace{
+    margin-top: 10px;
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    background: #E3E3E3;
+}
+.inputPlace{
+    display: inline-flex;
+    width: 340px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.inputNumber{
+    padding: 10px 20px;
+    border:none;
+    outline:0;
+    box-sizing: border-box;
+    background-color:#E3E3E3;
+    outline: 2px solid #4D42BA;
+    width:240px;
+    height:46px;
+    color:#111;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:600;
+}
+.numberButton{
+    outline: none;
+    border: none;
+    display: flex;
+    width: 40px;
+    height: 30px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #5448C8;
+    color:#fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.numberButton:hover{
+    background: #4D42BA;
+}
+.overlay {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    padding: 100px 0px;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: rgba(17, 17, 17, 0.10);
+    backdrop-filter: blur(1px);
+}
+.notification {
+    top: 0;
+    display: none;
+    width: 300px;
+    height: 220px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 20px;
+    background: #FFF;
+}
+.notif{
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+.notifName{
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+.notifText{
+    display: flex;
+    padding: 5px;
+    align-items: flex-start;
+    font-size: 12px;
+}
+.notifText2{
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    font-size: 14px;
+}
+.notifButton{
+    margin-top: 50px;
+    display: flex;
+    padding: 10px 0px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+.finish{
+    outline: none;
+    display: flex;
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    border: 2px solid #CECECE;
+    color:#5448C8;
+    cursor: pointer;
+}
+.finish:hover{
+    background: rgba(84, 72, 200, 0.20);
+}
+.continue{
+    outline: none;
+    border: none;
+    display: flex;
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #5448C8;
+    color:#fff;
+    cursor: pointer;
+}
+.continue:hover{
+    background: #4D42BA;
+}
+.show {
+    display: flex; /* Отображаем уведомление и затемнение */
+}
+.scorePlace{
+    display: inline-flex;
+    width: 340px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+.scoreName{
+    display: flex;
+    width: 150px;
+    height: 30px;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #E3E3E3;
+}
+.score{
+    display: flex;
+    width: 100px;
+    height: 30px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #5448C8;
+    color:#fff;
+    font-size: 20px;
+}
+.gamePlace{
+    margin-top: 20px;
+    width: 350px;
+    height: 350px; /* Занимаем всю высоту экрана */
+    background-color: #E3E3E3;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden; 
+    display: grid;
+    grid-template: repeat(15, 1fr) / repeat(15, 1fr);
+}
+.gamePlace .food{
+    background-image: url('images/fruit.png');
+    background-size: 20px 22px;
+    background-repeat: no-repeat;
+
+}
+.gamePlace .head{
+    background: #5448C8;
+}
+
 .inputWord{
     margin-top:10px;
     padding-left:25px;
@@ -401,7 +709,7 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
 }
 .linkPlaceStart{
     margin-top: 50px;
-    width: 320px;
+    width: 350px;
     height: 40px;
     padding: 10px;
     display: flex;
@@ -413,7 +721,7 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
 }
 .linkPlace{
     margin-top: 10px;
-    width: 320px;
+    width: 350px;
     height: 40px;
     padding: 10px;
     display: flex;
