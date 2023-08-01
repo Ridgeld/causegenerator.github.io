@@ -26,6 +26,13 @@ footer{
     position: fixed;
     background-color: rgba(49, 49, 49, 0.05);
 }
+.footer-content-menu{
+    width:100%;
+    bottom: 0;
+    position: absolute;
+    align-items: center;
+    position: fixed;
+}
 .backFon{
     display: flex;
     position: relative;
