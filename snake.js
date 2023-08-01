@@ -65,6 +65,7 @@ const handleGameOver = () =>{
       } else {
         if (deltaY > 0) {
           console.log('Свайп вниз');
+          event.preventDefault();
           velocityX = 0;
           velocityY = 1;
         } else if (deltaY < 0) {
