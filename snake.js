@@ -1,3 +1,6 @@
+
+document.body.style.overflow = 'hidden';
+
 const scoreCount = document.getElementById('score');
 const notifName = document.getElementById('notifName');
 const text = document.getElementById('text');
