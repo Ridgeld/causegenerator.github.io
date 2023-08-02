@@ -1,38 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Disable Page Reload</title>
+  <title>Fixed Page</title>
+  <style>
+    body {
+      overflow: hidden; /* Убираем скроллинг */
+    }
+  </style>
 </head>
 <body>
 
-  <button id="enableReloadButton">Enable Page Reload</button>
+  <h1>Зафиксированная страница</h1>
+  <p>Это пример зафиксированной страницы без возможности прокрутки.</p>
 
   <script>
-    let allowReload = false;
-
-    document.getElementById('enableReloadButton').addEventListener('click', function() {
-      allowReload = true;
-      alert('Page reload is now enabled.');
-    });
-
-    // Отключаем перезагрузку страницы при свайпах, если allowReload равно false
-    document.addEventListener('touchstart', function(event) {
-      if (!allowReload) {
-        event.preventDefault();
-      }
-    });
-
-    document.addEventListener('touchmove', function(event) {
-      if (!allowReload) {
-        event.preventDefault();
-      }
-    });
-
-    document.addEventListener('touchend', function(event) {
-      if (!allowReload) {
-        event.preventDefault();
-      }
-    });
+    // Отключаем скроллинг при загрузке страницы
+    document.body.style.overflow = 'hidden';
   </script>
 
 </body>
