@@ -344,6 +344,16 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
 .hidden{
     display: none;
 }
+.downloadPlaceFir{
+    margin-top: 50px;
+    width: 350px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    border-radius: 30px;
+    background: #E3E3E3;
+    align-items: center;
+}
 .downloadPlace{
     margin-top: 50px;
     width: 350px;
