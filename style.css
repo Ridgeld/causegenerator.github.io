@@ -355,7 +355,7 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
     align-items: center;
 }
 .downloadPlace{
-    margin-top: 20px;
+    margin-top: 10px;
     width: 320px;
     height: 40px;
     padding: 10px;
