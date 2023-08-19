@@ -15,11 +15,10 @@ fetch('update.json')
     // const textDiv = document.createElement('div');
     // textDiv.className = 'text';
     // textDiv.textContent = update.text;
-
+    const textDiv = document.createElement('div');
     const paragraphs = update.text.split('\n');
     paragraphs.forEach(paragraph => {
       // const paragraphDiv = document.createElement('p');
-      const textDiv = document.createElement('div');
       textDiv.className = 'text';
       textDiv.textContent = update.text;
       // textDiv.appendChild(paragraphDiv);
