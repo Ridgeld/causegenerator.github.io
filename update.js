@@ -1,34 +1,33 @@
 fetch('update.json')
-.then(response => response.json())
-.then(data => {
-  const updatesContainer = document.getElementById('container'); // контейнер для обновлений
+  .then(response => response.json())
+  .then(data => {
+    const updatesContainer = document.getElementById('container');
 
-  // Проходимся по каждому элементу в массиве данных
-  data.forEach(update => {
-    const updateDiv = document.createElement('div');
-    updateDiv.className = 'updatePlace'; // добавляем класс update
+    data.forEach(update => {
+      const updateDiv = document.createElement('div');
+      updateDiv.className = 'updatePlace';
 
-    const dateDiv = document.createElement('div');
-    dateDiv.className = 'date';
-    dateDiv.textContent = update.data;
+      const dateDiv = document.createElement('div');
+      dateDiv.className = 'data';
+      dateDiv.textContent = update.data;
 
-    const textDiv = document.createElement('div');
-    textDiv.className = 'text';
+      const textDiv = document.createElement('div');
+      textDiv.className = 'text';
 
-    // Разделение текста на абзацы и добавление на страницу
-    const paragraphs = update.text.split('\n');
-    paragraphs.forEach(paragraph => {
-      textDiv.textContent = paragraph;
-      // const paragraphDiv = document.createElement('div');
-      // paragraphDiv.className = 'text';
-      // paragraphDiv.textContent = paragraph;
-      // textDiv.appendChild(paragraphDiv);
+      // Разделение текста на абзацы и добавление на страницу
+      const paragraphs = update.text.split('\n');
+      paragraphs.forEach(paragraph => {
+        const paragraphText = document.createTextNode(paragraph);
+        textDiv.appendChild(paragraphText);
+
+        // Добавление переноса строки между абзацами
+        textDiv.appendChild(document.createElement('br'));
+      });
+
+      updateDiv.appendChild(dateDiv);
+      updateDiv.appendChild(textDiv);
+
+      updatesContainer.appendChild(updateDiv);
     });
-
-    updateDiv.appendChild(dateDiv);
-    updateDiv.appendChild(textDiv);
-
-    updatesContainer.appendChild(updateDiv);
-  });
-})
-.catch(error => console.error('Error:', error));
+  })
+  .catch(error => console.error('Ошибка:', error));
