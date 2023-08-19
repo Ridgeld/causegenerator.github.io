@@ -18,10 +18,11 @@ fetch('update.json')
     // Разделение текста на абзацы и добавление на страницу
     const paragraphs = update.text.split('\n');
     paragraphs.forEach(paragraph => {
-      const paragraphDiv = document.createElement('div');
-      paragraphDiv.className = 'text';
-      paragraphDiv.textContent = paragraph;
-      textDiv.appendChild(paragraphDiv);
+      textDiv.textContent = paragraph;
+      // const paragraphDiv = document.createElement('div');
+      // paragraphDiv.className = 'text';
+      // paragraphDiv.textContent = paragraph;
+      // textDiv.appendChild(paragraphDiv);
     });
 
     updateDiv.appendChild(dateDiv);
