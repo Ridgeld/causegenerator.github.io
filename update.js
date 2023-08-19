@@ -12,17 +12,15 @@ fetch('update.json')
     dateDiv.className = 'date';
     dateDiv.textContent = update.data;
 
-    // const textDiv = document.createElement('div');
-    // textDiv.className = 'text';
-    // textDiv.textContent = update.text;
     const textDiv = document.createElement('div');
+    textDiv.className = 'text';
 
+    // Разделение текста на абзацы и добавление на страницу
     const paragraphs = update.text.split('\n');
     paragraphs.forEach(paragraph => {
-      // const paragraphDiv = document.createElement('p');
-      textDiv.className = 'text';
-      textDiv.textContent = paragraphs;
-      // textDiv.appendChild(paragraphDiv);
+      const paragraphDiv = document.createElement('p');
+      paragraphDiv.textContent = paragraph;
+      textDiv.appendChild(paragraphDiv);
     });
 
     updateDiv.appendChild(dateDiv);
