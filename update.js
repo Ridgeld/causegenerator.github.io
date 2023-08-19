@@ -19,7 +19,7 @@ fetch('update.json')
     const paragraphs = update.text.split('\n');
     paragraphs.forEach(paragraph => {
       const paragraphDiv = document.createElement('div');
-      paragraphDiv.className = 'date';
+      paragraphDiv.className = 'text';
       paragraphDiv.textContent = paragraph;
       textDiv.appendChild(paragraphDiv);
     });
