@@ -22,6 +22,7 @@ fetch('update.json')
 
         // Добавление переноса строки между абзацами
         textDiv.appendChild(document.createElement('br'));
+        textDiv.appendChild(document.createElement('br'));
       });
 
       updateDiv.appendChild(dateDiv);
