@@ -44,4 +44,9 @@ window.onload = function() {
 
     context.fillStyle = "green";
     context.fillRect(doodler.x, doodler.y, doodler.width, doodler.height);
+
+
+    doodlerRightImg = new Image();
+    doodlerRightImg.src = "/images/doodler.png";
+    doodler.img = doodlerRightImg;
 }
