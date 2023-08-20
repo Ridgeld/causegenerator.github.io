@@ -29,6 +29,9 @@ let doodlerLeftImg;
 
 //physics
 let velocityX = 0;
+let velocityY = 0;
+let initialVelocityY = -8;
+let gravity = 0.4;
 
 let platformArray = [];
 let platformWidth = 60;
@@ -68,6 +71,8 @@ window.onload = function() {
     platformImg = new Image();
     platformImg.src= "images/platform.png";
 
+    velocityY = initialVelocityY;
+
     placePlatforms();
     requestAnimationFrame(update);
     document.addEventListener("keydown", moveDoodler);
@@ -84,11 +89,18 @@ function update(){
     else if(doodler.x + doodler.width < 0){
         doodler.x = boardWidth;
     }
+
+
+    velocityY +=gravity;
+    doodler.y += velocityY;
     context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
 
 
     for (let i = 0; i < platformArray.length; i++){
         let platform = platformArray[i];
+        if (detectCollision(doodler, platform)){
+            velocityY = initialVelocityY; 
+        }
         context.drawImage(platform.img, platform.x, platform.y, platform.width, platform.height);
     }
 
@@ -129,6 +141,12 @@ function placePlatforms(){
     platformArray.push(platform);
 }
 
+function detectCollision(a , b){
+    return  a.x < b.x + b.width && 
+            a.x + a.width > b.x &&
+            a.y < b.y + b.height &&
+            a.y +a.height > b.y;
+}
 
 window.addEventListener('deviceorientation', handleOrientation);
 
