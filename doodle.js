@@ -29,6 +29,11 @@ let doodlerLeftImg;
 //physics
 let velocityX = 0;
 
+let platformArray = [];
+let platformWidth = 60;
+let platformHeught = 18;
+let platformImage
+
 let doodler = {
     img: null,
     x: doodlerX,
