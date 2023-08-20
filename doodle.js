@@ -98,12 +98,18 @@ function update(){
 
     for (let i = 0; i < platformArray.length; i++){
         let platform = platformArray[i];
+        if (velocityY < 0 && doodler.y < boardHeight*3/4){
+            platform.y -= initialVelocityY;
+        }
         if (detectCollision(doodler, platform)){
             velocityY = initialVelocityY; 
         }
         context.drawImage(platform.img, platform.x, platform.y, platform.width, platform.height);
     }
-
+    while (platformArray.length > 0 && platformArray[0].y >=boardHeight){
+        platformArray.shift();
+        newPlatform();
+    }
 }
 
 
@@ -142,6 +148,17 @@ function placePlatforms(){
         }
         platformArray.push(platform);
     }
+}
+function newPlatform(){
+    let randomX = Math.floor(Math.random()*boardWidth*3/4);
+    let platform ={
+        img: platformImg,
+        x: randomX,
+        y: - platformHeight,
+        width: platformWidth,
+        height: platformHeight
+    }
+    platformArray.push(platform);
 }
 //     platform ={
 //         img: platformImg,
