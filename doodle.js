@@ -116,6 +116,7 @@ function placePlatforms(){
         width: platformWidth,
         height: platformHeight
     }
+    platformArray.push(platform);
 }
 
 document.addEventListener('deviceorientation', handleOrientation);
