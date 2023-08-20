@@ -114,7 +114,7 @@ function placePlatforms(){
         x : boardWidth,
         y: boardHeight,
         width: platformWidth,
-        height: platformHeight,
+        height: platformHeight
     }
 }
 
