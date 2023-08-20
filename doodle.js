@@ -100,7 +100,7 @@ function moveDoodler(e){
         doodler.img = doodlerRightImg;
     }
     else if( e.code == "ArrowLeft" || e.code == "KeyA"){
-        velocityX =-4;
+        velocityX = -4;
         doodler.img = doodlerLeftImg;
     }
 }
