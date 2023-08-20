@@ -42,8 +42,8 @@ window.onload = function() {
     context = board.getContext("2d");
 
 
-    context.fillStyle = "green";
-    context.fillRect(doodler.x, doodler.y, doodler.width, doodler.height);
+    // context.fillStyle = "green";
+    // context.fillRect(doodler.x, doodler.y, doodler.width, doodler.height);
 
 
     doodlerRightImg = new Image();
@@ -52,4 +52,13 @@ window.onload = function() {
     doodlerRightImg.onload = function(){
         context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
     }
+    doodlerLeftImg = new Image();
+    doodlerLeftImg.src = "images/doodler.png";
+
+    requestAnimationFrame(update);
+}
+
+function update(){
+    removeEventListener(update);
+    context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
 }
