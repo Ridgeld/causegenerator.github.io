@@ -162,8 +162,8 @@ function handleOrientation(event) {
   }
 
   if (gamma > 10) {
-    console.log('Наклонено вправо');
+    alert('Наклонено вправо');
   } else if (gamma < -10) {
-    console.log('Наклонено влево');
+    alert('Наклонено влево');
   }
 }
