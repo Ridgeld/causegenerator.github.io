@@ -15,6 +15,7 @@ let board;
 let boardWidth = 360;
 let boardHeight = 500;
 let context;
+let score;
 
 //doodler
 
@@ -75,7 +76,8 @@ window.onload = function() {
 
     placePlatforms();
     requestAnimationFrame(update);
-    document.addEventListener("keydown", moveDoodler);
+    // document.addEventListener("keydown", moveDoodler);
+    document.addEventListener('devicemotion', moveDoodler);
 }
 
 function update(){
@@ -112,17 +114,31 @@ function update(){
     }
 }
 
-
-function moveDoodler(e){
-    if (e.code == "ArrowRight" || e.code == "KeyD"){
-        velocityX = 4;
-        doodler.img = doodlerRightImg;
+function moveDoodler(event) {
+    const accelerationX = event.accelerationIncludingGravity.x; // ускорение по оси X
+  
+    if (accelerationX > 5) {
+      console.log('Наклонено влево');
+      velocityX = -4;
+      doodler.img = doodlerLeftImg;
+    } else if (accelerationX < -5) {
+      console.log('Наклонено вправо');
+      velocityX = 4;
+      doodler.img = doodlerRightImg;
+    //   score++;
+    //   scoreCount.textContent = score;
     }
-    else if(e.code == "ArrowLeft" || e.code == "KeyA"){
-        velocityX = -4;
-        doodler.img = doodlerLeftImg;
-    }
-}
+  }
+// function moveDoodler(e){
+//     if (e.code == "ArrowRight" || e.code == "KeyD"){
+//         velocityX = 4;
+//         doodler.img = doodlerRightImg;
+//     }
+//     else if(e.code == "ArrowLeft" || e.code == "KeyA"){
+//         velocityX = -4;
+//         doodler.img = doodlerLeftImg;
+//     }
+// }
 
 
 function placePlatforms(){
@@ -182,19 +198,12 @@ window.addEventListener('devicemotion', handleMotion);
 
 function handleMotion(event) {
   const accelerationX = event.accelerationIncludingGravity.x; // ускорение по оси X
-  const accelerationY = event.accelerationIncludingGravity.y; // ускорение по оси Y
-  const accelerationZ = event.accelerationIncludingGravity.z; // ускорение по оси Z
-
-  // Добавьте здесь свою логику для определения направления наклона
-  if (accelerationY > 5) {
-    console.log('Наклонено вправо');
-  } else if (accelerationY < -5) {
-    console.log('Наклонено влево');
-  }
 
   if (accelerationX > 5) {
     console.log('Наклонено вперёд');
   } else if (accelerationX < -5) {
     console.log('Наклонено назад');
+    score++;
+    scoreCount.textContent = score;
   }
 }
