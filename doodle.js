@@ -16,6 +16,8 @@ let boardWidth = 360;
 let boardHeight = 500;
 let context;
 let score = 0;
+let maxScore = 0;
+let gameOver = false;
 
 //doodler
 
@@ -81,6 +83,9 @@ window.onload = function() {
 }
 
 function update(){
+    if (gameOver){
+        return;
+    }
     requestAnimationFrame(update);
     context.clearRect(0,0, board.width, board.height);
     doodler.x += velocityX;
@@ -95,6 +100,9 @@ function update(){
 
     velocityY +=gravity;
     doodler.y += velocityY;
+    if(doodler.y  > board.height){
+        gameOver = true;
+    }
     context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
 
 
@@ -114,6 +122,14 @@ function update(){
     }
     updateScore();
     scoreCount.textContent = score;
+
+    if(gameOver){
+        notifName.textContent = 'Вы проиграли(';
+        text2.textContent = "";
+        text.textContent = 'Ваш счет: '+score;
+        overlay.classList.add('show');
+        notification.classList.add('show');
+    }
 }
 
 function moveDoodler(event) {
@@ -195,20 +211,20 @@ function detectCollision(a , b){
 
 function updateScore(){
     let points =Math.floor(50*Math.random());
-    score +=points;
-
+    if (velocityY < 0){
+        maxScore += points;
+        if (score < maxScore){
+            score = maxScore;
+        }
+    }
+    else if( velocityY >= 0){
+        maxScore -=points;
+    }
 }
+finishButton.addEventListener('click', function() {
+    window.location.href = "game.html"; // Переход на другую страницу game.html
+});
 
-// window.addEventListener('devicemotion', handleMotion);
-
-// function handleMotion(event) {
-//   const accelerationX = event.accelerationIncludingGravity.x; // ускорение по оси X
-
-//   if (accelerationX > 5) {
-//     console.log('Наклонено вперёд');
-//   } else if (accelerationX < -5) {
-//     console.log('Наклонено назад');
-//     score++;
-//     scoreCount.textContent = score;
-//   }
-// }
+continueButton.addEventListener('click', function() {
+    location.reload();
+});
