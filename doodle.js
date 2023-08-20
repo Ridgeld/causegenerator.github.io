@@ -131,15 +131,27 @@ function placePlatforms(){
     }
     platformArray.push(platform);
 
-    platform ={
-        img: platformImg,
-        x: boardWidth/2,
-        y: boardHeight-150,
-        width: platformWidth,
-        height: platformHeight
+    for(let i=0; i<6; i++){
+        let randomX = Math.floor(Math.random()*boardWidth*3/4);
+        let platform ={
+            img: platformImg,
+            x: randomX,
+            y: boardHeight - 75*i - 150,
+            width: platformWidth,
+            height: platformHeight
+        }
+        platformArray.push(platform);
     }
-    platformArray.push(platform);
 }
+//     platform ={
+//         img: platformImg,
+//         x: boardWidth/2,
+//         y: boardHeight-150,
+//         width: platformWidth,
+//         height: platformHeight
+//     }
+//     platformArray.push(platform);
+// }
 
 function detectCollision(a , b){
     return  a.x < b.x + b.width && 
