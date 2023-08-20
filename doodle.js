@@ -87,3 +87,24 @@ function moveDoodler(e){
         doodler.img = doodler.doodlerLeftImg;
     }
 }
+
+
+window.addEventListener('deviceorientation', handleOrientation);
+
+function handleOrientation(event) {
+  const beta = event.beta; // угол наклона вперёд-назад
+  const gamma = event.gamma; // угол наклона влево-вправо
+
+  // Добавьте здесь свою логику для определения направления наклона
+  if (beta > 10) {
+    console.log('Наклонено вперёд');
+  } else if (beta < -10) {
+    console.log('Наклонено назад');
+  }
+
+  if (gamma > 10) {
+    alert('Наклонено вправо');
+  } else if (gamma < -10) {
+    alert('Наклонено влево');
+  }
+}
