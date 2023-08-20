@@ -111,7 +111,7 @@ function placePlatforms(){
     platformArray = [];
 
     let platform ={
-        img: platformImage,
+        img: platformImg,
         x: boardWidth/2,
         y: boardHeight-50,
         width: platformWidth,
