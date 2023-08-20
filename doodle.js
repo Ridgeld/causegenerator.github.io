@@ -61,12 +61,12 @@ window.onload = function() {
     doodlerRightImg.onload = function(){
         context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
     }
-    
+
     doodlerLeftImg = new Image();
     doodlerLeftImg.src = "images/doodler.png";
 
     platformImg = new Image();
-    platformImage.src="images/platform.png";
+    platformImg.src= "images/platform.png";
 
     placePlatforms();
     requestAnimationFrame(update);
@@ -100,9 +100,10 @@ function moveDoodler(e){
         velocityX = 4;
         doodler.img = doodlerRightImg;
     }
-    else if( e.code == "ArrowLeft" || e.code == "KeyA"){
+    else if(e.code == "ArrowLeft" || e.code == "KeyA"){
         velocityX = -4;
         doodler.img = doodlerLeftImg;
+        alert("Привет");
     }
 }
 
