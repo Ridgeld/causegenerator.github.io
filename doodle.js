@@ -77,7 +77,7 @@ window.onload = function() {
     placePlatforms();
     requestAnimationFrame(update);
     // document.addEventListener("keydown", moveDoodler);
-    document.addEventListener('devicemotion', moveDoodler);
+    window.addEventListener('devicemotion', moveDoodler);
 }
 
 function update(){
