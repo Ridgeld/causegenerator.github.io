@@ -87,7 +87,7 @@ function update(){
     context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
 
 
-    for (let i=0; i < platformArray.length; i++){
+    for (let i = 0; i < platformArray.length; i++){
         let platform = platformArray[i];
         context.drawImage(platform.img, platform.x, platform.y, platform.width, platform.height);
     }
@@ -112,8 +112,8 @@ function placePlatforms(){
 
     let platform ={
         img: platformImage,
-        x: boardWidth,
-        y: boardHeight,
+        x: boardWidth/2,
+        y: boardHeight-50,
         width: platformWidth,
         height: platformHeight
     }
