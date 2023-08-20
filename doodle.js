@@ -15,7 +15,7 @@ let board;
 let boardWidth = 360;
 let boardHeight = 500;
 let context;
-let score;
+let score = 0;
 
 //doodler
 
@@ -112,21 +112,21 @@ function update(){
         platformArray.shift();
         newPlatform();
     }
+    updateScore();
+    scoreCount.textContent = score;
 }
 
 function moveDoodler(event) {
     const accelerationX = event.accelerationIncludingGravity.x; // ускорение по оси X
   
-    if (accelerationX > 5) {
+    if (accelerationX > 2) {
       console.log('Наклонено влево');
       velocityX = -4;
       doodler.img = doodlerLeftImg;
-    } else if (accelerationX < -5) {
+    } else if (accelerationX < -2) {
       console.log('Наклонено вправо');
       velocityX = 4;
       doodler.img = doodlerRightImg;
-    //   score++;
-    //   scoreCount.textContent = score;
     }
   }
 // function moveDoodler(e){
@@ -193,6 +193,11 @@ function detectCollision(a , b){
             a.y +a.height > b.y;
 }
 
+function updateScore(){
+    let points =Math.floor(50*Math.random());
+    score +=points;
+
+}
 
 // window.addEventListener('devicemotion', handleMotion);
 
