@@ -31,8 +31,8 @@ let velocityX = 0;
 
 let platformArray = [];
 let platformWidth = 60;
-let platformHeught = 18;
-let platformImage
+let platformHeight = 10;
+let platformImage;
 
 let doodler = {
     img: null,
@@ -63,6 +63,10 @@ window.onload = function() {
     doodlerLeftImg = new Image();
     doodlerLeftImg.src = "images/doodler.png";
 
+    platformImg = new Image();
+    platformImage.src="images/platform.png";
+
+    placePlatforms();
     requestAnimationFrame(update);
     document.addEventListener("keydown", moveDoodler);
 }
@@ -79,6 +83,13 @@ function update(){
         doodler.x = boardWidth;
     }
     context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
+
+
+    for (let i=0; i < platformArray.length; i++){
+        let platform = platformArray[i];
+        context.drawImage(platform.img, platform.x, platform.y, platform.width, platform.height);
+    }
+
 }
 
 
@@ -93,6 +104,18 @@ function moveDoodler(e){
     }
 }
 
+
+function placePlatforms(){
+    platformArray = [];
+
+    let platform ={
+        img : platformImage,
+        x : boardWidth,
+        y: boardHeight,
+        width: platformWidth,
+        height: platformHeight,
+    }
+}
 
 window.addEventListener('deviceorientation', handleOrientation);
 
