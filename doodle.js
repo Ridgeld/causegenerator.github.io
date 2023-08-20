@@ -36,11 +36,11 @@ let platformHeight = 10;
 let platformImage;
 
 let doodler = {
-    img : null,
-    x : doodlerX,
-    y : doodlerY,
-    width : doodlerWidth,
-    height : doodlerHeight
+    img: null,
+    x: doodlerX,
+    y: doodlerY,
+    width: doodlerWidth,
+    height: doodlerHeight
 }
 
 
@@ -110,8 +110,8 @@ function placePlatforms(){
     platformArray = [];
 
     let platform ={
-        img : platformImage,
-        x : boardWidth,
+        img: platformImage,
+        x: boardWidth,
         y: boardHeight,
         width: platformWidth,
         height: platformHeight
