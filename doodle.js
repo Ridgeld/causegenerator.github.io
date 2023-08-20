@@ -164,6 +164,8 @@ function handleOrientation(event) {
   if (gamma > 10) {
     alert('Наклонено вправо');
   } else if (gamma < -10) {
-    alert('Наклонено влево');
+    score++;
+
+    scoreCount.innerText = score;
   }
 }
