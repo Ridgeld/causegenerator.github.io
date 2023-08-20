@@ -118,6 +118,15 @@ function placePlatforms(){
         height: platformHeight
     }
     platformArray.push(platform);
+
+    platform ={
+        img: platformImg,
+        x: boardWidth/2,
+        y: boardHeight-150,
+        width: platformWidth,
+        height: platformHeight
+    }
+    platformArray.push(platform);
 }
 
 
