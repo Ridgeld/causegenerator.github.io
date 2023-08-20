@@ -64,8 +64,7 @@ window.onload = function() {
 
 function update(){
     removeEventListener(update);
-
-
+    context.clearRect(0,0, board.width, board.height);
     doodler.x += velocityX;
     context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
 }
