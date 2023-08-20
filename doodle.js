@@ -1,8 +1,3 @@
-let board;
-let boardWidth = 360;
-let boardHeight = 500;
-let context;
-
 document.body.style.overflow = 'hidden';
 
 const scoreCount = document.getElementById('score');
@@ -16,6 +11,10 @@ const notification = document.getElementById('notification');
 const finishButton = document.getElementById('finish');
 const continueButton = document.getElementById('continue');
 
+let board;
+let boardWidth = 360;
+let boardHeight = 500;
+let context;
 
 //doodler
 
@@ -26,6 +25,8 @@ let doodlerY = boardHeight*7/8 - doodlerHeight;
 let doodlerRightImg;
 let doodlerLeftImg;
 
+
+
 //physics
 let velocityX = 0;
 
@@ -35,11 +36,11 @@ let platformHeight = 10;
 let platformImage;
 
 let doodler = {
-    img: null,
-    x: doodlerX,
-    y: doodlerY,
-    width: doodlerWidth,
-    height: doodlerHeight
+    img : null,
+    x : doodlerX,
+    y : doodlerY,
+    width : doodlerWidth,
+    height : doodlerHeight
 }
 
 
@@ -96,11 +97,11 @@ function update(){
 function moveDoodler(e){
     if (e.code == "ArrowRight" || e.code == "KeyD"){
         velocityX = 4;
-        doodler.img = doodler.doodlerRightImg;
+        doodler.img = doodlerRightImg;
     }
     else if( e.code == "ArrowLeft" || e.code == "KeyA"){
         velocityX =-4;
-        doodler.img = doodler.doodlerLeftImg;
+        doodler.img = doodlerLeftImg;
     }
 }
 
