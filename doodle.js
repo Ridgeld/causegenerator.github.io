@@ -66,6 +66,13 @@ function update(){
     removeEventListener(update);
     context.clearRect(0,0, board.width, board.height);
     doodler.x += velocityX;
+
+    if (doodler.x > boardWidth){
+        doodler.x =0;
+    }
+    else if(doodler.x + doodler.width < 0){
+        doodler.x = boardWidth;
+    }
     context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
 }
 
