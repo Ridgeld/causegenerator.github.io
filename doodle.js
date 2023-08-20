@@ -27,7 +27,7 @@ let doodlerRightImg;
 let doodlerLeftImg;
 
 //physics
-let velocityX =0;
+let velocityX = 0;
 
 let doodler = {
     img: null,
@@ -59,7 +59,7 @@ window.onload = function() {
     doodlerLeftImg.src = "images/doodler.png";
 
     requestAnimationFrame(update);
-    document.addEventListener("keydown", moveDoodler)
+    document.addEventListener("keydown", moveDoodler);
 }
 
 function update(){
@@ -68,7 +68,7 @@ function update(){
     doodler.x += velocityX;
 
     if (doodler.x > boardWidth){
-        doodler.x =0;
+        doodler.x = 0;
     }
     else if(doodler.x + doodler.width < 0){
         doodler.x = boardWidth;
