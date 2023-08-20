@@ -194,16 +194,16 @@ function detectCollision(a , b){
 }
 
 
-window.addEventListener('devicemotion', handleMotion);
+// window.addEventListener('devicemotion', handleMotion);
 
-function handleMotion(event) {
-  const accelerationX = event.accelerationIncludingGravity.x; // ускорение по оси X
+// function handleMotion(event) {
+//   const accelerationX = event.accelerationIncludingGravity.x; // ускорение по оси X
 
-  if (accelerationX > 5) {
-    console.log('Наклонено вперёд');
-  } else if (accelerationX < -5) {
-    console.log('Наклонено назад');
-    score++;
-    scoreCount.textContent = score;
-  }
-}
+//   if (accelerationX > 5) {
+//     console.log('Наклонено вперёд');
+//   } else if (accelerationX < -5) {
+//     console.log('Наклонено назад');
+//     score++;
+//     scoreCount.textContent = score;
+//   }
+// }
