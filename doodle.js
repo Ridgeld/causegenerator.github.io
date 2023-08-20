@@ -118,7 +118,7 @@ function placePlatforms(){
     }
 }
 
-window.addEventListener('deviceorientation', handleOrientation);
+document.addEventListener('deviceorientation', handleOrientation);
 
 function handleOrientation(event) {
   const beta = event.beta; // угол наклона вперёд-назад
