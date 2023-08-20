@@ -177,7 +177,6 @@ function detectCollision(a , b){
             a.y +a.height > b.y;
 }
 
-window.addEventListener('deviceorientation', handleOrientation);
 
 window.addEventListener('devicemotion', handleMotion);
 
