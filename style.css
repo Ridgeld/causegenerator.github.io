@@ -410,8 +410,19 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
     justify-content: space-between;
     align-items: center;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     background: url("images/snakeCover.png"), lightgray 50% / cover no-repeat;
+}
+.gamePlaceDoodle{
+    display: inline-flex;
+    height: 180px;
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 15px;
+    background: url("images/doodleCover.png"), lightgray 50% / cover no-repeat;
 }
 .namePlace{
     display: flex;
