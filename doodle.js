@@ -191,10 +191,8 @@ function handleOrientation(event) {
   }
 
   if (gamma > 10) {
-    alert('Наклонено вправо');
+    console.log('Наклонено назад2');
   } else if (gamma < -10) {
-    score++;
-
-    scoreCount.innerText = score;
+    console.log('Наклонено назад1');
   }
 }
