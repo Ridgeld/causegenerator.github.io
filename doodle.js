@@ -179,20 +179,23 @@ function detectCollision(a , b){
 
 window.addEventListener('deviceorientation', handleOrientation);
 
-function handleOrientation(event) {
-  const beta = event.beta; // угол наклона вперёд-назад
-  const gamma = event.gamma; // угол наклона влево-вправо
+window.addEventListener('devicemotion', handleMotion);
+
+function handleMotion(event) {
+  const accelerationX = event.accelerationIncludingGravity.x; // ускорение по оси X
+  const accelerationY = event.accelerationIncludingGravity.y; // ускорение по оси Y
+  const accelerationZ = event.accelerationIncludingGravity.z; // ускорение по оси Z
 
   // Добавьте здесь свою логику для определения направления наклона
-  if (beta > 10) {
-    console.log('Наклонено вперёд');
-  } else if (beta < -10) {
-    console.log('Наклонено назад');
+  if (accelerationY > 5) {
+    console.log('Наклонено вправо');
+  } else if (accelerationY < -5) {
+    console.log('Наклонено влево');
   }
 
-  if (gamma > 10) {
-    console.log('Наклонено назад2');
-  } else if (gamma < -10) {
-    console.log('Наклонено назад1');
+  if (accelerationX > 5) {
+    console.log('Наклонено вперёд');
+  } else if (accelerationX < -5) {
+    console.log('Наклонено назад');
   }
 }
