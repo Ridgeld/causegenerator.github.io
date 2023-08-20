@@ -1,6 +1,6 @@
 let board;
 let boardWidth = 360;
-let boardHeight = 530;
+let boardHeight = 500;
 let context;
 
 document.body.style.overflow = 'hidden';
