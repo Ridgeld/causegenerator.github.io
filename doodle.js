@@ -63,7 +63,7 @@ window.onload = function() {
 }
 
 function update(){
-    removeEventListener(update);
+    requestAnimationFrame(update);
     context.clearRect(0,0, board.width, board.height);
     doodler.x += velocityX;
 
