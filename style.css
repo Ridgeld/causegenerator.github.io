@@ -716,9 +716,13 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
 .gamePlace .head{
     background: #5448C8;
 }
-
+.buttonPlace{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .inputWord{
-    margin-top:10px;
     padding-left:25px;
     border:none;
     outline:0;
@@ -728,7 +732,7 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
     width:290px;
     height:50px;
     color:#111;
-    border-radius:30px;
+    border-radius:30px 0 0 30px;
     font-size:15px;
     font-weight:600;
 
@@ -741,17 +745,13 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
 .inputWord:focus{
     outline: 2px solid #5448C8;
 }
-.buttonPlace{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 .check{
     display: flex;
     width: 50px;
     height: 50px;
     background-color: #5448C8;
     border-radius: 0 30px 30px 0;
+    align-items: center;
 }
 .linkPlaceStart{
     margin-top: 50px;
