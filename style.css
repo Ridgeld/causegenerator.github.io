@@ -725,7 +725,7 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
     box-sizing: border-box;
     background-color:#E3E3E3;
     outline: 2px solid #4D42BA;
-    width:340px;
+    width:290px;
     height:50px;
     color:#111;
     border-radius:30px;
