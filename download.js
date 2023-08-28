@@ -26,3 +26,15 @@ downSec.addEventListener('click', function() {
     element.click();
     document.body.removeChild(element);
 });
+downThr.addEventListener('click', function() {
+    const fileName = 'app.rar';
+    const filePath = 'files/app.rar';
+    const element = document.createElement('a');
+    element.href = filePath;
+    element.download = fileName;
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+});
+
