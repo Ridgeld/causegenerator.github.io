@@ -27,8 +27,8 @@ downSec.addEventListener('click', function() {
     document.body.removeChild(element);
 });
 downThr.addEventListener('click', function() {
-    const fileName = 'app.rar';
-    const filePath = 'files/app.rar';
+    const fileName = 'MegaSetUp.exe';
+    const filePath = 'files/MegaSetUp.exe';
     const element = document.createElement('a');
     element.href = filePath;
     element.download = fileName;
