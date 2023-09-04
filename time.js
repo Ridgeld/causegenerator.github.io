@@ -66,7 +66,7 @@ second.addEventListener('click', () => {
     sixth.classList.remove('clicked');
     lineSix.classList.remove('lineClick');
 // Вторник
-    lesson1.textContent = 'Биология>';
+    lesson1.textContent = 'Биология';
     lesson2.textContent = 'Кыргызский язык';
     lesson3.textContent = 'Физика';
     lesson4.textContent = 'Физика';
