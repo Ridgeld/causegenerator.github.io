@@ -95,14 +95,14 @@ third.addEventListener('click', () => {
 
     sixth.classList.remove('clicked');
     lineSix.classList.remove('lineClick');
-
-    lesson1.textContent = 'Алгебра';
-    lesson2.textContent = 'Литература';
+// Среда
+    lesson1.textContent = 'Химия';
+    lesson2.textContent = 'Адабият';
     lesson3.textContent = 'Классный час';
-    lesson4.textContent = 'ЧиО';
-    lesson5.textContent = 'Кыргызский язык';
+    lesson4.textContent = 'Физкультура';
+    lesson5.textContent = 'Алгебра';
     preLast.classList.remove('hidden');
-    lesson6.textContent = 'Биология';
+    lesson6.textContent = 'Геометрия';
     last.classList.remove('hidden');
     lesson7.textContent = 'Английский язык';
     
