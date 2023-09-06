@@ -126,14 +126,16 @@ fourth.addEventListener('click', () => {
     sixth.classList.remove('clicked');
     lineSix.classList.remove('lineClick');
 
+// Четверг
     lesson1.textContent = 'География';
     lesson2.textContent = 'Английский язык';
-    lesson3.textContent = 'Химия';
-    lesson4.textContent = 'Химия';
-    lesson5.textContent = 'Физкультура';
+    lesson3.textContent = 'Кыргызский язык';
+    lesson4.textContent = 'Алгебра';
+    lesson5.textContent = 'Физика';
     preLast.classList.remove('hidden');
-    lesson6.textContent = 'Геометрия';
-    last.classList.add('hidden');
+    lesson6.textContent = 'ДП';
+    last.classList.remove('hidden');
+    lesson7.textContent = 'ДП';
 });
 fiveth.addEventListener('click', () => {
     fiveth.classList.toggle('clicked');
