@@ -14,7 +14,7 @@ const lineFiv = document.getElementById('line5');
 const lineSix = document.getElementById('line6');
 
 const lessonTable = document.getElementById('lessonTable');
-// last = document.getElementById('last')
+last = document.getElementById('last')
 
 first.addEventListener('click', () => {
   first.classList.toggle('clicked');
@@ -32,8 +32,8 @@ first.addEventListener('click', () => {
   fiveth.classList.remove('clicked');
   lineFiv.classList.remove('lineClick');
 
-  sixth.classList.remove('clicked');
-  lineSix.classList.remove('lineClick');
+//   sixth.classList.remove('clicked');
+//   lineSix.classList.remove('lineClick');
 
 //   Понедельник
   lesson1.textContent = 'Русский язык';
@@ -63,8 +63,8 @@ second.addEventListener('click', () => {
     fiveth.classList.remove('clicked');
     lineFiv.classList.remove('lineClick');
 
-    sixth.classList.remove('clicked');
-    lineSix.classList.remove('lineClick');
+    // sixth.classList.remove('clicked');
+    // lineSix.classList.remove('lineClick');
 // Вторник
     lesson1.textContent = 'Биология';
     lesson2.textContent = 'Кыргызский язык';
@@ -93,8 +93,8 @@ third.addEventListener('click', () => {
     fiveth.classList.remove('clicked');
     lineFiv.classList.remove('lineClick');
 
-    sixth.classList.remove('clicked');
-    lineSix.classList.remove('lineClick');
+    // sixth.classList.remove('clicked');
+    // lineSix.classList.remove('lineClick');
 // Среда
     lesson1.textContent = 'Химия';
     lesson2.textContent = 'Адабият';
@@ -123,8 +123,8 @@ fourth.addEventListener('click', () => {
     fiveth.classList.remove('clicked');
     lineFiv.classList.remove('lineClick');
 
-    sixth.classList.remove('clicked');
-    lineSix.classList.remove('lineClick');
+    // sixth.classList.remove('clicked');
+    // lineSix.classList.remove('lineClick');
 
 // Четверг
     lesson1.textContent = 'География';
@@ -153,8 +153,9 @@ fiveth.addEventListener('click', () => {
     fourth.classList.remove('clicked');
     lineFor.classList.remove('lineClick');
 
-    sixth.classList.remove('clicked');
-    lineSix.classList.remove('lineClick');
+    // sixth.classList.remove('clicked');
+    // lineSix.classList.remove('lineClick');
+
 // Пятница 
     lesson1.textContent = 'Кыргызский язык';
     lesson2.textContent = 'История';
@@ -167,31 +168,31 @@ fiveth.addEventListener('click', () => {
     lesson7.textContent = 'Литература';
 });
 
-sixth.addEventListener('click', () => {
-    sixth.classList.toggle('clicked');
-    lineSix.classList.toggle('lineClick');
+// sixth.addEventListener('click', () => {
+//     sixth.classList.toggle('clicked');
+//     lineSix.classList.toggle('lineClick');
 
-    first.classList.remove('clicked');
-    lineFir.classList.remove('lineClick');
+//     first.classList.remove('clicked');
+//     lineFir.classList.remove('lineClick');
 
-    second.classList.remove('clicked');
-    lineSec.classList.remove('lineClick');
+//     second.classList.remove('clicked');
+//     lineSec.classList.remove('lineClick');
 
-    third.classList.remove('clicked');
-    lineThi.classList.remove('lineClick');
+//     third.classList.remove('clicked');
+//     lineThi.classList.remove('lineClick');
 
-    fourth.classList.remove('clicked');
-    lineFor.classList.remove('lineClick');
+//     fourth.classList.remove('clicked');
+//     lineFor.classList.remove('lineClick');
 
-    fiveth.classList.remove('clicked');
-    lineFiv.classList.remove('lineClick');
+//     fiveth.classList.remove('clicked');
+//     lineFiv.classList.remove('lineClick');
 
-    lesson1.textContent = 'Кыргызский язык';
-    lesson2.textContent = 'Физика';
-    lesson3.textContent = 'Физика';
-    lesson4.textContent = 'ДП';
-    lesson5.textContent = 'ДП';
-    preLast.classList.add('hidden');
-    last.classList.add('hidden');
-});
+//     lesson1.textContent = 'Кыргызский язык';
+//     lesson2.textContent = 'Физика';
+//     lesson3.textContent = 'Физика';
+//     lesson4.textContent = 'ДП';
+//     lesson5.textContent = 'ДП';
+//     preLast.classList.add('hidden');
+//     last.classList.add('hidden');
+// });
 
