@@ -155,14 +155,16 @@ fiveth.addEventListener('click', () => {
 
     sixth.classList.remove('clicked');
     lineSix.classList.remove('lineClick');
-
-    lesson1.textContent = 'Адабият';
+// Пятница 
+    lesson1.textContent = 'Кыргызский язык';
     lesson2.textContent = 'История';
     lesson3.textContent = 'Английский язык';
-    lesson4.textContent = 'Алгебра';
-    lesson5.textContent = 'Русский язык';
-    preLast.classList.add('hidden');
-    last.classList.add('hidden');
+    lesson4.textContent = 'Химия';
+    lesson5.textContent = 'Алгебра';
+    preLast.classList.remove('hidden');
+    lesson6.textContent = 'Русский язык';
+    last.classList.remove('hidden');
+    lesson7.textContent = 'Литература';
 });
 
 sixth.addEventListener('click', () => {
