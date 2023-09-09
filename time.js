@@ -15,6 +15,7 @@ const lineSix = document.getElementById('line6');
 
 const lessonTable = document.getElementById('lessonTable');
 last = document.getElementById('last')
+lastL = document.getElementById('LastL')
 
 first.addEventListener('click', () => {
   first.classList.toggle('clicked');
@@ -36,15 +37,16 @@ first.addEventListener('click', () => {
 //   lineSix.classList.remove('lineClick');
 
 //   Понедельник
-  lesson1.textContent = 'Русский язык';
-  lesson2.textContent = 'Литература';
+  lesson1.textContent = 'Алгебра';
+  lesson2.textContent = 'Геометрия';
   lesson3.textContent = 'История';
   lesson4.textContent = 'Английский язык';
-  lesson5.textContent = 'Физкультура';
+  lesson5.textContent = 'Кыргызский язык';
   preLast.classList.remove('hidden');
-  lesson6.textContent = 'Кыргызский язык';
+  lesson6.textContent = 'Физкультура';
   last.classList.remove('hidden');
   lesson7.textContent = 'ЧиО';
+  lastL.classList.add('hidden');
 });
 
 second.addEventListener('click', () => {
@@ -70,11 +72,12 @@ second.addEventListener('click', () => {
     lesson2.textContent = 'Кыргызский язык';
     lesson3.textContent = 'Физика';
     lesson4.textContent = 'Физика';
-    lesson5.textContent = 'Литература';
+    lesson5.textContent = 'Английский язык';
     preLast.classList.remove('hidden');
-    lesson6.textContent = 'Английский язык';
-    last.classList.remove('hidden');
-    lesson7.textContent = 'Английский язык';
+    lesson6.textContent = 'Литература';
+    last.classList.add('hidden');
+    lastL.classList.add('hidden');
+    // lesson7.textContent = 'Английский язык';
 });
 
 third.addEventListener('click', () => {
@@ -100,11 +103,14 @@ third.addEventListener('click', () => {
     lesson2.textContent = 'Адабият';
     lesson3.textContent = 'Классный час';
     lesson4.textContent = 'Физкультура';
-    lesson5.textContent = 'Алгебра';
+    lesson5.textContent = 'Русский язык';
     preLast.classList.remove('hidden');
-    lesson6.textContent = 'Геометрия';
+    lesson6.textContent = 'Литература';
     last.classList.remove('hidden');
     lesson7.textContent = 'Английский язык';
+    lastL.classList.remove('hidden');
+    lesson8.textContent = 'Английский язык';
+
     
 });
 fourth.addEventListener('click', () => {
@@ -136,6 +142,7 @@ fourth.addEventListener('click', () => {
     lesson6.textContent = 'ДП';
     last.classList.remove('hidden');
     lesson7.textContent = 'ДП';
+    lastL.classList.add('hidden');
 });
 fiveth.addEventListener('click', () => {
     fiveth.classList.toggle('clicked');
@@ -166,6 +173,7 @@ fiveth.addEventListener('click', () => {
     lesson6.textContent = 'Русский язык';
     last.classList.remove('hidden');
     lesson7.textContent = 'Литература';
+    lastL.classList.add('hidden');
 });
 
 // sixth.addEventListener('click', () => {
