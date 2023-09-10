@@ -348,7 +348,7 @@ footer{
     border-radius: 10px;
     background: rgba(84, 72, 200, 0.20);
 }
-.circle{
+.lesson_circle{
     width: 32px;
     height: 32px;
     flex-shrink: 0;
@@ -405,7 +405,7 @@ footer{
     border-radius: 10px;
     background: rgba(0, 71, 255, 0.20);
 }
-.circle_special{
+.lesson_circle_special{
     width: 32px;
     height: 32px;
     flex-shrink: 0;

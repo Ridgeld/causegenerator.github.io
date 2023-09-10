@@ -107,7 +107,7 @@ function loadTimetable(jsonFile, dayOfWeek) {
                 
                     // Создайте div с классом "circle" перед названием урока
                     const circleDiv = document.createElement("div");
-                    circleDiv.className = "circle";
+                    circleDiv.className = "lesson_circle";
                     lessonContainer.appendChild(circleDiv);
                 
                     // Создайте div с классом "lesson_info" для названия, времени и кабинета
@@ -136,7 +136,7 @@ function loadTimetable(jsonFile, dayOfWeek) {
                     lessonContainer.appendChild(lessonRoomDiv);
                     if (урок.name === "Классный час") {
                         lessonContainer.classList.add("lesson_container_special");
-                        circleDiv.classList.add("circle_special");
+                        circleDiv.classList.add("lesson_circle_special");
                         lessonNameDiv.classList.add("lesson_name_special");
                         lessonRoomDiv.classList.add("lesson_room_special");
                         lessonTimeDiv.classList.add("lesson_time_special");
