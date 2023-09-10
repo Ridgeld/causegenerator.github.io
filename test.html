@@ -5,20 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Мега генератор</title>
+<!--<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">-->
     <link rel="shortcut icon" type="image/png" href="images/icon.png"/>
     <link rel="stylesheet" href="style.css">
 
 </head>
-
-<div class="containerR">
-    <div class="logoContainer">
-        <div class="logoImage">
-            <img src="images/iconsite.png" alt="лого" width="52" height="42">
-        </div>
-        <div class="logoPlace">Мега<br>Генератор</div>
-    </div>
+<body>
+<div class="menutop">
+    <div class="icon"><img src="images/iconsite.png" widht="42" height="34" alt="ЛОГО"></div>
+    <div class="logo">МЕГА<br>ГЕНЕРАТОР</div>
+    <div class="page">Расписание</div>
+    <div class="button"><a href="menu.html" target="_self">
+        <img src="images/back.png" width="16" height="25" alt="Кнопка">
+    </a></div>
 </div>
-    <!-- <script src="next.js"></script> -->
+<div class="line"></div>
+<div class="container">
+    <div class="week"> 
+        <div class="eachDay">
+            <a class="day" id="1">ПН</a>
+            <div class="lineViolet" id="line1"></div>
+        </div>
+        <div class="eachDay">
+            <a class="day" id="2">ВТ</a>
+            <div class="lineViolet" id="line2"></div>
+        </div>
+        <div class="eachDay">
+            <a class="day" id="3">СР</a>
+            <div class="lineViolet" id="line3"></div>
+        </div>
+        <div class="eachDay">
+            <a class="day" id="4">ЧТ</a>
+            <div class="lineViolet" id="line4"></div>
+        </div>
+        <div class="eachDay">
+            <a class="day" id="5">ПТ</a>
+            <div class="lineViolet" id="line5"></div>
+        </div>
+        <div class="lesson_place" id="place">
+            <div class="lesson_container">
+                <div class="circle"></div>
+                <div class="lesson_info">
+                    <div class="lesson_name" id="name">География</div>
+                    <div class="lesson_time" id="time">08:00 - 08:45</div>
+                </div>
+                <div class="lesson_room" id="room">204</div>
+            </div>
+        </div>
+    </div>
+    <script src="timetable.js"></script>
 </body>
-
+<footer>
+    <div class="footer-content"><p>DM 2023</p></div>
+      <!-- <p>&copy; DM 2023</p> -->
+</footer>
 </html>

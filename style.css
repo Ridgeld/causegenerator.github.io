@@ -330,6 +330,129 @@ footer{
     display: block;
     opacity: 100;
 }
+.lesson_place{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.lesson_container{
+    display: flex;
+    width: 320px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: rgba(84, 72, 200, 0.20);
+}
+.circle{
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #5448C8;
+    opacity: 0.3;
+}
+.lesson_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+.lesson_name{
+    color: #5448C8;
+    opacity: 0.6;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.lesson_time{
+    color: #5448C8;
+    opacity: 0.3;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.lesson_room{
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1 0 0;
+
+    color: #5448C8;
+    opacity: 0.6;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.lesson_container_special{
+    display: flex;
+    width: 320px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: rgba(0, 71, 255, 0.20);
+}
+.circle_special{
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #0047FF;
+    opacity: 0.3;
+}
+.lesson_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+.lesson_name_special{
+    color: #0047FF;
+    opacity: 0.6;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.lesson_time_special{
+    color: #0047FF;
+    opacity: 0.3;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.lesson_room_special{
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1 0 0;
+
+    color: #0047FF;
+    opacity: 0.6;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
 table{
     color: #111;;
     margin-top:40px;
