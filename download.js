@@ -32,17 +32,17 @@ downFir.addEventListener("click", () => {
 // finishButton.addEventListener('click', function() {
 //     location.reload();
 // });
-continueButton.addEventListener('click', function() {
-    const fileName = 'AdvancedKey.pdf';
-    const filePath = 'files/AdvancedKey.pdf';
-    const element = document.createElement('a');
-    element.href = filePath;
-    element.download = fileName;
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-});
+// continueButton.addEventListener('click', function() {
+//     const fileName = 'AdvancedKey.pdf';
+//     const filePath = 'files/AdvancedKey.pdf';
+//     const element = document.createElement('a');
+//     element.href = filePath;
+//     element.download = fileName;
+//     element.style.display = 'none';
+//     document.body.appendChild(element);
+//     element.click();
+//     document.body.removeChild(element);
+// });
 
 
 downSec.addEventListener('click', function() {
