@@ -4,12 +4,12 @@ const downSec = document.getElementById('downSec');
 
 
 downFir.addEventListener('click', function() {
-    notifName.textContent = 'Скачать';
-    text2.textContent = "";
-    text.textContent = "Вы хотите скачать Solutions Advanced?";
-    overlay.classList.add('show');
-    notification.classList.add('show');
-    finishButton.addEventListener('click', function() {
+    // notifName.textContent = 'Скачать';
+    // text2.textContent = "";
+    // text.textContent = "Вы хотите скачать Solutions Advanced?";
+    // overlay.classList.add('show');
+    // notification.classList.add('show');
+    // finishButton.addEventListener('click', function() {
         const fileName = 'AdvancedKey.pdf';
         const filePath = 'files/AdvancedKey.pdf';
         const element = document.createElement('a');
@@ -19,7 +19,7 @@ downFir.addEventListener('click', function() {
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
-    });
+    // });
     
     continueButton.addEventListener('click', function() {
         location.reload();
