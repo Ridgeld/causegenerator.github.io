@@ -31,6 +31,16 @@ continueButton.addEventListener('click', function() {
 });
 
 downSec.addEventListener('click', function() {
+    notifName.textContent = 'Скачать';
+    text2.textContent = "";
+    text.textContent = "Вы хотите скачать Solutions Upper-Intermediate?";
+    overlay.classList.add('show');
+    notification.classList.add('show');
+});
+finishButton.addEventListener('click', function() {
+    location.reload();
+});
+continueButton.addEventListener('click', function() {
     const fileName = 'UpperKey.rar';
     const filePath = 'files/UpperKey.rar';
     const element = document.createElement('a');
