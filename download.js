@@ -1,7 +1,12 @@
 const downFir = document.getElementById('downFir');
 const downSec = document.getElementById('downSec');
+const downThr = document.getElementById('downThr');
 
 
+const overlay = document.getElementById('overlay');
+const notification = document.getElementById('notification');
+const finishButton = document.getElementById('finish');
+const continueButton = document.getElementById('continue');
 
 downFir.addEventListener('click', function() {
     notifName.textContent = 'Скачать';
@@ -9,7 +14,7 @@ downFir.addEventListener('click', function() {
     text.textContent = "Вы хотите скачать Solutions Advanced?";
     overlay.classList.add('show');
     notification.classList.add('show');
-    finishButton.addEventListener('click', function() {
+    continueButton.addEventListener('click', function() {
         const fileName = 'AdvancedKey.pdf';
         const filePath = 'files/AdvancedKey.pdf';
         const element = document.createElement('a');
@@ -21,7 +26,7 @@ downFir.addEventListener('click', function() {
         document.body.removeChild(element);
     });
     
-    continueButton.addEventListener('click', function() {
+    finishButton.addEventListener('click', function() {
         location.reload();
     });
 });
