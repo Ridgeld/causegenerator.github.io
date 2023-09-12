@@ -10,6 +10,7 @@ const continueButton = document.getElementById('continue');
 
 downFir.addEventListener("click", () => {
     currentFile = "files/AdvancedKey.pdf";
+    currentFileName = "AdvancedKey.pdf";
     notifName.textContent = 'Скачать';
     text2.textContent = "";
     text.textContent = "Вы хотите скачать Solutions Advanced?";
@@ -18,6 +19,7 @@ downFir.addEventListener("click", () => {
   });
 downSec.addEventListener("click", () => {
     currentFile = "files/UpperKey.rar";
+    currentFileName = "UpperKey.rar";
     notifName.textContent = 'Скачать';
     text2.textContent = "";
     text.textContent = "Вы хотите скачать Solutions Upper-Intermediate?";
@@ -26,6 +28,7 @@ downSec.addEventListener("click", () => {
   });
 downThr.addEventListener("click", () => {
     currentFile = "files/MegaSetUp.exe";
+    currentFileName = "MegaSetUp.exe";
     notifName.textContent = 'Скачать';
     text2.textContent = "";
     text.textContent = "Вы хотите скачать desctop version?";
@@ -35,7 +38,7 @@ downThr.addEventListener("click", () => {
 
 continueButton.addEventListener('click', function() {
     const fileName = currentFile;
-    const filePath = currentFile;
+    const filePath = currentFileName;
     const element = document.createElement('a');
     element.href = filePath;
     element.download = fileName;
