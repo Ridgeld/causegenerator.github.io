@@ -37,8 +37,8 @@ downThr.addEventListener("click", () => {
   });
 
 continueButton.addEventListener('click', function() {
-    const fileName = currentFile;
-    const filePath = currentFileName;
+    const fileName = currentFileName;
+    const filePath = currentFile;
     const element = document.createElement('a');
     element.href = filePath;
     element.download = fileName;
