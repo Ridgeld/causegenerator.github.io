@@ -8,9 +8,8 @@ const notification = document.getElementById('notification');
 const finishButton = document.getElementById('finish');
 const continueButton = document.getElementById('continue');
 
-
 downFir.addEventListener("click", () => {
-    currentFile = "files/UpperKey.rar";
+    currentFile = "files/AdvancedKey.pdf";
     notifName.textContent = 'Скачать';
     text2.textContent = "";
     text.textContent = "Вы хотите скачать Solutions Advanced?";
@@ -18,10 +17,10 @@ downFir.addEventListener("click", () => {
     notification.classList.add('show');
   });
 downSec.addEventListener("click", () => {
-    currentFile = "files/AdvancedKey.pdf";
+    currentFile = "files/UpperKey.rar";
     notifName.textContent = 'Скачать';
     text2.textContent = "";
-    text.textContent = "Вы хотите скачать Solutions Advanced?";
+    text.textContent = "Вы хотите скачать Solutions Upper-Intermediate?";
     overlay.classList.add('show');
     notification.classList.add('show');
   });
