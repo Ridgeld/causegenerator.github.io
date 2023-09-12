@@ -8,16 +8,30 @@ const notification = document.getElementById('notification');
 const finishButton = document.getElementById('finish');
 const continueButton = document.getElementById('continue');
 
-downFir.addEventListener('click', function() {
+
+downFir.addEventListener("click", () => {
+    downloadLink.href = "files/AdvancedKey.pdf";
+    downloadLink.click();
     notifName.textContent = 'Скачать';
     text2.textContent = "";
     text.textContent = "Вы хотите скачать Solutions Advanced?";
     overlay.classList.add('show');
     notification.classList.add('show');
-});
-finishButton.addEventListener('click', function() {
-    location.reload();
-});
+    finishButton.addEventListener('click', function() {
+        location.reload();
+    });
+  });
+
+// downFir.addEventListener('click', function() {
+//     notifName.textContent = 'Скачать';
+//     text2.textContent = "";
+//     text.textContent = "Вы хотите скачать Solutions Advanced?";
+//     overlay.classList.add('show');
+//     notification.classList.add('show');
+// });
+// finishButton.addEventListener('click', function() {
+//     location.reload();
+// });
 continueButton.addEventListener('click', function() {
     const fileName = 'AdvancedKey.pdf';
     const filePath = 'files/AdvancedKey.pdf';
