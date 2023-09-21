@@ -3,7 +3,7 @@ const text = document.getElementById("text");
 const button = document.getElementById("check");
 
 button.addEventListener('click', function() {
-  const word = wordInput.value.trim().toLowerCase();
+  const word = wordInput.value;
 //   let output;
 
 
