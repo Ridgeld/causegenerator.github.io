@@ -61,7 +61,7 @@ const requestOptions = {
   },
   body: JSON.stringify({
     prompt: promptText,
-    max_tokens: 50 // Максимальное количество токенов в ответе
+    max_tokens: 100 // Максимальное количество токенов в ответе
   })
 };
 
