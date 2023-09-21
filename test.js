@@ -44,7 +44,7 @@ button.addEventListener('click', function() {
 //   }
 
 //   text.textContent = output;
-const apiKey = "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";
+const apiKey = "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";
 
 // Текст запроса
 const promptText = word;
