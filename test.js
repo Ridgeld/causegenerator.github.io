@@ -44,10 +44,10 @@ button.addEventListener('click', function() {
 //   }
 
 //   text.textContent = output;
-const apiKey = "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";
+const apiKey = "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";
 
 // Текст запроса
-const promptText = word;
+const promptText = "word";
 
 // URL для отправки запроса к GPT-3
 const apiUrl = "https://api.openai.com/v1/engines/davinci-codex/completions";
