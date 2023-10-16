@@ -35,5 +35,5 @@ fetch("assets/citata.txt")
     .then(response => response.text())
     .then(text => {
         lines = text.split('\n');
-        document.querySelector("#button").addEventListener("click", showRandomText);
+        document.querySelector("#btn").addEventListener("click", showRandomText);
     });
