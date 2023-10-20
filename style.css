@@ -1009,3 +1009,142 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
     /* position: relative; */
     overflow: hidden; 
 }
+.week{
+    margin-top: 2%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.day{
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+.day:hover{
+    color:#2400FF;
+}
+.eachDay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.under_line{
+    background: #2400FF;
+    opacity: 0;
+    width: 100%;
+    height: 4px;
+    gap: 20px;
+    border-radius: 3px 3px 0 0;
+}
+.day:hover+.under_line{
+    display: block;
+    opacity: 100;
+    transition: opacity 0.2s ease-in-out;
+}
+.clicked{
+    display: block;
+    opacity: 100;
+    color: #2400FF;
+}
+.lineClick{
+    display: block;
+    opacity: 100;
+}
+.lesson_place{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    padding: 0 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.lesson_container_math{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: rgba(0, 255, 117, 0.60);
+}
+.lesson_container_history{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: rgba(255, 0, 61, 0.60);
+}
+.lesson_container_language{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: rgba(36, 0, 255, 0.60);
+}
+.lesson_container_class{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: rgba(255, 245, 0, 0.60);
+}
+.lesson_circle{
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #FFF;
+    opacity: 0.3;
+}
+.lesson_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+.lesson_name{
+    color: #fff;
+    opacity: 0.6;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.lesson_time{
+    color: #fff;
+    opacity: 0.3;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.lesson_room{
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1 0 0;
+
+    color: #fff;
+    opacity: 0.6;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

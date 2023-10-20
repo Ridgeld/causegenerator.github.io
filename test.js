@@ -1,80 +1,180 @@
-const wordInput = document.getElementById('inputWord');
-const text = document.getElementById("text");
-const button = document.getElementById("check");
-
-button.addEventListener('click', function() {
-  const word = wordInput.value;
-//   let output;
-
-
-//   const wordArray = {
-//     "хуй": "Хер, петух, банан",
-//     "член": "Хер, петух, банан",
-//     "пенис": "Хер, петух, банан",
-//     "блять": "Блин. Ой, вот это да",
-//     "cука": "Блин. Ой, вот это да",
-//     "eбать": "Здорово! Невероятно. Очень хорошо",
-//     "охуенно": "Здорово! Невероятно. Очень хорошо",
-//     "пиздец": "Эх, не повезло. Черт. Все очень плохо",
-//     "ебанный рот": "Эх, не повезло. Черт. Все очень плохо",
-//     "иди нахуй": "отстань, надоел. Уйди отсюда",
-//     "заебал": "отстань, надоел. Уйди отсюда",
-//     "хуесос": "Гений. Не хороший человек, дурак",
-//     "пидарас": "Гений. Не хороший человек, дурак",
-//     "долбаеб": "Гений. Не хороший человек, дурак",
-//     "пизда": "Черная дыра. Пропасть",
-//     "манда": "Черная дыра. Пропасть",
-//     "анал": "Черная дыра. Пропасть",
-//     "соси хуй": "Заткнись, помолчи. Ты мне мешаешь",
-//     "завали ебало": "Заткнись, помолчи. Ты мне мешаешь",
-//     "дамиль": "человек, очень хороший человек",
-//     "радик": "Сразу нахуй, чисто нахуй, быстро нахуй, Р-р-радик",
-//     "данчик": "человек, очень хороший человек",
-//     "байсал": "человек, очень хороший человек",
-//     "арс": "По панковски. На мужика!",
-//     "глеб": "My name is Gleb. I'm starosta",
-//     "максим": "У-у-у-ублюдский",
-//     "бека": "Депутат, красный медведь. Это на зубы!",
-//   }
-//   if (wordArray.hasOwnProperty(word)){
-//     output = wordArray[word];
-//   }
-//   else{
-//     output = "Нет соответствующих слов";
-//   }
-
-//   text.textContent = output;
-const apiKey = "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";
-
-// Текст запроса
-const promptText = "word";
-
-// URL для отправки запроса к GPT-3
-const apiUrl = "https://api.openai.com/v1/engines/davinci-codex/completions";
-
-// Опции запроса
-const requestOptions = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    "Authorization": `Bearer ${apiKey}`
-  },
-  body: JSON.stringify({
-    prompt: promptText,
-    max_tokens: 100 // Максимальное количество токенов в ответе
-  })
-};
-
-// Отправляем запрос к GPT-3
-fetch(apiUrl, requestOptions)
-  .then(response => response.json())
-  .then(data => {
-    const responseText = data.choices[0].text;
-    // Отображаем ответ в div с id "line"
-    text.textContent = responseText;
-  })
-  .catch(error => {
-    console.error("Ошибка при отправке запроса к GPT-3:", error);
-  });
+const menu_button = document.getElementById('menu');
+menu_button.addEventListener( 'click', function(){
+    window.location.href = "menu.html";
 });
+
+
+
+document.getElementById('1').classList.add('clicked'); // По умолчанию активируем кнопку "Понедельник"
+document.getElementById('line1').classList.add('lineClick');
+
+loadTimetable('timetable.json', 'Понедельник'); // Загружаем расписание для понедельника при загрузке страницы
+// Обработчики событий для кнопок
+document.getElementById('1').addEventListener('click', function () {
+    loadTimetable('timetable.json', 'Понедельник');
+    this.classList.toggle('clicked');
+    document.getElementById('line1').classList.toggle('lineClick');
+
+
+    document.getElementById('2').classList.remove('clicked');
+    document.getElementById('3').classList.remove('clicked');
+    document.getElementById('4').classList.remove('clicked');
+    document.getElementById('5').classList.remove('clicked');
+
+    document.getElementById('line2').classList.remove('lineClick');
+    document.getElementById('line3').classList.remove('lineClick');
+    document.getElementById('line4').classList.remove('lineClick');
+    document.getElementById('line5').classList.remove('lineClick');
+
+});
+
+document.getElementById('2').addEventListener('click', function () {
+    loadTimetable('timetable.json', 'Вторник');
+    this.classList.toggle('clicked');
+    document.getElementById('line2').classList.toggle('lineClick');
+
+
+    document.getElementById('1').classList.remove('clicked');
+    document.getElementById('3').classList.remove('clicked');
+    document.getElementById('4').classList.remove('clicked');
+    document.getElementById('5').classList.remove('clicked');
+
+    document.getElementById('line1').classList.remove('lineClick');
+    document.getElementById('line3').classList.remove('lineClick');
+    document.getElementById('line4').classList.remove('lineClick');
+    document.getElementById('line5').classList.remove('lineClick');
+});
+
+document.getElementById('3').addEventListener('click', function () {
+    loadTimetable('timetable.json', 'Среда');
+    this.classList.toggle('clicked');
+    document.getElementById('line3').classList.toggle('lineClick');
+
+
+    document.getElementById('1').classList.remove('clicked');
+    document.getElementById('2').classList.remove('clicked');
+    document.getElementById('4').classList.remove('clicked');
+    document.getElementById('5').classList.remove('clicked');
+
+    document.getElementById('line1').classList.remove('lineClick');
+    document.getElementById('line2').classList.remove('lineClick');
+    document.getElementById('line4').classList.remove('lineClick');
+    document.getElementById('line5').classList.remove('lineClick');
+});
+document.getElementById('4').addEventListener('click', function () {
+    loadTimetable('timetable.json', 'Четверг');
+    this.classList.toggle('clicked');
+    document.getElementById('line4').classList.toggle('lineClick');
+
+
+    document.getElementById('1').classList.remove('clicked');
+    document.getElementById('2').classList.remove('clicked');
+    document.getElementById('3').classList.remove('clicked');
+    document.getElementById('5').classList.remove('clicked');
+
+    document.getElementById('line1').classList.remove('lineClick');
+    document.getElementById('line2').classList.remove('lineClick');
+    document.getElementById('line3').classList.remove('lineClick');
+    document.getElementById('line5').classList.remove('lineClick');
+});
+
+document.getElementById('5').addEventListener('click', function () {
+    loadTimetable('timetable.json', 'Пятница');
+    this.classList.toggle('clicked');
+    document.getElementById('line5').classList.toggle('lineClick');
+
+
+    document.getElementById('1').classList.remove('clicked');
+    document.getElementById('2').classList.remove('clicked');
+    document.getElementById('3').classList.remove('clicked');
+    document.getElementById('4').classList.remove('clicked');
+
+    document.getElementById('line1').classList.remove('lineClick');
+    document.getElementById('line2').classList.remove('lineClick');
+    document.getElementById('line3').classList.remove('lineClick');
+    document.getElementById('line4').classList.remove('lineClick');
+});
+
+// Загрузка и отображение расписания
+function loadTimetable(jsonFile, dayOfWeek) {
+    fetch(jsonFile)
+        .then(response => response.json())
+        .then(data => {
+            // Очистите расписание перед загрузкой нового
+            const container = document.getElementById("place");
+            container.innerHTML = '';
+
+            // Найдите день недели в массиве данных
+            const dayData = data.find(day => day.day === dayOfWeek);
+
+            if (dayData) {
+                // Если день недели найден, отобразите его уроки
+                const lessons = dayData.lessons;
+                lessons.forEach(урок => {
+                    // Создайте контейнер для урока
+                    const lessonContainer = document.createElement("div");
+                    lessonContainer.className = "lesson_container";
+                
+                    // Создайте div с классом "circle" перед названием урока
+                    const circleDiv = document.createElement("div");
+                    circleDiv.className = "lesson_circle";
+                    lessonContainer.appendChild(circleDiv);
+                
+                    // Создайте div с классом "lesson_info" для названия, времени и кабинета
+                    const lessonInfoDiv = document.createElement("div");
+                    lessonInfoDiv.className = "lesson_info";
+                    lessonContainer.appendChild(lessonInfoDiv);
+                
+                    // Создайте div с классом "lesson_name" для названия урока
+                    const lessonNameDiv = document.createElement("div");
+                    lessonNameDiv.className = "lesson_name";
+                
+                    // Проверьте текст урока и добавьте классы "lesson_name_green", "lesson_time_green" и "lesson_room_green" при необходимости
+                    lessonNameDiv.textContent = урок.name;
+                    lessonInfoDiv.appendChild(lessonNameDiv);
+                
+                    // Создайте div с классом "lesson_time" для времени урока
+                    const lessonTimeDiv = document.createElement("div");
+                    lessonTimeDiv.className = "lesson_time";
+                    lessonTimeDiv.textContent = урок.time;
+                    lessonInfoDiv.appendChild(lessonTimeDiv);
+
+                    // Создайте div с классом "lesson_room" для кабинета
+                    const lessonRoomDiv = document.createElement("div");
+                    lessonRoomDiv.className = "lesson_room";
+                    lessonRoomDiv.textContent = урок.room;
+                    lessonContainer.appendChild(lessonRoomDiv);
+                    if (урок.name === "Классный час") {
+                        lessonContainer.classList.add("lesson_container_class");
+                    }
+                    if (урок.name === "Кыргызский язык" || 
+                        урок.name === "Адабият" ||
+                        урок.name === "Английский язык" ||
+                        урок.name === "Русския язык" ||
+                        урок.name === "Литература") {
+                        lessonContainer.classList.add("lesson_container_language");
+                    }
+                    if (урок.name === "Физика" || 
+                        урок.name === "Алгебра" ||
+                        урок.name === "Геометрия" ||
+                        урок.name === "Химия") {
+                        lessonContainer.classList.add("lesson_container_math");
+                    }
+                    if (урок.name === "ДП" || 
+                        урок.name === "История" ||
+                        урок.name === "Биология" ||
+                        урок.name === "ЧиО" ||
+                        урок.name === "География") {
+                        lessonContainer.classList.add("lesson_container_history");
+                    }
+                    container.appendChild(lessonContainer);
+                });
+            }
+        });
+}
+
+// По умолчанию загрузите расписание для понедельника
+loadTimetable('timetable.json', 'Понедельник');
+
+
 

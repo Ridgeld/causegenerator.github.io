@@ -76,13 +76,13 @@ document.getElementById('5').addEventListener('click', function () {
 
     document.getElementById('1').classList.remove('clicked');
     document.getElementById('2').classList.remove('clicked');
+    document.getElementById('3').classList.remove('clicked');
     document.getElementById('4').classList.remove('clicked');
-    document.getElementById('5').classList.remove('clicked');
 
     document.getElementById('line1').classList.remove('lineClick');
     document.getElementById('line2').classList.remove('lineClick');
+    document.getElementById('line3').classList.remove('lineClick');
     document.getElementById('line4').classList.remove('lineClick');
-    document.getElementById('line5').classList.remove('lineClick');
 });
 
 // Загрузка и отображение расписания
