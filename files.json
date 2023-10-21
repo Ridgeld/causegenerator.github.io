@@ -1,0 +1,24 @@
+[
+    {
+        "type": "file",
+        "files": [
+            {
+                "name": "AdvancedKey.pdf",
+                "path": "files/AdvancedKey.pdf"
+            },
+            {
+                "name": "UpperKey.rar",
+                "path": "files/UpperKey.rar"
+            }
+        ]
+    },
+    {
+        "type": "app",
+        "files": [
+            {
+                "name": "files/MegaSetUp.exe",
+                "path": "MegaSetUp.exe"
+            }
+        ]
+    }
+]

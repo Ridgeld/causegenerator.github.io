@@ -1009,3 +1009,58 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
     /* position: relative; */
     overflow: hidden; 
 }
+
+.file_place{
+    display: flex;
+    padding: 0 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.app_place{
+    display: flex;
+    padding: 0 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.file_container{
+    display: flex;
+    width: 100%;
+    padding: 5px 5px 5px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(255, 0, 61, 0.60);
+}
+.app_container{
+    display: flex;
+    width: 100%;
+    padding: 5px 5px 5px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(0, 255, 117, 0.60);
+}
+.file_name{
+    color: #FFF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.button_container{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.30);
+}
