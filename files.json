@@ -3,11 +3,11 @@
         "type": "file",
         "files": [
             {
-                "name": "AdvancedKey.pdf",
+                "name": "Solutions_Advanced",
                 "path": "files/AdvancedKey.pdf"
             },
             {
-                "name": "UpperKey.rar",
+                "name": "Solutions_Upper_Intermediate",
                 "path": "files/UpperKey.rar"
             }
         ]
@@ -16,8 +16,8 @@
         "type": "app",
         "files": [
             {
-                "name": "files/MegaSetUp.exe",
-                "path": "MegaSetUp.exe"
+                "name": "Desctop_version",
+                "path": "files/MegaSetUp.exe"
             }
         ]
     }
