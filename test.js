@@ -46,11 +46,11 @@ function loadAndDisplayData() {
 
 
                     if (itemType === "file") {
-                        element.className = "file_container";
-                        file_place.appendChild(element);
+                        container.className = "file_container";
+                        file_place.appendChild(container);
                     } else if (itemType === "app") {
-                        element.className = "app_container";
-                        app_place.appendChild(element);
+                        container.className = "app_container";
+                        app_place.appendChild(container);
                     }
 
                 });
