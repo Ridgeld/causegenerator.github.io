@@ -78,6 +78,27 @@ const sendButton = document.getElementById('send');
 const messagePlace = document.getElementById('message_place');
 const messageInput = document.getElementById('message');
 
+const commandList = document.getElementById('command-list');
+        const commands = document.getElementById('commands');
+
+        messageInput.addEventListener('input', () => {
+            const text = messageInput.value;
+
+            if (text.startsWith('/')) {
+                // Если текст начинается с '/', отобразить список команд
+                commandList.style.display = 'block';
+            } else {
+                // В противном случае скрыть список команд
+                commandList.style.display = 'none';
+            }
+        });
+
+        commands.addEventListener('click', (event) => {
+            // Обработка выбора команды из списка
+            const selectedCommand = event.target.textContent.split(' - ')[0];
+            messageInput.value = selectedCommand;
+            commandList.style.display = 'none';
+        });
 // Функция для создания сообщения и добавления его в контейнер
 // Функция для создания сообщения и добавления его в контейнер
 function createMessage() {

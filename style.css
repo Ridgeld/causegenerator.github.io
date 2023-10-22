@@ -1097,3 +1097,29 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
 .send_button .send_icon:hover{
     transform: scale(1.1);
 }
+.command-list {
+    display: none;
+    position: absolute;
+    bottom: calc(10vh + 10px);
+    width: 55%;
+    background: rgba(30, 30, 47, 0.50);
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.command-list ul {
+    list-style-type: none;
+    padding: 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.command-list ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.command-list ul li:hover {
+    background: #13131F;
+}
