@@ -1010,57 +1010,90 @@ tr:nth-child(odd) th, tr:nth-child(odd) td{
     overflow: hidden; 
 }
 
-.file_place{
+.message_place{
+    margin-top: 5%;
+    margin-bottom: 20%;
     display: flex;
-    padding: 0 30%;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 5px;
+    flex: 1 0 0;
+    align-self: stretch;
 }
-.app_place{
+/* Стиль для сообщений */
+.message_container{
     display: flex;
-    padding: 0 30%;
+    width: 95%;
+    padding: 10px 10px 10px 5%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    background: rgba(30, 30, 47, 0.50);
+}
+.avatar_place{
+    display: flex;
+    height: 100%;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
 }
-.file_container{
-    display: flex;
-    width: 100%;
-    padding: 5px 5px 5px 20px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-    background: rgba(255, 0, 61, 0.60);
-}
-.app_container{
-    display: flex;
-    width: 100%;
-    padding: 5px 5px 5px 20px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-    background: rgba(0, 255, 117, 0.60);
-}
-.file_name{
+.message_text{
+    max-width: 90%;
+    word-wrap: break-word;
     color: #FFF;
     font-size: 15px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: normal;
 }
-.button_container{
+/* Стиль для поля ввода */
+.input_container{
+    position: fixed;
     display: flex;
-    width: 32px;
-    height: 32px;
-    padding: 5px;
-    flex-direction: column;
+    bottom: 0;
+    width: 100%;
+    height: calc( 10vh + 10px);
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
     flex-shrink: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.30);
+    background: #13131F;
+}
+.message_input{
+    width: 50%;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    border-radius: 10px 0 0 10px;
+    background: #0D0D15;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+}
+.message_input::placeholder{
+    color: #626262;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.message_input:focus{
+    outline: solid 1px #2400FF;
+}
+.send_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 0 10px 10px 0;
+    background: #2400FF;
+    cursor: pointer;
+}
+.send_icon{
+    transition: 0.5s;
+}
+.send_button .send_icon:hover{
+    transform: scale(1.1);
 }

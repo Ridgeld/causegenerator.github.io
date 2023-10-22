@@ -1,65 +1,145 @@
-const file_place = document.getElementById("file_place");
-const app_place = document.getElementById("app_place");
+// const menu_button = document.getElementById('menu');
+// menu_button.addEventListener( 'click', function(){
+//     window.location.href = "menu.html";
+// });
+// const sendButton = document.getElementById('send');
+// const messagePlace = document.getElementById('message_place');
+// const messageInput = document.getElementById('message');
+// // Функция, которая создает сообщение и добавляет его в контейнер
+// function createMessage() {
+//     // Находим контейнер для сообщений
+//     const messageText = messageInput.value.trim();
 
+//     // Создаем элементы сообщения
+// if (messageText !== ""){
+//     const message_container = document.createElement("div");
+//     message_container.className = "message_container";
 
-// Функция для загрузки и обработки JSON-файла
-function loadAndDisplayData() {
-    fetch('files.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Ошибка загрузки файла');
+//     const avatar = document.createElement("div");
+//     avatar.className = "avatar_place";
+//     avatar.innerHTML = 
+//     `<svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+//         <circle cx="15.5" cy="15" r="15" fill="#D9D9D9"/>
+//         <path d="M7.5 21C7.5 19.9391 7.92143 18.9217 8.67157 18.1716C9.42172 17.4214 10.4391 17 11.5 17H19.5C20.5609 17 21.5783 17.4214 22.3284 18.1716C23.0786 18.9217 23.5 19.9391 23.5 21C23.5 21.5304 23.2893 22.0391 22.9142 22.4142C22.5391 22.7893 22.0304 23 21.5 23H9.5C8.96957 23 8.46086 22.7893 8.08579 22.4142C7.71071 22.0391 7.5 21.5304 7.5 21Z" stroke="#121218" stroke-width="2" stroke-linejoin="round"/>
+//         <path d="M15.5 13C17.1569 13 18.5 11.6569 18.5 10C18.5 8.34315 17.1569 7 15.5 7C13.8431 7 12.5 8.34315 12.5 10C12.5 11.6569 13.8431 13 15.5 13Z" stroke="#121218" stroke-width="2"/>
+//     </svg>`
+//     message_container.appendChild(avatar);
+//     const messageText = document.createElement("div");
+//     messageText.className = "message_text";
+//     messageText.textContent = messageInput.value; // Здесь можно вставить ваш текст
+
+//     // Добавляем div с текстом в div сообщения
+//     message_container.appendChild(messageText);
+
+//     // Добавляем сообщение в контейнер
+//     messagePlace.appendChild(message_container);
+//     // Очищаем поле ввода
+//     messageInput.value = "";
+
+// }
+// if (messageText === "э"){
+//     const message_container = document.createElement("div");
+//     message_container.className = "message_container";
+
+//     const avatar = document.createElement("div");
+//     avatar.className = "avatar_place";
+//     avatar.innerHTML = 
+//     `<svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+//         <circle cx="15.5" cy="15" r="15" fill="#2400FF"/>
+//         <path d="M18.9097 6.73804C19.0124 6.79714 19.0918 6.88906 19.1351 6.99879C19.1783 7.10852 19.1828 7.22957 19.1478 7.34217L17.2587 13.4377H20.7443C20.8467 13.4376 20.9469 13.4674 21.0325 13.5232C21.1181 13.5791 21.1854 13.6586 21.226 13.752C21.2666 13.8454 21.2787 13.9485 21.261 14.0487C21.2432 14.1489 21.1963 14.2417 21.1261 14.3157L12.7348 23.1694C12.6536 23.2551 12.5455 23.311 12.4282 23.328C12.311 23.3449 12.1914 23.3219 12.0889 23.2627C11.9865 23.2035 11.9073 23.1116 11.8642 23.002C11.8211 22.8924 11.8166 22.7715 11.8516 22.659L13.7407 16.5625H10.2551C10.1527 16.5625 10.0525 16.5328 9.9669 16.4769C9.8813 16.421 9.81404 16.3415 9.77344 16.2481C9.73283 16.1547 9.72065 16.0516 9.7384 15.9514C9.75616 15.8512 9.80306 15.7584 9.87333 15.6844L18.2646 6.83074C18.3457 6.74512 18.4536 6.68926 18.5707 6.67224C18.6878 6.65522 18.8073 6.67804 18.9097 6.737V6.73804Z" fill="white"/>
+//     </svg>`
+//     message_container.appendChild(avatar);
+//     const messageText = document.createElement("div");
+//     messageText.className = "message_text";
+//     messageText.textContent = "Пошел нахуй!"; // Здесь можно вставить ваш текст
+
+//     // Добавляем div с текстом в div сообщения
+//     message_container.appendChild(messageText);
+
+//     // Добавляем сообщение в контейнер
+//     messagePlace.appendChild(message_container);
+//     // Очищаем поле ввода
+//     messageInput.value = "";
+
+// }
+// }
+// // Находим кнопку и добавляем обработчик события на клик
+// sendButton.addEventListener("click", createMessage);
+// messageInput.addEventListener("keydown", function(event) {
+//     if (event.key === "Enter") {
+//         createMessage();
+//     }
+// });
+const menu_button = document.getElementById('menu');
+menu_button.addEventListener('click', function () {
+    window.location.href = "menu.html";
+});
+const sendButton = document.getElementById('send');
+const messagePlace = document.getElementById('message_place');
+const messageInput = document.getElementById('message');
+
+// Функция для создания сообщения и добавления его в контейнер
+// Функция для создания сообщения и добавления его в контейнер
+function createMessage() {
+    // Очищаем контейнер сообщений от предыдущих сообщений
+    messagePlace.innerHTML = "";
+
+    const messageText = messageInput.value.trim().toLowerCase();
+
+    // Загрузим JSON с ответами
+    fetch('response.json')
+        .then(response => response.json())
+        .then(responses => {
+            const message_container = document.createElement("div");
+            message_container.className = "message_container";
+
+            const avatar = document.createElement("div");
+            avatar.className = "avatar_place";
+
+            const messageTextDiv = document.createElement("div");
+            messageTextDiv.className = "message_text";
+
+            // Проверим, есть ли ответ в JSON для введенного текста
+            const response = responses[messageText];
+
+            if (response) {
+                avatar.innerHTML = `
+                    <!-- SVG для аватара -->
+                `;
+                messageTextDiv.textContent = response;
+            } else {
+                avatar.innerHTML = `
+                    <!-- Другой аватар по умолчанию -->
+                `;
+
+                if (messageText.startsWith('/info')) {
+                    // Отправляем список доступных команд
+                    messageTextDiv.textContent = "Доступные команды:\n- /info: Показать список доступных команд";
+                } else {
+                    messageTextDiv.textContent = "Извините, я не понимаю. Можете перефразировать?";
+                }
             }
-            return response.json();
+
+            // Добавим аватар и текст в контейнер сообщения
+            message_container.appendChild(avatar);
+            message_container.appendChild(messageTextDiv);
+
+            // Добавим сообщение в контейнер
+            messagePlace.appendChild(message_container);
+
+            // Очистим поле ввода
+            messageInput.value = "";
         })
-        .then(data => {
-            // Получите ссылки на div'ы
-
-            // Переберите элементы и распределите их по div'ам
-            data.forEach(item => {
-                const itemType = item.type;
-                const files = item.files;
-
-                // Создайте элементы для файлов или приложений и добавьте их в соответствующий div
-                files.forEach(file => {
-                    const container = document.createElement("div");
-                    container.className = "file_container";
-
-                    const file_name = document.createElement("div");
-                    file_name.className = "file_name";
-                    file_name.textContent = file.name;
-                    container.appendChild(file_name);
-
-                    const button = document.createElement("a");
-                    button.href = file.path;
-                    button.target = "_self";
-                    button.download = file.name;
-                    button.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
-                        <path d="M2.73926 19.5199C2.05317 19.5199 1.39517 19.2446 0.910033 18.7545C0.424893 18.2644 0.152344 17.5997 0.152344 16.9066V13.1733C0.152344 12.8763 0.269151 12.5914 0.477068 12.3814C0.684985 12.1713 0.966982 12.0533 1.26102 12.0533C1.55506 12.0533 1.83706 12.1713 2.04497 12.3814C2.25289 12.5914 2.3697 12.8763 2.3697 13.1733V16.9066C2.3697 17.1127 2.53526 17.28 2.73926 17.28H18.2607C18.3588 17.28 18.4528 17.2406 18.5221 17.1706C18.5914 17.1006 18.6303 17.0056 18.6303 16.9066V13.1733C18.6303 12.8763 18.7471 12.5914 18.955 12.3814C19.1629 12.1713 19.4449 12.0533 19.739 12.0533C20.033 12.0533 20.315 12.1713 20.5229 12.3814C20.7308 12.5914 20.8477 12.8763 20.8477 13.1733V16.9066C20.8477 17.5997 20.5751 18.2644 20.09 18.7545C19.6048 19.2446 18.9468 19.5199 18.2607 19.5199H2.73926Z" fill="white"/>
-                        <path d="M9.38952 10.0956V1.60009C9.38952 1.30305 9.50632 1.01818 9.71424 0.80814C9.92216 0.598101 10.2042 0.480103 10.4982 0.480103C10.7922 0.480103 11.0742 0.598101 11.2821 0.80814C11.4901 1.01818 11.6069 1.30305 11.6069 1.60009V10.0956L14.519 7.15523C14.6219 7.0513 14.744 6.96885 14.8785 6.9126C15.0129 6.85635 15.157 6.8274 15.3025 6.8274C15.448 6.8274 15.592 6.85635 15.7265 6.9126C15.8609 6.96885 15.983 7.0513 16.0859 7.15523C16.1888 7.25917 16.2704 7.38256 16.3261 7.51836C16.3818 7.65416 16.4104 7.7997 16.4104 7.94669C16.4104 8.09368 16.3818 8.23923 16.3261 8.37503C16.2704 8.51082 16.1888 8.63421 16.0859 8.73815L11.2817 13.5914C11.1788 13.6955 11.0567 13.778 10.9223 13.8343C10.7878 13.8906 10.6437 13.9196 10.4982 13.9196C10.3527 13.9196 10.2086 13.8906 10.0741 13.8343C9.93969 13.778 9.81756 13.6955 9.71473 13.5914L4.91046 8.73815C4.80757 8.63421 4.72596 8.51082 4.67028 8.37503C4.6146 8.23923 4.58594 8.09368 4.58594 7.94669C4.58594 7.7997 4.6146 7.65416 4.67028 7.51836C4.72596 7.38256 4.80757 7.25917 4.91046 7.15523C5.01335 7.0513 5.13549 6.96885 5.26992 6.9126C5.40434 6.85635 5.54842 6.8274 5.69392 6.8274C5.83943 6.8274 5.98351 6.85635 6.11793 6.9126C6.25236 6.96885 6.3745 7.0513 6.47739 7.15523L9.38952 10.0956Z" fill="white"/>
-                    </svg>`
-                    button.className = "button_container";
-                    container.appendChild(button);
-
-    
-                    // element.textContent = file.name + " (" + file.path + ")";
-
-
-                    if (itemType === "file") {
-                        container.className = "file_container";
-                        file_place.appendChild(container);
-                    } else if (itemType === "app") {
-                        container.className = "app_container";
-                        app_place.appendChild(container);
-                    }
-
-                });
-            });
-        })
-        .catch(error => {
-            console.error('Произошла ошибка:', error);
-        });
+        .catch(error => console.error("Ошибка при загрузке JSON: " + error));
 }
 
-// Вызовите функцию загрузки и обработки данных при загрузке страницы
-window.addEventListener('load', loadAndDisplayData);
+
+// Найдем кнопку и добавим обработчик события на клик
+sendButton.addEventListener("click", createMessage);
+
+// Добавим возможность отправлять сообщение по нажатию Enter
+messageInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        createMessage();
+    }
+});
