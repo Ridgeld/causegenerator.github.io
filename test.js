@@ -128,6 +128,7 @@ function createMessage() {
                     <!-- SVG для аватара -->
                 `;
                 messageTextDiv.textContent = response;
+                messageText.innerHTML = response.replace(/\n/g, "<br>");
             } else {
                 avatar.innerHTML = `
                     <!-- Другой аватар по умолчанию -->
