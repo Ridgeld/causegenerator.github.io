@@ -9,7 +9,7 @@ const notification = document.getElementById('notification');
 const finishButton = document.getElementById('finish');
 const continueButton = document.getElementById('continue');
 
-let attempts = 5;
+let attempts = 10;
 
 function generateRandomNumber() {
     // Генерируем случайное число от 1 до 50 (включительно)
@@ -33,35 +33,19 @@ function resetGame() {
 button.addEventListener('click', function() {
     const userInput = Number(input.value); // Получаем значение из input и преобразуем его в число
 
-    if (userInput === result) {
-
-        notifName.textContent = `Поздравляем, вы угадали!`;
-        text.textContent = 'Продолжите играть?';
-        text2.textContent = `Загаданное число: ${result}`;
-        overlay.classList.add('show');
-        notification.classList.add('show');
-    } else {
-        console.log("Нет, числа не совпадают.");
+    if (userInput !== result) {
         attempts--; // Отнимаем одну попытку
         countNumber.textContent = attempts;
         input.value = '';
-    }
-
+        return console.log("Числа не совпадают")
+    } 
     if (attempts === 0) {
-        notifName.textContent = `Вы не угадали(`;
-        button.disabled = true; // Отключаем кнопку после окончания попыток
-        text2.textContent = `Загаданное число: ${result}`;
-        overlay.classList.add('show');
-        notification.classList.add('show');
+        return console.log("Вы проиграли!")
     }
-});
-
-finishButton.addEventListener('click', function() {
-    window.location.href = "game.html"; // Переход на другую страницу game.html
-});
-
-continueButton.addEventListener('click', function() {
-    resetGame();
-    overlay.classList.remove('show');
-    notification.classList.remove('show');
+    else{
+        attempts--; // Отнимаем одну попытку
+        countNumber.textContent = attempts;
+        input.value = '';
+        return console.log("Поздравляем, вы угадали!");
+    }
 });
