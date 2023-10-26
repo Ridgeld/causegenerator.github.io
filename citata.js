@@ -1,15 +1,3 @@
-// const text = document.getElementById("text");
-// const button = document.getElementById("btn");
-
-//   fetch('assets/citata.txt')
-//     .then(response => response.text())
-//     .then(data => {
-//       const lines = data.split('\n');
-//       const randomIndex = Math.floor(Math.random() * lines.length);
-//       text.textContent = lines[randomIndex];
-//     });
-// });
-
 let usedTexts = [];
 let lines;
 
@@ -36,4 +24,4 @@ fetch("assets/citata.txt")
     .then(text => {
         lines = text.split('\n');
         document.querySelector("#btn").addEventListener("click", showRandomText);
-    });
+});
