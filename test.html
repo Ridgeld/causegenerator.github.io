@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Наклон телефона</title>
+</head>
+<body>
+    <div id="orientation-data">Ориентация телефона:</div>
+
+    <script>
+        window.addEventListener('devicemotion', handleOrientation);
+
+        function handleOrientation(event) {
+            const alpha = event.alpha; // азимут (горизонтальное вращение)
+            const beta = event.beta;   // наклон вперед и назад
+            const gamma = event.gamma; // наклон влево и вправо
+
+            // Проверяем наклон влево и вправо
+            if (gamma < -2) {
+                console.log('Телефон наклонен влево');
+                document.getElementById('orientation-data').textContent = 'Ориентация телефона: Наклон влево';
+            } else if (gamma > 2) {
+                console.log('Телефон наклонен вправо');
+                document.getElementById('orientation-data').textContent = 'Ориентация телефона: Наклон вправо';
+            } else {
+                console.log('Телефон в вертикальном положении');
+                document.getElementById('orientation-data').textContent = 'Ориентация телефона: Вертикальное положение';
+            }
+        }
+    </script>
+</body>
+</html>

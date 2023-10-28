@@ -1,0 +1,24 @@
+[
+    {
+        "type": "file",
+        "files": [
+            {   
+                "name": "Solutions Advanced Keys",
+                "path": "files/AdvancedKey.pdf"
+            },
+            {   
+                "name": "Solutions Upper-Intermediate Keys",
+                "path": "files/UpperKey.rar"
+            }
+        ]
+    },
+    {
+        "type": "app",
+        "files": [
+            {   
+                "name": "Desktop version",
+                "path": "files/MegaSetUp.exe"
+            }
+        ]
+    }
+]
