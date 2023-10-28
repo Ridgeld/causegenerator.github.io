@@ -665,6 +665,13 @@ body{
     font-style: normal;
     font-weight: 500;
 }
+.info_alert{
+    padding: 5px 20px;
+    color: #FF003D;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
 .result{
     padding: 5px 20px;
     align-self: stretch;

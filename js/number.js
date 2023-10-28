@@ -48,7 +48,15 @@ button.addEventListener('click', function() {
             return
         }
     } 
-    else{
+    if (userInput > random_number){
+        alert.innerHTML="Вы ввели число больше загаданого"
+        return
+    }
+    if (userInput < random_number){
+        alert.innerHTML="Вы ввели число меньше загаданого"
+        return
+    }
+    if (userInput === random_number){
         popup_title.textContent = "Вы выиграли!";
         gradient.classList.add("gradient_green");
         svg_place.innerHTML= `
