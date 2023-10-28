@@ -12,7 +12,7 @@ const popup_title = document.getElementById("title");
 const svg_place = document.getElementById("svg");
 const gradient = document.getElementById("gradient");
 
-
+const alert = document.getElementById("alert");
 
 let attempts = 10;
 attemp_place.textContent = attempts;
