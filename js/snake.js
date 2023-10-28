@@ -134,7 +134,7 @@ const initGame = () =>{
     game.innerHTML = htmlMarkup;
 }
 changeFoodPosition();
-setIntervalId = setInterval(initGame, 300);
+setIntervalId = setInterval(initGame, 200);
 
 close_button.addEventListener('click', function(){
     popup.classList.remove('open');
