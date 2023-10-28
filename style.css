@@ -759,13 +759,13 @@ body{
     overflow: hidden;
 }
 .blue{
-    background: #2400FF;
+    background: rgba(36, 0, 255, 0.60);
 }
 .red{
-    background: #FF003D;
+    background: rgba(255, 0, 61, 0.60);
 }
 .green{
-    background: #00FF75;
+    background: rgba(0, 255, 117, 0.60);
 }
 .game_body:before {
     content:'';
