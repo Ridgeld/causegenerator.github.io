@@ -144,10 +144,10 @@ function update(){
 function moveDoodler(event) {
     const accelerationX = event.accelerationIncludingGravity.x; // ускорение по оси X
   
-    if (accelerationX > 1) {
+    if (accelerationX > 0.5) {
       console.log('Наклонено влево');
       velocityX = -4;
-    } else if (accelerationX < -1) {
+    } else if (accelerationX < -0.5) {
       console.log('Наклонено вправо');
       velocityX = 4;
     }
