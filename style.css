@@ -1022,3 +1022,10 @@ body{
     background: #1E1E2F;
     overflow: hidden; 
 }
+
+/* Динозаврик */
+.dino_place{
+    width: 350px;
+    background: #1E1E2F;
+    border-bottom: 2px solid #00FF75;
+}
