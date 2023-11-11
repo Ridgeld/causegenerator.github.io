@@ -33,6 +33,16 @@ function generation(file_path){
             saveMessageToLocalStorage({ text: text, user: false });
         });
 }
+
+function createAnswer(message){
+    setTimeout( createMessage, 1000, message, false)
+    saveMessageToLocalStorage({ text: message, user: false });
+}
+function startGame(message){
+    setTimeout( createMessage, 1000, message, false)
+    saveMessageToLocalStorage({ text: message, user: false });
+    setTimeout(window.location.href = "games_menu.html", 20000)
+}
 // Функция для загрузки сообщений из localStorage
 function loadMessagesFromLocalStorage() {
     const storedMessages = localStorage.getItem('chatMessages');
@@ -102,7 +112,6 @@ const responses = {
     "сгенерируй случайное число": "Сгенерировано случайное число: " + Math.floor(Math.random() * 100),
     "/info":"Список запросов:<br><br>• Сгенерируй мне причину не идти на урок<br><br>• Сгенерируй мне цитату<br><br>• Сгененрируй мне профессию<br><br>• Подбери аналог к слову *ваше слово*.",
     "иди нахуй":"Туда пойду, тебя найду.",
-    "спасибо":"Если что, обращайся, брат.",
 };
 
 const wordPairs = {
@@ -175,6 +184,12 @@ function handleUserInput() {
         // setTimeout( createMessage, 1000, generation("cause.txt"), false );
         // return saveMessageToLocalStorage({ text: generation("cause.txt"), user: false });
         return generation("cause.txt")
+    }
+    if ( textForResponse.includes('спасибо!') ) {
+        return createAnswer("Не за что, брат!")
+    }
+    if ( textForResponse.includes('хочу играть') ) {
+        return startGame("Желаю отлично провести время!")
     }
     if ( textForResponse === "/clear"){
         localStorage.clear('chatMessages');

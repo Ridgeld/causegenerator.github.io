@@ -310,7 +310,17 @@ body{
     align-items: center;
     gap:10px;
 }
-.lesson_container_math{
+.lesson_container{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    gap: 10px;
+    border-radius: 10px;
+    background: rgba(30, 30, 47, 0.70);
+}
+/* .lesson_container_math{
     display: flex;
     padding: 10px;
     align-items: center;
@@ -319,8 +329,8 @@ body{
     gap: 10px;
     border-radius: 10px;
     background: rgba(0, 255, 117, 0.60);
-}
-.lesson_container_history{
+} */
+/* .lesson_container_history{
     display: flex;
     padding: 10px;
     align-items: center;
@@ -349,7 +359,7 @@ body{
     gap: 10px;
     border-radius: 10px;
     background: rgba(255, 245, 0, 0.60);
-}
+} */
 .lesson_circle{
     width: 32px;
     height: 32px;
@@ -435,7 +445,8 @@ body{
     align-self: stretch;
     justify-content: space-between;
     border-radius: 10px;
-    background: rgba(255, 0, 61, 0.60);
+    /* background: rgba(255, 0, 61, 0.60); */
+    background: rgba(30, 30, 47, 0.70);
 }
 .app_container{
     display: flex;
@@ -444,7 +455,8 @@ body{
     align-self: stretch;
     justify-content: space-between;
     border-radius: 10px;
-    background: rgba(0, 255, 117, 0.60);
+    /* background: rgba(0, 255, 117, 0.60); */
+    background: rgba(30, 30, 47, 0.70);
 }
 .file_name{
     color: #FFF;
@@ -462,7 +474,7 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.30);
+    background: rgba(255, 255, 255, 0.10);
 }
 
 
@@ -756,6 +768,7 @@ body{
     align-self: stretch;
     gap: 5px;
     border-radius: 10px;
+    background: rgba(30, 30, 47, 0.70);
     overflow: hidden;
 }
 .blue{
