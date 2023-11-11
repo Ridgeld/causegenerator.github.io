@@ -93,7 +93,7 @@ window.onload = function() {
 
 
     requestAnimationFrame(update);
-    setInterval(placeCactus, 1000);
+    setInterval(placeCactus, 1500);
     document.addEventListener("click", moveDino);
 }
 
