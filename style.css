@@ -1042,3 +1042,123 @@ body{
     background: #1E1E2F;
     border-bottom: 2px solid #00FF75;
 }
+
+/* Колесо */
+.wheel_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.arrow{
+    position: absolute;
+    top:15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+.arrow::before{
+    content: "";
+    position: relative;
+    width: 20px;
+    height: 50px;
+    background: #fff;
+}
+.wheel_container{
+    display: flex;
+    position: absolute;
+    top:20%;
+    /* background: #0000f1; */
+}
+.spin{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: #2400FF;
+    text-transform: uppercase;
+    border: 8px solid #fff;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+    border-radius: 50%;
+    letter-spacing: 1px;
+}
+.wheel{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: 6s;
+}
+.wheel div{
+    height: 50%;
+    width: 100px;
+    position: absolute;
+    clip-path: polygon(100% 0, 50% 100%, 0 0);
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    left: 100px
+}
+.odd{
+    background: #2400FF;
+}
+.even{
+    background: #FF003D;
+}
+.zero{
+    background: #00FF75;
+    left: 50%;
+}
+.wheel ._0{
+    transform: rotate(36deg);
+}
+.wheel ._1{
+    /* background: #88ff00; */
+    transform: rotate(72deg);
+}
+.wheel ._2{
+    /* background: #88ff00; */
+    transform: rotate(108deg);
+}
+ .wheel ._3{
+    /* background: #88ff00; */
+    transform: rotate(144deg);
+} 
+.wheel ._4{
+    /* background: #88ff00; */
+    transform: rotate(180deg);
+}
+.wheel ._5{
+    /* background: #88ff00; */
+    transform: rotate(216deg);
+}
+.wheel ._6{
+    /* background: #88ff00; */
+    transform: rotate(252deg);
+}
+.wheel ._7{
+    /* background: #88ff00; */
+    transform: rotate(288deg);
+}
+.wheel ._8{
+    /* background: #88ff00; */
+    transform: rotate(324deg);
+}
+.wheel ._9{
+    /* background: #88ff00; */
+    transform: rotate(360deg);
+} 
