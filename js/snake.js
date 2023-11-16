@@ -111,13 +111,12 @@ const initGame = () =>{
 
         score_place.innerText = score;
     }
-
     for(let i = snakeBody.length - 1; i > 0; i--){
         snakeBody[i] = snakeBody[i-1];
     }
     snakeBody[0] = [snakeX, snakeY];
-
-
+    for (let i = 0; i < snakeBody.length; i++) {
+    }
     snakeX +=velocityX;
     snakeY +=velocityY;
 
@@ -126,7 +125,12 @@ const initGame = () =>{
     }
 
     for (let i = 0; i < snakeBody.length; i++){
-        htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
+      if (i === 0) {
+          htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
+      } else {
+          htmlMarkup += `<div class="body" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
+      }
+        // htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
         if(i !==0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]){
             gameOver = true;
         }
