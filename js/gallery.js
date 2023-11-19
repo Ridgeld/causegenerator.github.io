@@ -140,3 +140,9 @@ fetch('json/gallery.json')
     });
   })
   .catch(error => console.error('Ошибка:', error));
+
+const add_public = document.getElementById('add');
+
+add_public.addEventListener('click', function() {
+    window.location.href = "add_public.html"
+});

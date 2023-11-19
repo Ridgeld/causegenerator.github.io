@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENERY</title>
+    <link rel="shortcut icon" type="image/png" href="images/icon.png"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <!-- header -->
+            <div class="header">
+                <div class="logo_section">
+                    <div class="logo_place">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <circle cx="12.5" cy="12.5" r="12.5" fill="#2400FF"/>
+                            <path d="M15.3408 5.61507C15.4263 5.66432 15.4925 5.74092 15.5286 5.83237C15.5646 5.92381 15.5684 6.02469 15.5392 6.11852L13.965 11.1981H16.8696C16.9549 11.1981 17.0384 11.2228 17.1098 11.2694C17.1811 11.3159 17.2371 11.3822 17.271 11.46C17.3048 11.5379 17.315 11.6238 17.3002 11.7073C17.2854 11.7908 17.2463 11.8681 17.1877 11.9298L10.195 19.3079C10.1273 19.3793 10.0373 19.4259 9.93955 19.44C9.84182 19.4542 9.74214 19.435 9.65678 19.3857C9.57142 19.3363 9.5054 19.2597 9.46948 19.1684C9.43356 19.077 9.42987 18.9763 9.459 18.8825L11.0332 13.8021H8.12863C8.04327 13.8021 7.95977 13.7774 7.88843 13.7308C7.8171 13.6842 7.76105 13.618 7.72721 13.5401C7.69338 13.4623 7.68323 13.3764 7.69802 13.2929C7.71281 13.2094 7.7519 13.1321 7.81046 13.0704L14.8032 5.69232C14.8708 5.62097 14.9607 5.57442 15.0583 5.56024C15.1559 5.54606 15.2554 5.56507 15.3408 5.6142V5.61507Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo_title">GENERY
+                    </div>
+                </div>
+                <div class="page_name">Новая публикация</div>
+                <a href="gallery.html" target="_self" class="button_menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="26" viewBox="0 0 15 26" fill="none">
+                        <path d="M12 23L3.41421 14.4142C2.63317 13.6332 2.63317 12.3668 3.41421 11.5858L12 3" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+            <section class="item_container" id="place">
+                <div class="public_body">
+                    <div class="public_photo" id="photo_place">
+                        <div class="photo_add">
+                            <input type="file" class="add_photo_input" id="photo_input" accept="image/*">
+                            <button class="add_photo_button" id="add_photo">Добавить фото
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M18.5714 11.4286H11.4286V18.5714C11.4286 18.9503 11.2781 19.3137 11.0102 19.5816C10.7422 19.8495 10.3789 20 10 20C9.62112 20 9.25776 19.8495 8.98985 19.5816C8.72194 19.3137 8.57143 18.9503 8.57143 18.5714V11.4286H1.42857C1.04969 11.4286 0.686328 11.2781 0.418419 11.0102C0.15051 10.7422 0 10.3789 0 10C0 9.62112 0.15051 9.25776 0.418419 8.98985C0.686328 8.72194 1.04969 8.57143 1.42857 8.57143H8.57143V1.42857C8.57143 1.04969 8.72194 0.686328 8.98985 0.418418C9.25776 0.150509 9.62112 0 10 0C10.3789 0 10.7422 0.150509 11.0102 0.418418C11.2781 0.686328 11.4286 1.04969 11.4286 1.42857V8.57143H18.5714C18.9503 8.57143 19.3137 8.72194 19.5816 8.98985C19.8495 9.25776 20 9.62112 20 10C20 10.3789 19.8495 10.7422 19.5816 11.0102C19.3137 11.2781 18.9503 11.4286 18.5714 11.4286Z" fill="#F8F8F8"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- <img src="images/public/nophotoshop29-800x532.jpg" alt=""> -->
+                    </div>
+                    <textarea type="text" id="input" placeholder="Введите текст" class="title_add"></textarea>
+                </div>
+                <button class="new_public" id="add" disabled>Опубликовать</button>
+            </section>
+        </div>
+    </div>
+    <script src="js/add_public.js"></script>
+</body>
+</html>

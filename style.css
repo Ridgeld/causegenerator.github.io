@@ -1066,6 +1066,15 @@ body{
 }
 
 /* Колесо */
+.wheel_title{
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 15px;
+    color: #fff;
+}
 .wheel_content{
     display: flex;
     flex-direction: column;
@@ -1089,7 +1098,7 @@ body{
 .wheel_container{
     display: flex;
     position: absolute;
-    top:20%;
+    top:25%;
     /* background: #0000f1; */
 }
 .spin{
@@ -1335,3 +1344,101 @@ body{
     justify-content: flex-start;
     color: #626262;
 }
+.add_public{
+    position: fixed;
+    display: flex;
+    bottom: 50px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #2400FF;
+    box-shadow: -4px 4px 20px 0px rgba(225, 225, 225, 0.2);
+}
+
+/* Добавить публикацию */
+.photo_add{
+    display: flex;
+    width: 1200px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(80, 80, 80, 0.1);
+    border-radius: 10px 10px 0 0; 
+}
+.add_photo_input{
+    display: none;
+}
+.add_photo_button{
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 150px;
+    padding: 10px;
+    background: #2400FF;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FFF;
+    cursor: pointer;
+}
+.add_photo_button:hover{
+    background: #1900b9;
+}
+.title_add{
+    resize: none;
+    outline: none;
+    border: none;
+    display: flex;
+    width: calc(100% - 20px);
+    word-wrap: break-word;
+    padding: 10px;
+    height: 50px;
+    border-radius: 0 0 10px 10px; 
+    background: #0D0D15;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+}
+.title_add::placeholder{
+    color: #626262;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.new_public{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    background: #2400FF;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.new_public:disabled{
+    color: #c0c0c0;
+    background: #3E3E53;
+}
+.new_public:disabled:hover{
+    color: #c0c0c0;
+    background: #3E3E53;
+}
+.new_public:hover{
+    background: #1900b9;
+}
+/* .title_add:focus{
+    outline: solid 1px #2400FF;
+} */
