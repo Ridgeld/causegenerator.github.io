@@ -3,6 +3,25 @@
     font-family: 'Inter', sans-serif;
     font-weight: bold;
 }
+::-webkit-scrollbar {
+    width: 12px; /* ширина скроллбара */
+}
+  
+  /* Стили для полосы скроллбара (фон) */
+::-webkit-scrollbar-track {
+    background-color: #0D0D15; /* цвет фона полосы */
+}
+  
+  /* Стили для ползунка скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #2400FF; /* цвет ползунка */
+    border-radius: 10px; /* скругление углов ползунка */
+}
+  
+  /* Стили для ползунка при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #1900b9; /* цвет ползунка при наведении */
+}
 body{
     padding: 0;
     margin: 0;
@@ -1212,4 +1231,107 @@ body{
 }
 .vertical-line{
     border-right: 3px solid #1E1E2F;
+}
+/* Галерея */
+.public_body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(100% - 20px);
+    padding: 10px;
+    background: #0D0D15;
+    border-radius: 15px;
+}
+.public_photo{
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+}
+.public_photo img{
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 5px;
+}
+.public_actions{
+    display: flex;
+    margin-top: 5px;
+    width: 95%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+    gap:10px;
+}
+.public_like{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 21px;
+    max-height: 21px;
+}
+.public_like svg{
+    min-width: 100%;
+    min-height: 100%;
+}
+.public_comment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 21px;
+    max-height: 21px;
+}
+.public_comment svg{
+    min-width: 100%;
+    min-height: 100%;
+}
+.public_send{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 18px;
+    max-height: 18px;
+}
+@media(min-width: 700px) {
+    .public_like{
+        max-width: 25px;
+        max-height: 25px;
+    }
+    .public_comment{
+        max-width: 25px;
+        max-height: 25px;
+    }
+    .public_send{
+        max-width: 22px;
+        max-height: 22px;
+    }
+}
+.public_send svg{
+    min-width: 100%;
+    min-height: 100%;
+}
+.public_title{
+    display: flex;
+    margin-top: 10px;
+    width: 95%;
+    word-wrap: break-word;
+    padding: 10px 0;
+    justify-content: flex-start;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 500;
+}
+@media(min-width: 700px) {
+    .public_title{
+        font-size: 15px;
+    }
+}
+.public_data{
+    display: flex;
+    width: 95%;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    justify-content: flex-start;
+    color: #626262;
 }
