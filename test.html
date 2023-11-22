@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Наклон телефона</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание уроков</title>
 </head>
 <body>
-    <div id="orientation-data">Ориентация телефона:</div>
 
-    <script>
-        window.addEventListener('devicemotion', handleOrientation);
+<label for="dayInput">Введите день недели: </label>
+<input type="text" id="dayInput">
+<button onclick="showLessons()">Показать уроки</button>
 
-        function handleOrientation(event) {
-            const alpha = event.alpha; // азимут (горизонтальное вращение)
-            const beta = event.beta;   // наклон вперед и назад
-            const gamma = event.gamma; // наклон влево и вправо
+<script>
+    // Функция для загрузки и вывода названий уроков по выбранному дню недели
+    function showLessons() {
+        // Получаем значение из поля ввода
+        const dayInput = document.getElementById('dayInput').value;
 
-            // Проверяем наклон влево и вправо
-            if (gamma < -2) {
-                console.log('Телефон наклонен влево');
-                document.getElementById('orientation-data').textContent = 'Ориентация телефона: Наклон влево';
-            } else if (gamma > 2) {
-                console.log('Телефон наклонен вправо');
-                document.getElementById('orientation-data').textContent = 'Ориентация телефона: Наклон вправо';
-            } else {
-                console.log('Телефон в вертикальном положении');
-                document.getElementById('orientation-data').textContent = 'Ориентация телефона: Вертикальное положение';
-            }
+        // Проверка на пустой ввод
+        if (!dayInput) {
+            alert('Пожалуйста, введите день недели.');
+            return;
         }
-    </script>
+
+        // Путь к файлу JSON
+        const filePath = 'json/timetable.json';
+
+        // Запрос на загрузку файла
+        fetch(filePath)
+            .then(response => response.json())
+            .then(schedule => {
+                // Извлечение уроков по выбранному дню недели
+                const selectedDaySchedule = schedule.find(day => day.day.toLowerCase() === dayInput.toLowerCase());
+
+                if (selectedDaySchedule) {
+                    // Формирование строки с нумерацией и названиями уроков
+                    const lessonsInfo = selectedDaySchedule.lessons.map((lesson, index) => `${index + 1}. ${lesson.name}`).join('\n');
+                    alert(`Названия уроков на ${selectedDaySchedule.day}:\n${lessonsInfo}`);
+                } else {
+                    alert(`Расписание на ${dayInput} не найдено.`);
+                }
+            })
+            .catch(error => {
+                console.error(`Ошибка при загрузке файла: ${error.message}`);
+            });
+    }
+</script>
+
 </body>
 </html>

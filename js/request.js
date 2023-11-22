@@ -33,6 +33,30 @@ function generation(file_path){
             saveMessageToLocalStorage({ text: text, user: false });
         });
 }
+function timetable(dayInput){
+    const filePath = 'json/timetable.json';
+
+    // Запрос на загрузку файла
+    fetch(filePath)
+        .then(response => response.json())
+        .then(schedule => {
+            // Извлечение уроков по выбранному дню недели
+            const selectedDaySchedule = schedule.find(day => day.day.toLowerCase() === dayInput.toLowerCase());
+
+            if (selectedDaySchedule) {
+                // Формирование строки с нумерацией и названиями уроков
+                const lessonsInfo = selectedDaySchedule.lessons.map((lesson, index) => `${index + 1}. ${lesson.name}`).join('<br>');
+                // alert(`Названия уроков на ${selectedDaySchedule.day}:\n${lessonsInfo}`);
+                setTimeout( createMessage, 1000, `Названия уроков на ${selectedDaySchedule.day}:<br>${lessonsInfo}`, false)
+                saveMessageToLocalStorage({ text: `Названия уроков на ${selectedDaySchedule.day}:<br>${lessonsInfo}`, user: false });
+            } else {
+                alert(`Расписание на ${dayInput} не найдено.`);
+            }
+        })
+        .catch(error => {
+            console.error(`Ошибка при загрузке файла: ${error.message}`);
+        });
+}
 
 function createAnswer(message){
     setTimeout( createMessage, 1000, message, false)
@@ -161,11 +185,14 @@ function handleUserInput() {
 
     if (match) {
         const wordToFind = match[1];
-
         if (wordPairs.hasOwnProperty(wordToFind)) {
             const analogWord = wordPairs[wordToFind];
             setTimeout(createMessage, 1000, `Аналог к слову "${wordToFind}" - это "${analogWord}".`, false);
             return saveMessageToLocalStorage({text:`Аналог к слову "${wordToFind}" - это "${analogWord}".`,user: false});
+        }
+        else{
+            setTimeout(createMessage, 1000, `Аналог к слову "${wordToFind}" - не найден.`, false);
+            return saveMessageToLocalStorage({text:`Аналог к слову "${wordToFind}" - не найден.`,user: false});
         }
         return
     }
@@ -184,7 +211,18 @@ function handleUserInput() {
         // setTimeout( createMessage, 1000, generation("cause.txt"), false );
         // return saveMessageToLocalStorage({ text: generation("cause.txt"), user: false });
         return generation("cause.txt")
+    }  
+    if (['понедельник', 'вторник', 'сред', 'четверг', 'пятниц'].some(day => textForResponse.includes(day))) {
+        // return timetable('понедельник');
+        const dayRegex = /(понедельник|вторник|среда|четверг|пятница)/i;
+
+        // Используем метод match для поиска совпадений в тексте
+        const matches = textForResponse.match(dayRegex);
+    
+        // Возвращаем найденное название дня (или null, если ничего не найдено)
+        return matches ? timetable(matches[0].toLowerCase()) : null;
     }
+    
     if ( textForResponse.includes('спасибо!') ) {
         return createAnswer("Не за что, брат!")
     }
