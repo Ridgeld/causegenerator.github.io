@@ -1,51 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Расписание уроков</title>
+    <title>ChatGPT</title>
 </head>
 <body>
-
-<label for="dayInput">Введите день недели: </label>
-<input type="text" id="dayInput">
-<button onclick="showLessons()">Показать уроки</button>
-
-<script>
-    // Функция для загрузки и вывода названий уроков по выбранному дню недели
-    function showLessons() {
-        // Получаем значение из поля ввода
-        const dayInput = document.getElementById('dayInput').value;
-
-        // Проверка на пустой ввод
-        if (!dayInput) {
-            alert('Пожалуйста, введите день недели.');
-            return;
-        }
-
-        // Путь к файлу JSON
-        const filePath = 'json/timetable.json';
-
-        // Запрос на загрузку файла
-        fetch(filePath)
-            .then(response => response.json())
-            .then(schedule => {
-                // Извлечение уроков по выбранному дню недели
-                const selectedDaySchedule = schedule.find(day => day.day.toLowerCase() === dayInput.toLowerCase());
-
-                if (selectedDaySchedule) {
-                    // Формирование строки с нумерацией и названиями уроков
-                    const lessonsInfo = selectedDaySchedule.lessons.map((lesson, index) => `${index + 1}. ${lesson.name}`).join('\n');
-                    alert(`Названия уроков на ${selectedDaySchedule.day}:\n${lessonsInfo}`);
-                } else {
-                    alert(`Расписание на ${dayInput} не найдено.`);
-                }
-            })
-            .catch(error => {
-                console.error(`Ошибка при загрузке файла: ${error.message}`);
-            });
-    }
-</script>
-
+    <input id="input" type="text">
+    <button id="button">Отправить</button>
+    <p id="message"></p>
+    <script src="js/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/test.js"></script>
 </body>
 </html>
