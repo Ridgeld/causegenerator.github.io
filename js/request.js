@@ -73,7 +73,7 @@ function timetable(dayInput){
             "messages" : [textForRequest] 
         };
         // request.post('https://api.openai.com/v1/chat/completions', params)
-        request.post('https://api.openai.com/v1/completions',params)
+        request.post('https://api.openai.com/v1/chat/completions',params)
         .then(response => {
                 // message.innerText = response.data.choices[0].message.content;
                 // console.log(response.data.choices[0].message.content);
