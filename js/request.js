@@ -262,6 +262,7 @@ function handleUserInput() {
     }
     else {
         createMessage("Неизвестная команда!<br>Используйте /info для списка доступных команд ", false);
+        saveMessageToLocalStorage({ text: "Неизвестная команда!<br>Используйте /info для списка доступных команд ", user: false });
     }
 }
 
