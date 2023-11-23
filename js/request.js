@@ -57,13 +57,13 @@ function timetable(dayInput){
             console.error(`Ошибка при загрузке файла: ${error.message}`);
         });
 }
-function gptMessage(text){
+// function gptMessage(text){
     let request = axios.create({
         headers: {
             Authorization: `Bearer ${apiKey}`
         }
     });
-    const requestFunc = () => {
+    const requestFunc = (text) => {
         let textForRequest = {
             "role" : "user",
             "content" : `${text}`
@@ -79,9 +79,8 @@ function gptMessage(text){
                 setTimeout( createMessage, 1000, response.data.choices[0].message.content, false)
                 saveMessageToLocalStorage({ text: response.data.choices[0].message.content, user: false });
         });
-        requestFunc()
     }
-}
+// }
 function createAnswer(message){
     setTimeout( createMessage, 1000, message, false)
     saveMessageToLocalStorage({ text: message, user: false });
@@ -251,7 +250,7 @@ function handleUserInput() {
         return createAnswer("Не за что, брат!")
     }
     if ( textForResponse.includes('gpt') ) {
-        return gptMessage(textForResponse);
+        return requestFunc(textForResponse);
     }
     if ( textForResponse.includes('хочу играть') ) {
         return startGame("Желаю отлично провести время!")
