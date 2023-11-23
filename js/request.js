@@ -76,6 +76,7 @@ function timetable(dayInput){
         .then(response => {
                 // message.innerText = response.data.choices[0].message.content;
                 // console.log(response.data.choices[0].message.content);
+                console.log(1)
                 setTimeout( createMessage, 1000, response.data.choices[0].message.content, false)
                 saveMessageToLocalStorage({ text: response.data.choices[0].message.content, user: false });
         });
