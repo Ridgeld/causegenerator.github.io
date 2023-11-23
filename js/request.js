@@ -249,7 +249,7 @@ function handleUserInput() {
     if ( textForResponse.includes('спасибо!') ) {
         return createAnswer("Не за что, брат!")
     }
-    if ( textForResponse.includes('gpt') ) {
+    if ( textForResponse.includes('все') ) {
         return requestFunc(textForResponse);
     }
     if ( textForResponse.includes('хочу играть') ) {
