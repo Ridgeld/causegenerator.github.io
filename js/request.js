@@ -57,7 +57,31 @@ function timetable(dayInput){
             console.error(`Ошибка при загрузке файла: ${error.message}`);
         });
 }
-
+function gptMessage(text){
+    let request = axios.create({
+        headers: {
+            Authorization: `Bearer ${apiKey}`
+        }
+    });
+    const requestFunc = () => {
+        let textForRequest = {
+            "role" : "user",
+            "content" : `${text}`
+        }
+        let params = {
+            "model" : "gpt-3.5-turbo",
+            "messages" : [textForRequest] 
+        };
+        request.post('https://api.openai.com/v1/chat/completions', params)
+        .then(response => {
+                // message.innerText = response.data.choices[0].message.content;
+                // console.log(response.data.choices[0].message.content);
+                setTimeout( createMessage, 1000, response.data.choices[0].message.content, false)
+                saveMessageToLocalStorage({ text: response.data.choices[0].message.content, user: false });
+        });
+        requestFunc()
+    }
+}
 function createAnswer(message){
     setTimeout( createMessage, 1000, message, false)
     saveMessageToLocalStorage({ text: message, user: false });
@@ -225,6 +249,9 @@ function handleUserInput() {
     
     if ( textForResponse.includes('спасибо!') ) {
         return createAnswer("Не за что, брат!")
+    }
+    if ( textForResponse.includes('gpt') ) {
+        return gptMessage(textForResponse);
     }
     if ( textForResponse.includes('хочу играть') ) {
         return startGame("Желаю отлично провести время!")
