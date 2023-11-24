@@ -1,1 +1,1 @@
-let apiKey = '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';
+let apiKey = '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';

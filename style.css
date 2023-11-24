@@ -516,6 +516,27 @@ body{
     background: rgba(30, 30, 47, 0.50);
     gap: 20px
 }
+.load_body{
+    display: flex;
+    padding:10px 20px;
+    align-items: center;
+    align-self: stretch;
+    background: rgba(30, 30, 47, 0.50);
+    gap: 20px;
+    transition: 2s;
+    /* animation: load 2s infinite; */
+}
+@keyframes load {
+    0%{
+        background: rgba(30, 30, 47, 0.5);
+    }
+    100%{
+        background: rgba(30, 30, 47, 0.5);
+    }
+    50%{
+        background: rgba(30, 30, 47, 0.1);
+    }
+}
 .avatar_container{
     display: flex;
     height: 100%;
