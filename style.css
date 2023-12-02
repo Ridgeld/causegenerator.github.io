@@ -1376,7 +1376,7 @@ body{
     justify-content: center;
     border-radius: 10px;
     background: #2400FF;
-    box-shadow: -4px 4px 20px 0px rgba(225, 225, 225, 0.2);
+    box-shadow: -4px 4px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* Добавить публикацию */

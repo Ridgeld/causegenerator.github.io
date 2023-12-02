@@ -8,5 +8,10 @@
         "photo": "images/public/cover_1.png",
         "data": "19.11.2023",
         "text": "Новый проект"
+    },
+    {
+      "photo": "images/public/vr.png",
+      "data": "02.11.2023",
+      "text": "VR версия"
     }
 ]
