@@ -244,8 +244,11 @@ function handleUserInput() {
         setTimeout(createMessage, 1000, response, false);
         return saveMessageToLocalStorage({ text: response, user: false });
     }
-    if ( textForResponse.includes('цитат') ) {
+    if ( textForResponse.includes('пацан') && textForResponse.includes('цитат') ) {
         return generation("citata.txt")
+    }
+    if ( textForResponse.includes('цитат') ) {
+        return generation("white_citata.txt")
     }
     if ( textForResponse.includes('професси') || textForResponse.includes('работ') ) {
         return generation("work.txt")
