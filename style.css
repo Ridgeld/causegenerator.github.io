@@ -1283,6 +1283,11 @@ body{
     min-height: 100%;
     border-radius: 5px;
 }
+.public_photo iframe{
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 5px;
+}
 .public_actions{
     display: flex;
     margin-top: 5px;
