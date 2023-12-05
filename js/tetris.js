@@ -215,7 +215,8 @@ function placeTetromino() {
   for (let row = playfield.length - 1; row >= 0; ) {
     // если ряд заполнен
     if (playfield[row].every(cell => !!cell)) {
-
+        score +=100;
+        scoreCount.textContent = score;
       // очищаем его и опускаем всё вниз на одну клетку
       for (let r = row; r >= 0; r--) {
         for (let c = 0; c < playfield[r].length; c++) {
