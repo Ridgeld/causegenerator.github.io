@@ -1468,3 +1468,9 @@ body{
 /* .title_add:focus{
     outline: solid 1px #2400FF;
 } */
+/* тетрис */
+.tetris_board {
+    /* border: 1px solid white; */
+    background: #1E1E2F;
+    margin-top: -40px;
+}
