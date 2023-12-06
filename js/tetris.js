@@ -385,7 +385,7 @@ document.addEventListener('touchmove', function(e) {
     touchStartX = touchX; // обновляем начальную точку касания
   }
   if (Math.abs(deltaY) > 20) {
-    const row = tetromino.row + 1;
+    const row = tetromino.row + 0.2;
     // если опускаться больше некуда — запоминаем новое положение
     if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
       tetromino.row = row - 1;
