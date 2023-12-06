@@ -349,6 +349,8 @@ function loop() {
 //     tetromino.row = row;
 //   }
 // });
+
+
 const touchArea = document.getElementById('game'); // Добавляем контейнер для области сенсорного ввода
 let touchStartX = 0;
 
@@ -384,7 +386,7 @@ document.addEventListener('touchmove', function(e) {
 
     touchStartX = touchX; // обновляем начальную точку касания
   }
-  if (Math.abs(deltaY) > 20) {
+  if (Math.abs(deltaY) > 40) {
     const row = tetromino.row + 1;
     // если опускаться больше некуда — запоминаем новое положение
     if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
