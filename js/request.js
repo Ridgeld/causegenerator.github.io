@@ -248,7 +248,7 @@ function handleUserInput() {
         return generation("citata.txt")
     }
     if ( textForResponse.includes('цитат') ) {
-        return generation("white_citata.txt")
+        return generation("citata.txt")
     }
     if ( textForResponse.includes('професси') || textForResponse.includes('работ') ) {
         return generation("work.txt")
