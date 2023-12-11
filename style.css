@@ -1474,3 +1474,76 @@ body{
     background: #1E1E2F;
     margin-top: -40px;
 }
+/* 2048 */
+#board {
+    width: 320px;
+    height: 320px;
+    background-color: #1E1E2F;
+    border: 3px solid #3E3E53;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tile{
+    width: 76px;
+    height: 76px;
+    font-size: 35px;
+    border: 2px solid #3E3E53;
+    /* background-color: #00FF75; */
+    justify-content: center;
+    align-items: center;
+}
+
+.x2{
+    background: #eee4da;
+    color: #727371;
+}
+.x4{
+    background: #ece0ca;
+    color: #727371;
+}
+.x8{
+    background: #f4b17a;
+    color: #fff;
+}
+.x16{
+    background: #f59275;
+    color: #fff;
+}
+.x32{
+    background: #f57c5f;
+    color: #fff;
+}
+.x64{
+    background: #f65d3b;
+    color: #fff;
+}
+.x128{
+    background: #edce71;
+    color: #fff;
+}
+.x256{
+    background: #edcc63;
+    color: #fff;
+}
+.x512{
+    background: #edc651;
+    color: #fff;
+}
+.x1024{
+    background: #eec744;
+    color: #fff;
+}
+.x2048{
+    background: #ecc230;
+    color: #fff;
+}
+.x4096{
+    background: #fe3d3d;
+    color: #fff;
+}
+.x8192{
+    background: #ff2020;
+    color: #fff;
+}
