@@ -54,6 +54,7 @@ let gameOver = false;
 let score = 0;
 
 const handleGameOver = () =>{
+    new Audio("audio/gameover.mp3").play();
     const popup = document.querySelector('.popup');
     popup_title.textContent = "Вы програли!";
     gradient.classList.add("gradient_red");

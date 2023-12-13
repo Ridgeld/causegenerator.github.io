@@ -38,7 +38,8 @@ button.addEventListener('click', function() {
         input.value = '';
 
         if (attempts === 0) {
-            popup_title.textContent = "Вы програли!";
+            new Audio("audio/gameover.mp3").play();
+            popup_title.textContent = "Вы проиграли!";
             gradient.classList.add("gradient_red");
             svg_place.innerHTML= `
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">

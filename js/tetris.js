@@ -23,6 +23,7 @@ let score = 0;
 var tetrominoSequence = [];
 
 const handleGameOver = () =>{
+    new Audio("audio/gameover.mp3").play();
     const popup = document.querySelector('.popup');
     // clearInterval(setIntervalId);
     popup_title.textContent = "Вы програли!";

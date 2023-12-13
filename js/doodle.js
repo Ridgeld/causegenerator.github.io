@@ -124,6 +124,7 @@ function update(){
     scoreCount.textContent = score;
 
     if(gameOver){
+        new Audio("audio/gameover.mp3").play();
         const close_button = document.getElementById("close");
         const continue_button = document.getElementById("continue");
         const space_area = document.getElementById("area");
