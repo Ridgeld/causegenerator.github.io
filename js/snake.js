@@ -127,9 +127,17 @@ const initGame = () =>{
 
     for (let i = 0; i < snakeBody.length; i++){
       if (i === 0) {
-          htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
+          if(localStorage.getItem('snake_winter_2023')){
+              htmlMarkup += `<div class="head_green" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
+        } else {
+              htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
+        }
       } else {
-          htmlMarkup += `<div class="body" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
+          if(localStorage.getItem('snake_winter_2023')){
+            htmlMarkup += `<div class="body_green" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
+          } else {
+            htmlMarkup += `<div class="body" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
+          }
       }
         // htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
         if(i !==0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]){

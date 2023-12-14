@@ -10,6 +10,7 @@ card.addEventListener('click', function(){
     rect.style.opacity = '1';
     rect.style.animation = "rotation_opacity 3s linear infinite"
     card.classList.remove('hover');
+    localStorage.setItem('snake_winter_2023', 'true');
 });
 
 button.addEventListener('click', function(){

@@ -1072,6 +1072,12 @@ body{
 .game_container .body{
     background: #1900b9;
 }
+.game_container .head_green{
+    background: #00FF75;
+}
+.game_container .body_green{
+    background: #00c75d;
+}
 
 /* DOODLE JUMP */
 .board{
