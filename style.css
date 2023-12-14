@@ -1669,3 +1669,219 @@ body{
     font-weight: 400;
     border: 1px solid #FFF;
 }
+
+
+
+/* БАТЛЛ ПАСС (КАРТЫ) */
+.gift_info{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    color: #FFF;
+    font-size: 30px;
+    font-weight: 500;
+}
+.gift_body{
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #CC00FF;
+    border-radius: 10px;
+    background: rgba(30, 30, 47, 0.30); */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+}
+.gift_body:hover{
+    transform: rotateY(180deg);
+}
+.gift_front{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    background: #CC00FF;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+.gift_text{
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    animation: scale 1s infinite;
+}
+.gift_back{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    border: 2px solid #CC00FF;
+    border-radius: 10px;
+    background: rgba(30, 30, 47, 0.30);
+    backface-visibility: hidden;
+    overflow: hidden;
+    transform: rotateY(180deg);
+}
+.gift_title{
+    display: flex;
+    margin-top: 5%;
+    width: 90%;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.40);
+    border-radius: 5px;
+    padding: 5px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -1.75px;
+}
+.gift_description{
+    margin-top: -15px;
+    display: flex;
+    width: 85%;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.gift_data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.75px;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    background: #3F99C5;
+}
+.gift_type{
+    color: #C0F;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+.gift_photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+}
+.gift_button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 90%;
+    margin-top: 40px;
+    background: none;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 400;
+    border: 1px solid #FFF;
+}
+.gift_elements{
+    position: absolute;
+    display: flex;
+    width: 90%;
+    height: 90%;
+    /* background: #00FF75; */
+}
+.gift_gradient{
+    position: absolute;
+    top:40%;
+    left:25%;
+    width: 200px;
+    height:200px;
+    border-radius: 50%;
+    /* background: #00FF75; */
+    background: linear-gradient(158deg, rgba(36, 0, 255, 0.40) 0%, rgba(204, 0, 255, 0.40) 100%);
+    filter: blur(90px);
+}
+.gift_shadow{
+    position: absolute;
+    top:80%;
+    left:20%;
+}
+.gift_star_front{
+    position: absolute;
+    opacity: 0.4;
+}
+.gift_star{
+    position: absolute;
+    opacity: 0.05;
+}
+.gift_logo{
+    position: absolute;
+    opacity: 0.4;
+}
+.star1{
+    top:20%;
+    left:5%;
+}
+.star2{
+    top:85%;
+    right:5%;
+}
+.star3{
+    top:0;
+    left:0;
+}
+.star4{
+    top:70%;
+    right:0;
+}
+.logo1{
+    top:40%;
+    left:35%;
+}
+.text{
+    color: #fff;
+    animation: scale  1s infinite;
+    font-size: 20px;
+}
+@keyframes scale{
+    100%{
+        font-size: 20px;
+    }
+    0%{
+        font-size: 20px;
+    }
+    50%{
+        font-size: 25px;
+    }
+}
+/* .gift_body_gradient{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-style: 2px solid #CC00FF;
+    border-radius: 10px;
+    /* border-image: linear-gradient(158deg, #2400FF 0%, #C0F 100%)0;
+    border-width: 2px;
+    border-style: solid; 
+}*/
