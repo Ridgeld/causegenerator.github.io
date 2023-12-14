@@ -1,105 +1,56 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale = 1">
-    <title>CSS Card Flip</title>
-    <style>
-    body{
-    background: #3C5377;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>График функции</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+</head>
+<body>
+
+<h2>Введите функцию:</h2>
+<input type="text" id="functionInput" placeholder="Пример: x^2 + 2*x + 1">
+<button onclick="drawGraph()">Нарисовать график</button>
+
+<div id="graph"></div>
+
+<script>
+function drawGraph() {
+  // Получаем значение функции из поля ввода
+  var inputFunction = document.getElementById("functionInput").value;
+
+  // Создаем массив значений x от -10 до 10 с шагом 0.1
+  var xValues = [];
+  for (var x = -10; x <= 10; x += 0.1) {
+    xValues.push(x);
+  }
+
+  // Вычисляем значения y для каждого x с использованием math.js
+  var yValues = xValues.map(function(x) {
+    try {
+      var scope = { x: x };
+      var y = math.evaluate(inputFunction, scope);
+      return y;
+    } catch (error) {
+      return NaN; // Если произошла ошибка при вычислении значения, помечаем как NaN
     }
+  });
 
-/* THE MAINCONTAINER HOLDS EVERYTHING */
-.maincontainer{
-  position: absolute;
-  width: 250px;
-  height: 320px;
-  background: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // Очищаем предыдущий график (если он есть)
+  var graphDiv = document.getElementById("graph");
+  Plotly.purge(graphDiv);
 
+  // Рисуем новый график
+  Plotly.newPlot(graphDiv, [{
+    x: xValues,
+    y: yValues,
+    type: 'scatter',
+    mode: 'lines',
+    name: inputFunction
+  }]);
 }
+</script>
 
-/* THE CARD HOLDS THE FRONT AND BACK FACES */
-.thecard{
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  transform-style: preserve-3d;
-  transition: all 0.8s ease;
-}
-
-/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-.thecard:hover{
-  transform: rotateY(180deg);
-}
-
-/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
- .thefront{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  backface-visibility: hidden;
-  overflow: hidden;
-  background: #ffc728;
-  color: #000;
-}
-
-/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
-.theback{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  backface-visibility: hidden;
-  overflow: hidden;
-  background: #fafafa;
-  color: #333;
-  text-align: center;
-  transform: rotateY(180deg);
-}
-
-
-/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
-.thefront h1, .theback h1{
-  font-family: 'zilla slab', sans-serif;
-  padding: 30px;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-}
-
-.thefront p, .theback p{
-  font-family: 'zilla slab', sans-serif;
-  padding: 30px;
-  font-weight: normal;
-  font-size: 12px;
-  text-align: center;
-}
-/*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
-    </style>
-  </head>
-
-  <body>
-    <div class="maincontainer">
-
-      <div class="thecard">
-
-        <div class="thefront"><h1>Front of Card</h1><p>This is the front of the card. It contains important information. Please see overleaf for more details.</p></div>
-
-        <div class="theback"><h1>Back of Card</h1><p>Your use of this site is subject to the terms and conditions governing this and all transactions.</p>
-        <button>Submit</button></div>
-
-      </div>
-    </div>
-
-  </body>
+</body>
 </html>

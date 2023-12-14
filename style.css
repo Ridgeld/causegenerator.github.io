@@ -1682,6 +1682,28 @@ body{
     font-size: 30px;
     font-weight: 500;
 }
+.rect{
+    display: flex;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(158deg, rgba(36, 0, 255, 0.40) 0%, rgba(204, 0, 255, 0.40) 100%);
+    filter: blur(100px);
+    opacity: 0;
+    /* animation: rotation_opacity 4s linear infinite; */
+    z-index: -100;
+}
+@keyframes rotation_opacity {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 .gift_body{
     /* display: flex;
     flex-direction: column;
