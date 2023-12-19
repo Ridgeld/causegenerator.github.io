@@ -3,7 +3,12 @@ function changeColor() {
     light.style.opacity = 1;
 }
 setTimeout(function() {
-    window.location.href = "menu.html";
+    // if (localStorage.getItem('snake_winter_2023')){
+    //     window.location.href = "menu.html"
+    // } else {
+    //     window.location.href = "new_year.html";
+    // }
+    window.location.href = "new_year.html";
 }, 3000);
 
 // Задержка в 1 секунду перед вызовом функции

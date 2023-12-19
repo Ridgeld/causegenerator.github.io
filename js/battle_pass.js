@@ -6,7 +6,7 @@ const button = document.getElementById('button');
 
 
 card.addEventListener('click', function(){
-    new Audio('audio/gameover.mp3').play();
+    new Audio('audio/prize.mp3').play();
     rect.style.opacity = '1';
     rect.style.animation = "rotation_opacity 3s linear infinite"
     card.classList.remove('hover');

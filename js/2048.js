@@ -28,6 +28,7 @@ const handleGameOver = () =>{
     return
 }
 const showWin = () =>{
+    new Audio("audio/win.mp3").play();
     const popup = document.querySelector('.popup');
     popup_title.textContent = "Вы выиграли!";
     gradient.classList.add("gradient_green");

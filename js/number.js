@@ -58,6 +58,7 @@ button.addEventListener('click', function() {
         return
     }
     if (userInput === random_number){
+        new Audio("audio/win.mp3").play();
         popup_title.textContent = "Вы выиграли!";
         gradient.classList.add("gradient_green");
         svg_place.innerHTML= `
