@@ -58,49 +58,110 @@ function timetable(dayInput){
         });
 }
 // function gptMessage(text){
-    let request = axios.create({
-        headers: {
-            Authorization: `Bearer ${apiKey}`
-        }
-    });
-    const requestFunc = (text) => {
-        const load_body = document.createElement('div');
-        load_body.className = "load_body";
-        const avatar_container = document.createElement('div');
-        avatar_container.className = "avatar_container";
-        avatar_container.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
-                <circle cx="15.5" cy="15" r="15" fill="#2400FF"/>
-                <path d="M18.9097 6.73798C19.0124 6.79708 19.0918 6.889 19.1351 6.99873C19.1783 7.10846 19.1828 7.22951 19.1478 7.34211L17.2587 13.4376H20.7443C20.8467 13.4376 20.9469 13.4673 21.0325 13.5232C21.1181 13.579 21.1854 13.6586 21.226 13.7519C21.2666 13.8453 21.2787 13.9485 21.261 14.0487C21.2432 14.1488 21.1963 14.2417 21.1261 14.3157L12.7348 23.1693C12.6536 23.2551 12.5455 23.311 12.4282 23.3279C12.311 23.3449 12.1914 23.3219 12.0889 23.2627C11.9865 23.2035 11.9073 23.1116 11.8642 23.0019C11.8211 22.8923 11.8166 22.7714 11.8516 22.6589L13.7407 16.5624H10.2551C10.1527 16.5625 10.0525 16.5327 9.9669 16.4768C9.8813 16.421 9.81404 16.3415 9.77344 16.2481C9.73283 16.1547 9.72065 16.0515 9.7384 15.9514C9.75616 15.8512 9.80306 15.7584 9.87333 15.6843L18.2646 6.83068C18.3457 6.74506 18.4536 6.6892 18.5707 6.67218C18.6878 6.65516 18.8073 6.67798 18.9097 6.73693V6.73798Z" fill="white"/>
-            </svg>`;
-        load_body.appendChild(avatar_container);
-        const message_text = document.createElement('div');
-        message_text.className = "message_text";
-        message_text.innerText = "Ждем ответ...";
-        load_body.appendChild(message_text);
-        load_body.style.animation = 'load 2s infinite';
-        const container = document.getElementById('place');
-        container.appendChild(load_body);
-        let textForRequest = {
-            "role" : "user",
-            "content" : `${text}`
-        }
-        let params = {
-            "model" : "gpt-3.5-turbo",
-            "messages" : [textForRequest] 
-        };
-        // request.post('https://api.openai.com/v1/chat/completions', params)
-        request.post('https://api.openai.com/v1/chat/completions',params)
-        .then(response => {
-                container.removeChild(load_body);
-                // message.innerText = response.data.choices[0].message.content;
-                // console.log(response.data.choices[0].message.content);
-                console.log(1)
-                setTimeout( createMessage, 1000, response.data.choices[0].message.content, false)
-                saveMessageToLocalStorage({ text: response.data.choices[0].message.content, user: false });
-        });
-    }
+    // let request = axios.create({
+    //     headers: {
+    //         Authorization: `Bearer ${apiKey}`
+    //     }
+    // });
+    // const requestFunc = (text) => {
+    //     const load_body = document.createElement('div');
+    //     load_body.className = "load_body";
+    //     const avatar_container = document.createElement('div');
+    //     avatar_container.className = "avatar_container";
+    //     avatar_container.innerHTML = `
+    //         <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+    //             <circle cx="15.5" cy="15" r="15" fill="#2400FF"/>
+    //             <path d="M18.9097 6.73798C19.0124 6.79708 19.0918 6.889 19.1351 6.99873C19.1783 7.10846 19.1828 7.22951 19.1478 7.34211L17.2587 13.4376H20.7443C20.8467 13.4376 20.9469 13.4673 21.0325 13.5232C21.1181 13.579 21.1854 13.6586 21.226 13.7519C21.2666 13.8453 21.2787 13.9485 21.261 14.0487C21.2432 14.1488 21.1963 14.2417 21.1261 14.3157L12.7348 23.1693C12.6536 23.2551 12.5455 23.311 12.4282 23.3279C12.311 23.3449 12.1914 23.3219 12.0889 23.2627C11.9865 23.2035 11.9073 23.1116 11.8642 23.0019C11.8211 22.8923 11.8166 22.7714 11.8516 22.6589L13.7407 16.5624H10.2551C10.1527 16.5625 10.0525 16.5327 9.9669 16.4768C9.8813 16.421 9.81404 16.3415 9.77344 16.2481C9.73283 16.1547 9.72065 16.0515 9.7384 15.9514C9.75616 15.8512 9.80306 15.7584 9.87333 15.6843L18.2646 6.83068C18.3457 6.74506 18.4536 6.6892 18.5707 6.67218C18.6878 6.65516 18.8073 6.67798 18.9097 6.73693V6.73798Z" fill="white"/>
+    //         </svg>`;
+    //     load_body.appendChild(avatar_container);
+    //     const message_text = document.createElement('div');
+    //     message_text.className = "message_text";
+    //     message_text.innerText = "Ждем ответ...";
+    //     load_body.appendChild(message_text);
+    //     load_body.style.animation = 'load 2s infinite';
+    //     const container = document.getElementById('place');
+    //     container.appendChild(load_body);
+    //     let textForRequest = {
+    //         "role" : "user",
+    //         "content" : `${text}`
+    //     }
+    //     let params = {
+    //         "model" : "gpt-3.5-turbo",
+    //         "messages" : [textForRequest] 
+    //     };
+    //     // request.post('https://api.openai.com/v1/chat/completions', params)
+    //     request.post('https://api.openai.com/v1/chat/completions',params)
+    //     .then(response => {
+    //             container.removeChild(load_body);
+    //             // message.innerText = response.data.choices[0].message.content;
+    //             // console.log(response.data.choices[0].message.content);
+    //             console.log(1)
+    //             setTimeout( createMessage, 1000, response.data.choices[0].message.content, false)
+    //             saveMessageToLocalStorage({ text: response.data.choices[0].message.content, user: false });
+    //     });
+    // }
 // }
+// import { GoogleGenerativeAI } from "@google/generative-ai";
+// const API_KEY = "AIzaSyBt_lAZTgr_sGBpILMRvyMh8jfucxQnqtw";
+// // Access your API key (see "Set up your API key" above)
+// const genAI = new GoogleGenerativeAI(API_KEY);
+
+// async function run() {
+
+//     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+//     const prompt = "привет"
+
+//     const result = await model.generateContent(prompt);
+//     const response = await result.response;
+//     const text = response.text();
+//     console.log(text);
+// }
+
+// run();
+import { GoogleGenerativeAI } from "@google/generative-ai";
+const API_KEY = "AIzaSyBt_lAZTgr_sGBpILMRvyMh8jfucxQnqtw";
+// Access your API key (see "Set up your API key" above)
+const genAI = new GoogleGenerativeAI(API_KEY);
+
+async function run(message) {
+  // For text-only input, use the gemini-pro model
+  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+
+  const chat = model.startChat({
+    history: [
+      {
+        role: "user",
+        parts: "1+1",
+      },
+      {
+        role: "model",
+        parts: "да, будет 2",
+      },
+      {
+        role: "user",
+        parts: "привет",
+      },
+      {
+        role: "model",
+        parts: "привет, я чат-бот Genery.Могу генерировать различные цитаты и поиграть с тобой в игры. Я был создан DM",
+      },
+    ],
+    generationConfig: {
+      maxOutputTokens: 100,
+    },
+  });
+
+//   const msg = "привет, ты кто?";
+
+  const result = await chat.sendMessage(message);
+  const response = await result.response;
+  const text = response.text();
+  console.log(text);
+  setTimeout(createMessage, 1000, text, false)
+  saveMessageToLocalStorage({ text: text, user: false });
+}
+
+run();
 function createAnswer(message){
     setTimeout( createMessage, 1000, message, false)
     saveMessageToLocalStorage({ text: message, user: false });
@@ -272,8 +333,8 @@ function handleUserInput() {
     if ( textForResponse.includes('спасибо!') ) {
         return createAnswer("Не за что, брат!")
     }
-    if ( textForResponse.includes('gpt') ) {
-        return requestFunc(textForResponse);
+    if ( textForResponse.includes('.') ) {
+        return run(textForResponse);
     }
     if ( textForResponse.includes('хочу играть') ) {
         return startGame("Желаю отлично провести время!")
