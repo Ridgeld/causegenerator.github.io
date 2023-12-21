@@ -1,95 +1,71 @@
-
-
-
-
-document.getElementById('1').classList.add('clicked'); // По умолчанию активируем кнопку "Понедельник"
-document.getElementById('line_1').classList.add('lineClick');
+document.getElementById('1').classList.add('click'); // По умолчанию активируем кнопку "Понедельник"
+// document.getElementById('line_1').classList.add('lineClick');
 
 loadTimetable('json/timetable.json', 'Понедельник'); // Загружаем расписание для понедельника при загрузке страницы
 // Обработчики событий для кнопок
 document.getElementById('1').addEventListener('click', function () {
     loadTimetable('json/timetable.json', 'Понедельник');
-    this.classList.toggle('clicked');
-    document.getElementById('line_1').classList.toggle('lineClick');
+    this.classList.toggle('click');
+    // document.getElementById('line_1').classList.toggle('lineClick');
 
 
-    document.getElementById('2').classList.remove('clicked');
-    document.getElementById('3').classList.remove('clicked');
-    document.getElementById('4').classList.remove('clicked');
-    document.getElementById('5').classList.remove('clicked');
+    document.getElementById('2').classList.remove('click');
+    document.getElementById('3').classList.remove('click');
+    document.getElementById('4').classList.remove('click');
+    document.getElementById('5').classList.remove('click');
 
-    document.getElementById('line_2').classList.remove('lineClick');
-    document.getElementById('line_3').classList.remove('lineClick');
-    document.getElementById('line_4').classList.remove('lineClick');
-    document.getElementById('line_5').classList.remove('lineClick');
+    // document.getElementById('line_2').classList.remove('lineClick');
+    // document.getElementById('line_3').classList.remove('lineClick');
+    // document.getElementById('line_4').classList.remove('lineClick');
+    // document.getElementById('line_5').classList.remove('lineClick');
 
 });
 
 document.getElementById('2').addEventListener('click', function () {
     loadTimetable('json/timetable.json', 'Вторник');
-    this.classList.toggle('clicked');
-    document.getElementById('line_2').classList.toggle('lineClick');
+    this.classList.toggle('click');
 
 
-    document.getElementById('1').classList.remove('clicked');
-    document.getElementById('3').classList.remove('clicked');
-    document.getElementById('4').classList.remove('clicked');
-    document.getElementById('5').classList.remove('clicked');
+    document.getElementById('1').classList.remove('click');
+    document.getElementById('3').classList.remove('click');
+    document.getElementById('4').classList.remove('click');
+    document.getElementById('5').classList.remove('click');
 
-    document.getElementById('line_1').classList.remove('lineClick');
-    document.getElementById('line_3').classList.remove('lineClick');
-    document.getElementById('line_4').classList.remove('lineClick');
-    document.getElementById('line_5').classList.remove('lineClick');
 });
 
 document.getElementById('3').addEventListener('click', function () {
     loadTimetable('json/timetable.json', 'Среда');
-    this.classList.toggle('clicked');
-    document.getElementById('line_3').classList.toggle('lineClick');
+    this.classList.toggle('click');
 
 
-    document.getElementById('1').classList.remove('clicked');
-    document.getElementById('2').classList.remove('clicked');
-    document.getElementById('4').classList.remove('clicked');
-    document.getElementById('5').classList.remove('clicked');
+    document.getElementById('1').classList.remove('click');
+    document.getElementById('2').classList.remove('click');
+    document.getElementById('4').classList.remove('click');
+    document.getElementById('5').classList.remove('click');
 
-    document.getElementById('line_1').classList.remove('lineClick');
-    document.getElementById('line_2').classList.remove('lineClick');
-    document.getElementById('line_4').classList.remove('lineClick');
-    document.getElementById('line_5').classList.remove('lineClick');
 });
 document.getElementById('4').addEventListener('click', function () {
     loadTimetable('json/timetable.json', 'Четверг');
-    this.classList.toggle('clicked');
-    document.getElementById('line_4').classList.toggle('lineClick');
+    this.classList.toggle('click');
 
 
-    document.getElementById('1').classList.remove('clicked');
-    document.getElementById('2').classList.remove('clicked');
-    document.getElementById('3').classList.remove('clicked');
-    document.getElementById('5').classList.remove('clicked');
+    document.getElementById('1').classList.remove('click');
+    document.getElementById('2').classList.remove('click');
+    document.getElementById('3').classList.remove('click');
+    document.getElementById('5').classList.remove('click');
 
-    document.getElementById('line_1').classList.remove('lineClick');
-    document.getElementById('line_2').classList.remove('lineClick');
-    document.getElementById('line_3').classList.remove('lineClick');
-    document.getElementById('line_5').classList.remove('lineClick');
 });
 
 document.getElementById('5').addEventListener('click', function () {
     loadTimetable('json/timetable.json', 'Пятница');
-    this.classList.toggle('clicked');
-    document.getElementById('line_5').classList.toggle('lineClick');
+    this.classList.toggle('click');
 
 
-    document.getElementById('1').classList.remove('clicked');
-    document.getElementById('2').classList.remove('clicked');
-    document.getElementById('3').classList.remove('clicked');
-    document.getElementById('4').classList.remove('clicked');
+    document.getElementById('1').classList.remove('click');
+    document.getElementById('2').classList.remove('click');
+    document.getElementById('3').classList.remove('click');
+    document.getElementById('4').classList.remove('click');
 
-    document.getElementById('line_1').classList.remove('lineClick');
-    document.getElementById('line_2').classList.remove('lineClick');
-    document.getElementById('line_3').classList.remove('lineClick');
-    document.getElementById('line_4').classList.remove('lineClick');
 });
 
 function loadTimetable(jsonFile, dayOfWeek) {
