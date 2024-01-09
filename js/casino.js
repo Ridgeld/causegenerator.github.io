@@ -18,3 +18,27 @@ function handleClick(event) {
         alert(clickedElementText);
     }
 }
+const numberTo_container = document.getElementById('from_to');
+numberTo_container.addEventListener('click', handleClickNumber);
+function handleClickNumber(event) {
+    // Проверяем, является ли цель события элементом с классом "element"
+    if (event.target.classList.contains('table_grid')) {
+        // Получаем textContent элемента, на который произведено нажатие
+        var clickedElementText = event.target.textContent;
+        
+        // Выводим textContent в alert
+        alert(clickedElementText);
+    }
+}
+const numberProp_container = document.getElementById('numbers_prop');
+numberProp_container.addEventListener('click', handleClickProp);
+function handleClickProp(event) {
+    // Проверяем, является ли цель события элементом с классом "element"
+    if (event.target.classList.contains('table_grid')) {
+        // Получаем textContent элемента, на который произведено нажатие
+        var clickedElementText = event.target.textContent;
+        
+        // Выводим textContent в alert
+        alert(clickedElementText);
+    }
+}
