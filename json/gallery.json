@@ -1,11 +1,19 @@
 [
     {
-      "photo": "images/public/cover_october.png",
-      "data": "16.11.2023",
-      "text": "Добавлено 2 новые игры.\nВнесены правки в игру змейка.",
-      "like": 0,
-      "comment": 0,
-      "send": 0
+        "photo": "images/public/cover_january.png",
+        "data": "21.01.2023",
+        "text": "Добавлена новая стартовая страница.\nДобавлено новое меню навигации.",
+        "like": 0,
+        "comment": 0,
+        "send": 0
+    },
+    {
+        "photo": "images/public/cover_october.png",
+        "data": "16.11.2023",
+        "text": "Добавлено 2 новые игры.\nВнесены правки в игру змейка.",
+        "like": 0,
+        "comment": 0,
+        "send": 0
     },
     {
         "photo": "images/public/cover_1.png",

@@ -8,7 +8,7 @@ setTimeout(function() {
     // } else {
     //     window.location.href = "new_year.html";
     // }
-    window.location.href = "menu.html";
+    window.location.href = "start.html";
     // window.location.href = "new_year.html";
 }, 3000);
 

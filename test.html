@@ -3,40 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>График функции</title>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <title>Колесо фортуны</title>
 </head>
 <body>
-<div class="text"></div>
-<h2>Введите функцию:</h2>
-<input type="text" id="functionInput" placeholder="Пример: x^2 + 2*x + 1">
-<button onclick="drawGraph()">Нарисовать график</button>
-
-<div id="graph"></div>
-<script type="importmap">
-  {
-    "imports": {
-      "@google/generative-ai": "https://esm.run/@google/generative-ai"
-    }
-  }
-</script>
-<script type="module">
-function formatText(input) {
-    // Заменяем *** на жирное форматирование
-    let formattedText = input.replace(/\*\*\*(.*?)\*\*\*/g, '<b>$1</b>');
-
-    // Заменяем ``` на курсивное форматирование
-    formattedText = formattedText.replace(/```(.*?)```/g, '<i>$1</i>');
-
-    // Вставляем отформатированный текст в div с классом "text"
-    document.querySelector('.text').innerHTML = formattedText;
+  <style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-// Пример использования
-const inputText = '***print("Hello, world!")*** Этот код выведет сообщение ```Hello, world!``` в консоль.';
-formatText(inputText);
-</script>
+.wheel-container {
+  position: relative;
+  width: 300px; /* Задайте размер контейнера по вашему усмотрению */
+  height: 300px; /* Задайте размер контейнера по вашему усмотрению */
+  border: 10px solid #333; /* Граница контейнера */
+  border-radius: 50%; /* Делает контейнер круглым */
+  overflow: hidden; /* Обрезает контент за пределами границы */
+}
 
+.wheel {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* Поворачивает колесо, чтобы сектора начинались с верха */
+}
+
+.sector {
+  position: absolute;
+  width: calc(360 / 37 * 1deg);
+  height: 100%;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  transform-origin: 50% 50%; /* Изменено: устанавливаем точку поворота в центр контейнера */
+  background-color: #c72d2d; /* Цвет сектора, замените по вашему выбору */
+  transform: rotate(var(--rotate)); /* Поворот каждого сектора */
+}
+
+/* .sector:nth-child(1) { --color: #343434; }
+.sector:nth-child(2) { --color: #7a1d1d; } */
+
+  </style>
+  <div class="wheel-container">
+    <div class="wheel" id="wheel">
+      <!-- Секторы будут добавлены динамически с использованием JavaScript -->
+    </div>
+  </div>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const totalSectors = 37;
+  const wheel = document.getElementById('wheel');
+
+  for (let i = 0; i < totalSectors; i++) {
+    const sector = document.createElement('div');
+    sector.classList.add('sector');
+    sector.style.setProperty('--rotate', `${(360 / totalSectors) * i}deg`);
+    wheel.appendChild(sector);
+  }
+  });
+</script>
 </html>

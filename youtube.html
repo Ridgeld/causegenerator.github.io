@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENERY</title>
+    <link rel="shortcut icon" type="image/png" href="images/icon.png" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <!-- header -->
+            <div class="header">
+                <div class="logo_section">
+                    <div class="logo_place">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <circle cx="12.5" cy="12.5" r="12.5" fill="#2400FF" />
+                            <path
+                                d="M15.3408 5.61507C15.4263 5.66432 15.4925 5.74092 15.5286 5.83237C15.5646 5.92381 15.5684 6.02469 15.5392 6.11852L13.965 11.1981H16.8696C16.9549 11.1981 17.0384 11.2228 17.1098 11.2694C17.1811 11.3159 17.2371 11.3822 17.271 11.46C17.3048 11.5379 17.315 11.6238 17.3002 11.7073C17.2854 11.7908 17.2463 11.8681 17.1877 11.9298L10.195 19.3079C10.1273 19.3793 10.0373 19.4259 9.93955 19.44C9.84182 19.4542 9.74214 19.435 9.65678 19.3857C9.57142 19.3363 9.5054 19.2597 9.46948 19.1684C9.43356 19.077 9.42987 18.9763 9.459 18.8825L11.0332 13.8021H8.12863C8.04327 13.8021 7.95977 13.7774 7.88843 13.7308C7.8171 13.6842 7.76105 13.618 7.72721 13.5401C7.69338 13.4623 7.68323 13.3764 7.69802 13.2929C7.71281 13.2094 7.7519 13.1321 7.81046 13.0704L14.8032 5.69232C14.8708 5.62097 14.9607 5.57442 15.0583 5.56024C15.1559 5.54606 15.2554 5.56507 15.3408 5.6142V5.61507Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                    <div class="logo_title">GENERY
+                    </div>
+                </div>
+                <div class="page_name">Кешбэк</div>
+                <a href="games_menu.html" target="_self" class="button_menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
+                        <path d="M13.4056 2.59987L2.78213 13.05L13.16 23.5984" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            <section class="item_container">
+                <div class="info_body">
+                    <div class="info_title">Скачать видео</div>
+                    <div class="info_text">Вставь ссылку на видео youtube в поле ниже -></div>
+                    <!-- <div class="result" id="result">ссылка</div> -->
+                </div>
+                <section class="input_and_button">
+                    <input type="url" placeholder="Введите ссылку на видео" id="link" class="count_input">
+                    <button class="check_button" data-text="Скачать" id="check"></button>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="js/youtube.js"></script>
+</body>
+
+</html>

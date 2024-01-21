@@ -188,7 +188,183 @@ body{
 .button_menu:hover{
     transform: scale(1.2);
 }
+/* FOOTER */
+.footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: calc(100% - 20px);
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* background: #13131F;     */
+    background: #1A1A28;
+}
+.button_section{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.button_container_f{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 5px 15px 5px 15px;
+    min-height: 10px;
+    min-width: 40px;
+    background: #1A1A28;
+    transition: 0.5s;   
+}
+.active_f{
+    background: #2B2B41;
+}
+.button_container_f svg{
+    max-width: 100%;
+    max-height: 100%;
+}
+/* START */
+.citata_body{
+    display: flex;
+    padding:5px;
+    align-self: stretch;
+    min-height: 100px;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(30, 30, 47, 0.50);
+    border-radius: 10px;
+    gap: 5px;
+}
+.citata_title{
+    padding: 5px 20px;
+    color: #898989;
+    font-size: 15px;
+    font-weight: 500;
+}
+.citata_text{
+    padding: 5px 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
 
+.element_wrapper{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;   
+}
+.element_container{
+    display: flex;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 30, 47, 0.50);
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+.element_container_full{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 30, 47, 0.50);
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+.element_glow{
+    display: flex;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(37, 143, 228, 0.30);
+    filter: blur(50px);
+}
+.background_object_left{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left:5px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.1;
+}
+.background_object_rigth{
+    display: flex;
+    position: absolute;
+    top: -10px;
+    right:5px;
+    width: 70px;
+    height: 70px;
+    opacity: 0.1;
+}
+.background_object_full{
+    display: flex;
+    position: absolute;
+    top: -10px;
+    left: 20%;
+    width: 90px;
+    height: 90px;
+    opacity: 0.1;
+}
+.element_container img{
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.element_container:hover img{
+    max-width: 120%;
+    max-height: 120%;
+}
+.element_container_full img{
+    position: absolute;
+    left:5%;
+    max-width: 110%;
+    max-height: 110%;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.element_container_full:hover img{
+    max-width: 140%;
+    max-height: 140%;
+}
+.element_text{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    padding: 0 0 15px 0;
+    z-index: 5;
+}
+.element_title{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+.element_container:hover .element_title{
+    font-size: 16px;
+}
+.element_container_full:hover .element_title{
+    font-size: 16px;
+}
 /* ОБЪЕКТЫ МЕНЮ */
 .menu_container{
     display: flex;
@@ -406,7 +582,7 @@ body{
     flex-shrink: 0;
     border-radius: 50%;
     background: #FFF;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 .lesson_info{
     display: flex;
@@ -430,7 +606,7 @@ body{
 }
 .lesson_time{
     color: #fff;
-    opacity: 0.3;
+    opacity: 0.5;
     font-size: 13px;
     font-style: normal;
     font-weight: 600;
@@ -1632,11 +1808,11 @@ body{
 .black-key:nth-child(2) {
     left: calc(15px + 42.86px + 32.86px);
 }
-.black-key:nth-child(3) {
+.black-key:nth-child(5) {
     left: calc(15px + 42.86px + 42.86px*2 + 32.86px);
 }
 .black-key:nth-child(4) {
-    left: calc(15px + 42.86px + 42.86px*3 + 32.86px);
+    left: calc(15px + 42.86px + 42.86px*5 + 32.86px);
 }
 .black-key:nth-child(5) {
     left: calc(15px + 42.86px + 42.86px*4 + 32.86px);
@@ -1644,7 +1820,7 @@ body{
 .black-key:nth-child(6) {
     left: calc(15px + 42.86px + 42.86px*5 + 42.86px + 32.86px);
 }
-.black-key:nth-child(7) {
+.black-key:nth-child(5) {
     left: calc(15px + 42.86px + 42.86px*6 + 42.86px + 32.86px);
 }
 .black-key:nth-child(8) {
@@ -1672,7 +1848,7 @@ body{
     color: #FFF;
     font-size: 40px;
     font-weight: 400;
-    letter-spacing: -3.2px;
+    letter-spacing: -5.2px;
 }
 .greeting_text{
     color: #668966;
@@ -2128,4 +2304,284 @@ body{
 }
 .border_right{
     border-radius: 0 0 10px 0;
+}
+/* Колесо КАЗИНО */
+.wheel_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.wheel_container_casino{
+    display: flex;
+    position: absolute;
+    top:25%;
+    /* background: #0000f1; */
+    transform: rotate(90deg);
+}
+@media (min-width: 700px) {
+    .wheel_container_casino{
+        transform: rotate(0deg);
+    }
+}
+.wheel_casino_border_circle{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    /* background: #776100; */
+    /* text-transform: uppercase; */
+    border: 5px solid #614f00;
+    color: #fff;
+    width: 220px;
+    height: 220px;
+    font-size: 12px;
+    border-radius: 50%;
+    letter-spacing: 1px;
+    user-select: none;
+}
+.wheel_casino_circle{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    background: #776100;
+    text-transform: uppercase;
+    border: 8px solid #614f00;
+    color: #fff;
+    width: 160px;
+    height: 160px;
+    font-size: 12px;
+    border-radius: 50%;
+    letter-spacing: 1px;
+    user-select: none;
+}
+.spin_casino{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: #776100;
+    text-transform: uppercase;
+    border: 8px solid #614f00;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+    border-radius: 50%;
+    letter-spacing: 1px;
+    user-select: none;
+}
+.spin_casino::after{ 
+    content: '';
+    top:-15px;
+    left:50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #614f00;
+    clip-path:  polygon(50% 0, 15% 100%, 85% 100%);
+}
+.wheel_casino{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 10px solid #613a00;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: 6s;
+}
+.wheel_casino div{
+    height: 50%;
+    width: 25px;
+    position: absolute;
+    clip-path: polygon(100% 0, 50% 100%, 0 0);
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    align-items: flex-start;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    left: 138px;
+    display: flex;
+}
+.inner_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+
+.number_container {
+/* Стили для .number_container */
+    display: flex;
+    margin-top: 100%;
+/* Другие стили, если нужны */
+}
+.red_casino{
+    background: #d30909;
+}
+.black_casino{
+    background: #2e2e2e;
+}
+.zero_casino{
+    background: #007537;
+    left: 50%;
+}
+.wheel_casino ._0_casino{
+    transform: rotate(0deg);
+}
+.wheel_casino ._1_casino{
+    /* background: #88ff00; */
+    transform: rotate(9.47deg);
+}
+.wheel_casino ._2_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*2deg));
+}
+.wheel_casino ._3_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*3deg));
+} 
+.wheel_casino ._4_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*4deg));
+}
+.wheel_casino ._5_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*5deg));
+}
+.wheel_casino ._6_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*6deg));
+}
+.wheel_casino ._7_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*7deg));
+}
+.wheel_casino ._8_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*8deg));
+}
+.wheel_casino ._9_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*9deg));
+}
+.wheel_casino ._10_casino{
+    transform: rotate(calc(9.47*10deg));
+}
+.wheel_casino ._11_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*11deg));
+}
+.wheel_casino ._12_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*12deg));
+}
+ .wheel_casino ._13_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*13deg));
+} 
+.wheel_casino ._14_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*14deg));
+}
+.wheel_casino ._15_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*15deg));
+}
+.wheel_casino ._16_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*16deg));
+}
+.wheel_casino ._17_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*17deg));
+}
+.wheel_casino ._18_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*18deg));
+}
+.wheel_casino ._19_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*19deg));
+}
+.wheel_casino ._20_casino{
+    transform: rotate(calc(9.47*20deg));
+}
+.wheel_casino ._21_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*21deg));
+}
+.wheel_casino ._22_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*22deg));
+}
+ .wheel_casino ._23_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*23deg));
+} 
+.wheel_casino ._24_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*24deg));
+}
+.wheel_casino ._25_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*25deg));
+}
+.wheel_casino ._26_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*26deg));
+}
+.wheel_casino ._27_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*27deg));
+}
+.wheel_casino ._28_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*28deg));
+}
+.wheel_casino ._29_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*29deg));
+}
+.wheel_casino ._30_casino{
+    transform: rotate(calc(9.47*30deg));
+}
+.wheel_casino ._31_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*31deg));
+}
+.wheel_casino ._32_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*32deg));
+}
+ .wheel_casino ._33_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*33deg));
+} 
+.wheel_casino ._34_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*34deg));
+}
+.wheel_casino ._35_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*35deg));
+}
+.wheel_casino ._36_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*36deg));
+}
+.wheel_casino ._37_casino{
+    /* background: #88ff00; */
+    transform: rotate(calc(9.47*37deg));
 }
