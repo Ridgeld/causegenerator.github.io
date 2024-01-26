@@ -122,8 +122,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const API_KEY = "AIzaSyBt_lAZTgr_sGBpILMRvyMh8jfucxQnqtw";
 // Access your API key (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(API_KEY);
-
-async function run(message) {
+//async function run (message) {
+function run(message) {
     const load_body = document.createElement('div');
     load_body.className = "load_body";
     const avatar_container = document.createElement('div');
@@ -198,7 +198,7 @@ if(response){
 }
 }
 
-run();
+//run();
 function createAnswer(message){
     setTimeout( createMessage, 1000, message, false)
     saveMessageToLocalStorage({ text: message, user: false });
