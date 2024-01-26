@@ -117,7 +117,7 @@ function timetable(dayInput){
 //     console.log(text);
 // }
 
-// run();
+run();
 import { GoogleGenerativeAI } from "@google/generative-ai";
 const API_KEY = "AIzaSyBt_lAZTgr_sGBpILMRvyMh8jfucxQnqtw";
 // Access your API key (see "Set up your API key" above)
