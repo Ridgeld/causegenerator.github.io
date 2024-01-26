@@ -148,14 +148,6 @@ function run(message) {
     history: [
       {
         role: "user",
-        parts: "подскажи правило морфемного разбора",
-      },
-      {
-        role: "model",
-        parts: "Правила разбора следующие: указать род, число, падеж",
-      },
-      {
-        role: "user",
         parts: "привет",
       },
       {
@@ -164,7 +156,7 @@ function run(message) {
       },
     ],
     generationConfig: {
-      maxOutputTokens: 1000,
+      maxOutputTokens: 100,
     },
   });
 
@@ -190,7 +182,7 @@ function run(message) {
 //     //     saveMessageToLocalStorage({ text: formattedText, user: false });
 //     //   }
 //     }
-if(response){
+if(text){
     container.removeChild(load_body);
     console.log(text);
     setTimeout(createMessage, 1000, text, false)
