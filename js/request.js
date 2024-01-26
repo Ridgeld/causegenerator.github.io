@@ -117,13 +117,12 @@ function timetable(dayInput){
 //     console.log(text);
 // }
 
-run();
 import { GoogleGenerativeAI } from "@google/generative-ai";
 const API_KEY = "AIzaSyDI-SDKnQDRW-PyIBMPtadgAVVJWdSbFPc";
 // Access your API key (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(API_KEY);
 //async function run (message) {
-function run(message) {
+async function run(message) {
     const load_body = document.createElement('div');
     load_body.className = "load_body";
     const avatar_container = document.createElement('div');
@@ -149,35 +148,36 @@ function run(message) {
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
     const prompt = "Write a story about a magic backpack."
 
-  const chat = model.startChat({
-    history: [
-      {
-        role: "user",
-        parts: "подскажи правило морфемного разбора",
-      },
-      {
-        role: "model",
-        parts: "Правила разбора следующие: указать род, число, падеж",
-      },
-      {
-        role: "user",
-        parts: "привет",
-      },
-      {
-        role: "model",
-        parts: "привет, я чат-бот Genery.Могу генерировать различные цитаты и поиграть с тобой в игры. Я был создан DM",
-      },
-    ],
-    generationConfig: {
-      maxOutputTokens: 100,
-    },
-  });
+//   const chat = model.startChat({
+//     history: [
+//       {
+//         role: "user",
+//         parts: "подскажи правило морфемного разбора",
+//       },
+//       {
+//         role: "model",
+//         parts: "Правила разбора следующие: указать род, число, падеж",
+//       },
+//       {
+//         role: "user",
+//         parts: "привет",
+//       },
+//       {
+//         role: "model",
+//         parts: "привет, я чат-бот Genery.Могу генерировать различные цитаты и поиграть с тобой в игры. Я был создан DM",
+//       },
+//     ],
+//     generationConfig: {
+//       maxOutputTokens: 100,
+//     },
+//   });
 
 //   const msg = "привет, ты кто?";
 
-  const result = await chat.sendMessage(message);
-  const response = await result.response;
-  const text = response.text();
+    const result = await model.generateContent(message);
+    const response = await result.response;
+    const text = response.text();
+    console.log(text);
 //   formatText(text);
 //   function formatText(input) {
 //     // Заменяем *** на жирное форматирование
@@ -195,12 +195,12 @@ function run(message) {
 //     //     saveMessageToLocalStorage({ text: formattedText, user: false });
 //     //   }
 //     }
-if(text){
-    container.removeChild(load_body);
-    console.log(text);
-    setTimeout(createMessage, 1000, text, false)
-    saveMessageToLocalStorage({ text: text, user: false });
-}
+    if(text){
+        container.removeChild(load_body);
+        console.log(text);
+        setTimeout(createMessage, 1000, text, false)
+        saveMessageToLocalStorage({ text: text, user: false });
+    }
 }
 
 run();
