@@ -119,7 +119,7 @@ function timetable(dayInput){
 
 // run();
 import { GoogleGenerativeAI } from "@google/generative-ai";
-const API_KEY = "AIzaSyBt_lAZTgr_sGBpILMRvyMh8jfucxQnqtw";
+const API_KEY = "AIzaSyDI-SDKnQDRW-PyIBMPtadgAVVJWdSbFPc";
 // Access your API key (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(API_KEY);
 
@@ -142,63 +142,64 @@ async function run(message) {
     const container = document.getElementById('place');
     container.appendChild(load_body);
   // For text-only input, use the gemini-pro model
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-  const chat = model.startChat({
-    history: [
-      {
-        role: "user",
-        parts: "подскажи правило морфемного разбора",
-      },
-      {
-        role: "model",
-        parts: "Правила разбора следующие: указать род, число, падеж",
-      },
-      {
-        role: "user",
-        parts: "привет",
-      },
-      {
-        role: "model",
-        parts: "привет, я чат-бот Genery.Могу генерировать различные цитаты и поиграть с тобой в игры. Я был создан DM",
-      },
-    ],
-    generationConfig: {
-      maxOutputTokens: 100,
-    },
-  });
+
+// Access your API key (see "Set up your API key" above)
+    // For text-only input, use the gemini-pro model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+    const prompt = "Write a story about a magic backpack."
+
+    // const chat = model.startChat({
+    //     history: [
+    //       {
+    //         role: "user",
+    //         parts: "Кто ты?",
+    //       },
+    //       {
+    //         role: "model",
+    //         parts: "Я чат-бот Genery, созданная DM",
+    //       },
+    //     ],
+    //     generationConfig: {
+    //       maxOutputTokens: 100,
+    //     },
+    //   });
+    
+    
+      const result = await model.generateContent(message);
+      const response = await result.response;
+      const text = response.text();
+      console.log(text);
+
+    // const chat = model.startChat({
+    //     history: [
+    //     {
+    //         role: "user",
+    //         parts: "привет",
+    //     },
+    //     {
+    //         role: "model",
+    //         parts: "привет, я чат-бот Genery.Могу генерировать различные цитаты и поиграть с тобой в игры. Я был создан DM",
+    //     },
+    //     ],
+    //     generationConfig: {
+    //     maxOutputTokens: 100,
+    //     },
+    // });
 
 //   const msg = "привет, ты кто?";
-
-  const result = await chat.sendMessage(message);
-  const response = await result.response;
-  const text = response.text();
-//   formatText(text);
-//   function formatText(input) {
-//     // Заменяем *** на жирное форматирование
-//     let formattedText = input.replace(/\*\*\*(.*?)\*\*\*/g, '<b>$1</b>');
-
-//     // Заменяем ``` на курсивное форматирование
-//     formattedText = formattedText.replace(/```(.*?)```/g, '<i>$1</i>');
-
-//     // Вставляем отформатированный текст в div с классом "text"
-//     // document.querySelector('.text').innerHTML = formattedText;
-//     // if(formattedText){
-//     //     container.removeChild(load_body);
-//     //     console.log(formattedText);
-//     //     setTimeout(createMessage, 1000, formattedText, false)
-//     //     saveMessageToLocalStorage({ text: formattedText, user: false });
-//     //   }
-//     }
-if(text){
-    container.removeChild(load_body);
-    console.log(text);
-    setTimeout(createMessage, 1000, text, false)
-    saveMessageToLocalStorage({ text: text, user: false });
-}
+    // const result = await chat.sendMessage(message);
+    // const response = await result.response;
+    // const text = response.text();
+    if (text) {
+        container.removeChild(load_body);
+        console.log(text);
+        setTimeout(createMessage, 1000, text, false)
+        saveMessageToLocalStorage({ text: text, user: false });
+    }
 }
 
-run();
+// run();
 function createAnswer(message){
     setTimeout( createMessage, 1000, message, false)
     saveMessageToLocalStorage({ text: message, user: false });

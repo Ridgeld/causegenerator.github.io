@@ -3,66 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
-  <title>Колесо фортуны</title>
+  <title>Рисование и изменение прямоугольников</title>
+  <style>
+    #canvas {
+      border: 1px solid #000;
+      cursor: crosshair;
+    }
+
+    #controls {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <style>
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.wheel-container {
-  position: relative;
-  width: 300px; /* Задайте размер контейнера по вашему усмотрению */
-  height: 300px; /* Задайте размер контейнера по вашему усмотрению */
-  border: 10px solid #333; /* Граница контейнера */
-  border-radius: 50%; /* Делает контейнер круглым */
-  overflow: hidden; /* Обрезает контент за пределами границы */
-}
-
-.wheel {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg); /* Поворачивает колесо, чтобы сектора начинались с верха */
-}
-
-.sector {
-  position: absolute;
-  width: calc(360 / 37 * 1deg);
-  height: 100%;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
-  transform-origin: 50% 50%; /* Изменено: устанавливаем точку поворота в центр контейнера */
-  background-color: #c72d2d; /* Цвет сектора, замените по вашему выбору */
-  transform: rotate(var(--rotate)); /* Поворот каждого сектора */
-}
-
-/* .sector:nth-child(1) { --color: #343434; }
-.sector:nth-child(2) { --color: #7a1d1d; } */
-
-  </style>
-  <div class="wheel-container">
-    <div class="wheel" id="wheel">
-      <!-- Секторы будут добавлены динамически с использованием JavaScript -->
-    </div>
+  <h1>Рисование и изменение прямоугольников</h1>
+  <canvas id="canvas" width="800" height="600"></canvas>
+  <div id="controls">
+    <label>Ширина: <input type="number" id="widthInput" value="50" oninput="updateRectangle()"></label>
+    <label>Высота: <input type="number" id="heightInput" value="30" oninput="updateRectangle()"></label>
   </div>
-</body>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const totalSectors = 37;
-  const wheel = document.getElementById('wheel');
 
-  for (let i = 0; i < totalSectors; i++) {
-    const sector = document.createElement('div');
-    sector.classList.add('sector');
-    sector.style.setProperty('--rotate', `${(360 / totalSectors) * i}deg`);
-    wheel.appendChild(sector);
-  }
-  });
-</script>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    let rectangles = [];
+    let selectedRectangle = null;
+    let activeHandle = null;
+
+    function drawHandles(rect) {
+      const handles = [
+        { x: rect.x, y: rect.y },               // верхний левый угол
+        { x: rect.x + rect.width, y: rect.y },  // верхний правый угол
+        { x: rect.x, y: rect.y + rect.height }, // нижний левый угол
+        { x: rect.x + rect.width, y: rect.y + rect.height } // нижний правый угол
+      ];
+
+      context.fillStyle = 'blue';
+      context.strokeStyle = 'black';
+
+      handles.forEach(handle => {
+        context.beginPath();
+        context.arc(handle.x, handle.y, 5, 0, 2 * Math.PI);
+        context.fill();
+        context.stroke();
+      });
+    }
+
+    function drawRectangle(rect) {
+      context.fillStyle = 'rgba(0, 0, 255, 0.5)';
+      context.fillRect(rect.x, rect.y, rect.width, rect.height);
+
+      drawHandles(rect);
+    }
+
+    function drawRectangles() {
+      rectangles.forEach(rect => {
+        drawRectangle(rect);
+      });
+    }
+
+    function startDragging(event) {
+      const mouseX = event.clientX - canvas.getBoundingClientRect().left;
+      const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+
+      activeHandle = null;
+
+      rectangles.forEach(rect => {
+        drawHandles(rect);
+
+        // Проверяем, находится ли указатель мыши в пределах какой-либо контрольной точки
+        if (rectHandles.some(handle => Math.abs(handle.x - mouseX) < 5 && Math.abs(handle.y - mouseY) < 5)) {
+          activeHandle = rect;
+        }
+      });
+
+      if (!activeHandle) {
+        canvas.addEventListener('mousemove', dragRectangle);
+        canvas.addEventListener('mouseup', stopDragging);
+      }
+    }
+
+    function dragRectangle(event) {
+      const mouseX = event.clientX - canvas.getBoundingClientRect().left;
+      const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+
+      if (activeHandle) {
+        // Перемещаем контрольную точку
+        activeHandle.width = mouseX - activeHandle.x;
+        activeHandle.height = mouseY - activeHandle.y;
+      } else {
+        // Перемещаем весь прямоугольник
+        activeHandle.x = mouseX;
+        activeHandle.y = mouseY;
+      }
+
+      clearCanvas();
+      drawRectangles();
+    }
+
+    function stopDragging() {
+      activeHandle = null;
+      canvas.removeEventListener('mousemove', dragRectangle);
+      canvas.removeEventListener('mouseup', stopDragging);
+    }
+
+    function updateRectangle() {
+      clearCanvas();
+      drawRectangles();
+    }
+
+    function clearCanvas() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    canvas.addEventListener('mousedown', startDrawing);
+
+    function startDrawing(event) {
+      const startX = event.clientX - canvas.getBoundingClientRect().left;
+      const startY = event.clientY - canvas.getBoundingClientRect().top;
+
+      // Проверяем, выбран ли какой-то прямоугольник
+      selectedRectangle = rectangles.find(rect => {
+        return startX >= rect.x && startX <= rect.x + rect.width &&
+               startY >= rect.y && startY <= rect.y + rect.height;
+      });
+
+      if (!selectedRectangle) {
+        // Если не выбран, создаем новый прямоугольник
+        selectedRectangle = {
+          x: startX,
+          y: startY,
+          width: 0,
+          height: 0
+        };
+        rectangles.push(selectedRectangle);
+      }
+
+      canvas.removeEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mousedown', startDragging);
+    }
+
+    const rectHandles = [
+      { x: 0, y: 0 },
+      { x: 0, y: 0 },
+      { x: 0, y: 0 },
+      { x: 0, y: 0 }
+    ];
+
+    canvas.addEventListener('mousedown', startDrawing);
+  </script>
+</body>
 </html>
