@@ -182,7 +182,7 @@ function run(message) {
 //     //     saveMessageToLocalStorage({ text: formattedText, user: false });
 //     //   }
 //     }
-if(text){
+if(response){
     container.removeChild(load_body);
     console.log(text);
     setTimeout(createMessage, 1000, text, false)
