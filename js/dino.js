@@ -67,7 +67,7 @@ const handleGameOver = () =>{
 }
 
 window.onload = function() {
-    board = document.getElementById("board");
+    board = document.getElementById("dino_board");
     board.height = boardHeight;
     board.width = boardWidth;
 

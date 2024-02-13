@@ -89,12 +89,30 @@ fetch('json/gallery.json')
         const public_photo = document.createElement('div');
         public_photo.className = "public_photo";
 
-        const photo = document.createElement('img');
-        photo.src = public.photo;
-        photo.alt = "";
-        public_photo.appendChild(photo);
+        if (public.photo){
+            const photo = document.createElement('img');
+            photo.src = public.photo;
+            photo.alt = "";
+            public_photo.appendChild(photo);
+    
+            public_body.appendChild(public_photo);
+        }
+        if (public.spline){
+            const spline = document.createElement('iframe');
+            spline.src = public.spline;
+            spline.width = '1000px';
+            spline.height = '450px';
+            spline.frameBorder = '0'
 
-        public_body.appendChild(public_photo);
+            public_photo.appendChild(spline);
+            public_body.appendChild(public_photo)
+        }
+        // const photo = document.createElement('img');
+        // photo.src = public.photo;
+        // photo.alt = "";
+        // public_photo.appendChild(photo);
+
+        // public_body.appendChild(public_photo);
 
         const public_actions = document.createElement('div');
         public_actions.className = 'public_actions';

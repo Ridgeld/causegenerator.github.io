@@ -1,156 +1,115 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Рисование и изменение прямоугольников</title>
   <style>
-    #canvas {
-      border: 1px solid #000;
-      cursor: crosshair;
+    #quiz-container {
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    #controls {
+    .question-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .options-container {
       margin-top: 10px;
     }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
   </style>
+  <title>Викторина</title>
 </head>
 <body>
-  <h1>Рисование и изменение прямоугольников</h1>
-  <canvas id="canvas" width="800" height="600"></canvas>
-  <div id="controls">
-    <label>Ширина: <input type="number" id="widthInput" value="50" oninput="updateRectangle()"></label>
-    <label>Высота: <input type="number" id="heightInput" value="30" oninput="updateRectangle()"></label>
-  </div>
-
+  <div id="quiz-container"></div>
   <script>
-    const canvas = document.getElementById('canvas');
-    const context = canvas.getContext('2d');
-    let rectangles = [];
-    let selectedRectangle = null;
-    let activeHandle = null;
+    document.addEventListener('DOMContentLoaded', function() {
+      const quizContainer = document.getElementById('quiz-container');
+      let totalPoints = 0;
+      let currentQuestionIndex = 0;
 
-    function drawHandles(rect) {
-      const handles = [
-        { x: rect.x, y: rect.y },               // верхний левый угол
-        { x: rect.x + rect.width, y: rect.y },  // верхний правый угол
-        { x: rect.x, y: rect.y + rect.height }, // нижний левый угол
-        { x: rect.x + rect.width, y: rect.y + rect.height } // нижний правый угол
-      ];
+      function loadQuestions(callback) {
+        fetch('json/quiz/questions.json')
+          .then(response => response.json())
+          .then(data => {
+            callback(data);
+          })
+          .catch(error => console.error('Error loading questions:', error));
+      }
 
-      context.fillStyle = 'blue';
-      context.strokeStyle = 'black';
+      function renderQuestion() {
+        loadQuestions(questions => {
+          const question = questions[currentQuestionIndex];
+          const questionContainer = document.createElement('div');
+          questionContainer.classList.add('question-container');
 
-      handles.forEach(handle => {
-        context.beginPath();
-        context.arc(handle.x, handle.y, 5, 0, 2 * Math.PI);
-        context.fill();
-        context.stroke();
-      });
-    }
+          const questionText = document.createElement('div');
+          questionText.textContent = question.text;
+          questionContainer.appendChild(questionText);
 
-    function drawRectangle(rect) {
-      context.fillStyle = 'rgba(0, 0, 255, 0.5)';
-      context.fillRect(rect.x, rect.y, rect.width, rect.height);
+          const points = document.createElement('div');
+          points.textContent = `Баллы: ${question.points}`;
+          questionText.appendChild(points);
 
-      drawHandles(rect);
-    }
+          const optionsContainer = document.createElement('div');
+          optionsContainer.classList.add('options-container');
 
-    function drawRectangles() {
-      rectangles.forEach(rect => {
-        drawRectangle(rect);
-      });
-    }
+          question.options.forEach((option, index) => {
+            const optionButton = document.createElement('button');
+            optionButton.textContent = option.text;
 
-    function startDragging(event) {
-      const mouseX = event.clientX - canvas.getBoundingClientRect().left;
-      const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+            optionButton.addEventListener('click', function() {
+              if (option.correct) {
+                optionButton.classList.add('correct');
+                totalPoints += question.points;
+              } else {
+                optionButton.classList.add('incorrect');
+              }
 
-      activeHandle = null;
+              setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                  renderQuestion();
+                } else {
+                  endQuiz();
+                }
+              }, 1000);
+            });
 
-      rectangles.forEach(rect => {
-        drawHandles(rect);
+            optionsContainer.appendChild(optionButton);
+          });
 
-        // Проверяем, находится ли указатель мыши в пределах какой-либо контрольной точки
-        if (rectHandles.some(handle => Math.abs(handle.x - mouseX) < 5 && Math.abs(handle.y - mouseY) < 5)) {
-          activeHandle = rect;
+          questionContainer.appendChild(optionsContainer);
+          quizContainer.innerHTML = '';
+          quizContainer.appendChild(questionContainer);
+
+          setTimeout(() => {
+            endQuiz();
+          }, 3000);
+        });
+      }
+
+      function endQuiz() {
+        if (currentQuestionIndex < questions.length) {
+          alert('Вы проиграли');
+        } else {
+          alert(`Вы выиграли! Набранные баллы: ${totalPoints}`);
         }
-      });
-
-      if (!activeHandle) {
-        canvas.addEventListener('mousemove', dragRectangle);
-        canvas.addEventListener('mouseup', stopDragging);
-      }
-    }
-
-    function dragRectangle(event) {
-      const mouseX = event.clientX - canvas.getBoundingClientRect().left;
-      const mouseY = event.clientY - canvas.getBoundingClientRect().top;
-
-      if (activeHandle) {
-        // Перемещаем контрольную точку
-        activeHandle.width = mouseX - activeHandle.x;
-        activeHandle.height = mouseY - activeHandle.y;
-      } else {
-        // Перемещаем весь прямоугольник
-        activeHandle.x = mouseX;
-        activeHandle.y = mouseY;
       }
 
-      clearCanvas();
-      drawRectangles();
-    }
-
-    function stopDragging() {
-      activeHandle = null;
-      canvas.removeEventListener('mousemove', dragRectangle);
-      canvas.removeEventListener('mouseup', stopDragging);
-    }
-
-    function updateRectangle() {
-      clearCanvas();
-      drawRectangles();
-    }
-
-    function clearCanvas() {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-    }
-
-    canvas.addEventListener('mousedown', startDrawing);
-
-    function startDrawing(event) {
-      const startX = event.clientX - canvas.getBoundingClientRect().left;
-      const startY = event.clientY - canvas.getBoundingClientRect().top;
-
-      // Проверяем, выбран ли какой-то прямоугольник
-      selectedRectangle = rectangles.find(rect => {
-        return startX >= rect.x && startX <= rect.x + rect.width &&
-               startY >= rect.y && startY <= rect.y + rect.height;
-      });
-
-      if (!selectedRectangle) {
-        // Если не выбран, создаем новый прямоугольник
-        selectedRectangle = {
-          x: startX,
-          y: startY,
-          width: 0,
-          height: 0
-        };
-        rectangles.push(selectedRectangle);
-      }
-
-      canvas.removeEventListener('mousedown', startDrawing);
-      canvas.addEventListener('mousedown', startDragging);
-    }
-
-    const rectHandles = [
-      { x: 0, y: 0 },
-      { x: 0, y: 0 },
-      { x: 0, y: 0 },
-      { x: 0, y: 0 }
-    ];
-
-    canvas.addEventListener('mousedown', startDrawing);
+      renderQuestion();
+    });
   </script>
 </body>
 </html>
+

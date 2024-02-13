@@ -137,6 +137,7 @@ body{
     align-items: center;
     justify-content: space-between;
     background: #13131F;
+    z-index: 3;
 }
 .logo_section{
     position: relative;
@@ -200,6 +201,7 @@ body{
     justify-content: space-between;
     /* background: #13131F;     */
     background: #1A1A28;
+    z-index: 10;
 }
 .button_section{
     display: flex;
@@ -218,6 +220,9 @@ body{
     min-width: 40px;
     background: #1A1A28;
     transition: 0.5s;   
+}
+.button_container_f:hover{
+    background: #2B2B41; 
 }
 .active_f{
     background: #2B2B41;
@@ -283,6 +288,19 @@ body{
     border-radius: 10px;
     /* overflow: hidden; */
 }
+.element_container_full_casino{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    background: #0D0E15;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 150px;
+}
 .element_glow{
     display: flex;
     position: absolute;
@@ -292,6 +310,18 @@ body{
     background: rgba(37, 143, 228, 0.30);
     filter: blur(50px);
 }
+.element_glow_casino{
+    display: flex;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(0, 87, 255, 0.1);
+    filter: blur(50px);
+}
+
+
+
 .background_object_left{
     display: flex;
     position: absolute;
@@ -319,6 +349,49 @@ body{
     height: 90px;
     opacity: 0.1;
 }
+.background_object_full_casino{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 100%;
+    height: 100%;
+}
+.casino_title{
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    top:20px;
+    right: 37%;
+    color: #fff;
+    font-style: italic;
+    font-weight: 600;
+}
+.casino_title span{
+    margin-left: -2px;
+    color: #1264E0;
+}
+.casino_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 60px;
+    right: 36%;
+    font-size: 13px;
+    font-weight: 500;
+    font-style: italic;
+    color: #fff;
+    z-index: 10;
+    line-height: 18px;
+}
+.casino_text span{
+    font-weight: 600;
+}
+
+
+
+
 .element_container img{
     position: absolute;
     max-width: 90%;
@@ -339,6 +412,18 @@ body{
     transition: 0.5s;
 }
 .element_container_full:hover img{
+    max-width: 140%;
+    max-height: 140%;
+}
+
+.element_container_full_casino img{
+    position: absolute;
+    right:40%;
+    max-width: 130%;
+    max-height: 130%;
+    transition: 0.5s;
+}
+.element_container_full_casino:hover img{
     max-width: 140%;
     max-height: 140%;
 }
@@ -734,6 +819,25 @@ body{
         background: rgba(30, 30, 47, 0.1);
     }
 }
+.time_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 15px;
+}
+.time_body{
+    display: flex;
+    align-items: center;
+    padding-inline: 10px;
+    padding-block: 2px;
+    background: rgba(30, 30, 47, 0.80);
+    border-radius: 5px;
+}
+.time_title{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
 .avatar_container{
     display: flex;
     height: 100%;
@@ -752,6 +856,24 @@ body{
     .message_text{
         font-size: 15px;
     }
+}
+.bottom_button{
+    border: none;
+    z-index: 2;
+    position: fixed;
+    bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0D0D15;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.bottom_button:hover{
+    scale: 1.2;
 }
 /* Стиль для поля ввода */
 .input_container{
@@ -1433,8 +1555,8 @@ body{
 /* Крестики нолики */
 .tic_board{
     margin-top: 20%;
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    height: 240px;
     display: flex;
     flex-wrap: wrap;
     /* background: #1E1E2F; */
@@ -1449,7 +1571,7 @@ body{
     color: #00FF75;
     background: #0D0D15;
 }
-.tile{
+.tic_tile{
     width: 97px;
     height: 97px;
 
@@ -2123,15 +2245,31 @@ body{
 /* КАЗИНО */
 .table{
     display: flex;
-    margin-top: 50%;
-    /* margin-right: -35%; */
+    margin-top: 40%;
+    margin-left: 15%;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     transform: rotate(90deg);
 }
-
+.item_container_casino{
+    display: flex;
+    margin-top: 20%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.score_container_casino{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5px;
+    padding-block: 10px;
+}
 @media (min-width: 700px){
+
     .table{
         margin-top: 10%;
         transform: rotate(0deg);
@@ -2240,7 +2378,7 @@ body{
     height: 80px;
     border:  3px solid #3E3E53;
     flex-wrap: wrap;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 0 10px;
     /* transform: rotate(90deg); */
 }
 .from_to{
@@ -2303,7 +2441,24 @@ body{
     border-radius: 0 0 0 10px;
 }
 .border_right{
-    border-radius: 0 0 10px 0;
+    border-radius: 0 0 0px 0;
+}
+.spin_button{
+    display: flex;
+    position: absolute;
+    top:100%;
+    left: 72%;
+    border: none;
+    width: 123px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    background: #3E3E53;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.5s;
 }
 /* Колесо КАЗИНО */
 .wheel_content{
@@ -2315,9 +2470,13 @@ body{
 .wheel_container_casino{
     display: flex;
     position: absolute;
-    top:25%;
+    top:-100%;
+    left: -20%;
     /* background: #0000f1; */
     transform: rotate(90deg);
+    transition: 0.5s;
+    align-items: center;
+    justify-content: center;
 }
 @media (min-width: 700px) {
     .wheel_container_casino{
@@ -2334,8 +2493,8 @@ body{
     /* text-transform: uppercase; */
     border: 5px solid #614f00;
     color: #fff;
-    width: 220px;
-    height: 220px;
+    width: 20px;
+    height: 20px;
     font-size: 12px;
     border-radius: 50%;
     letter-spacing: 1px;
@@ -2427,7 +2586,8 @@ body{
     margin-top: 100%;
 /* Другие стили, если нужны */
 }
-.red_casino{
+
+/* .red_casino{
     background: #d30909;
 }
 .black_casino{
@@ -2441,147 +2601,431 @@ body{
     transform: rotate(0deg);
 }
 .wheel_casino ._1_casino{
-    /* background: #88ff00; */
-    transform: rotate(9.47deg);
+    transform: rotate(9.72deg);
 }
 .wheel_casino ._2_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*2deg));
+    transform: rotate(calc(9.72*2deg));
 }
 .wheel_casino ._3_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*3deg));
+    transform: rotate(calc(9.72*3deg));
 } 
 .wheel_casino ._4_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*4deg));
+    transform: rotate(calc(9.72*4deg));
 }
 .wheel_casino ._5_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*5deg));
+    transform: rotate(calc(9.72*5deg));
 }
 .wheel_casino ._6_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*6deg));
+    transform: rotate(calc(9.72*6deg));
 }
 .wheel_casino ._7_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*7deg));
+    transform: rotate(calc(9.72*7deg));
 }
 .wheel_casino ._8_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*8deg));
+    transform: rotate(calc(9.72*8deg));
 }
 .wheel_casino ._9_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*9deg));
+    transform: rotate(calc(9.72*9deg));
 }
 .wheel_casino ._10_casino{
-    transform: rotate(calc(9.47*10deg));
+    transform: rotate(calc(9.72*10deg));
 }
 .wheel_casino ._11_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*11deg));
+    transform: rotate(calc(9.72*11deg));
 }
 .wheel_casino ._12_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*12deg));
+    transform: rotate(calc(9.72*12deg));
 }
  .wheel_casino ._13_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*13deg));
+    transform: rotate(calc(9.72*13deg));
 } 
 .wheel_casino ._14_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*14deg));
+
+    transform: rotate(calc(9.72*14deg));
 }
 .wheel_casino ._15_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*15deg));
+    transform: rotate(calc(9.72*15deg));
 }
 .wheel_casino ._16_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*16deg));
+    transform: rotate(calc(9.72*16deg));
 }
 .wheel_casino ._17_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*17deg));
+    transform: rotate(calc(9.72*17deg));
 }
 .wheel_casino ._18_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*18deg));
+    transform: rotate(calc(9.72*18deg));
 }
 .wheel_casino ._19_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*19deg));
+    transform: rotate(calc(9.72*19deg));
 }
 .wheel_casino ._20_casino{
-    transform: rotate(calc(9.47*20deg));
+    transform: rotate(calc(9.72*20deg));
 }
 .wheel_casino ._21_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*21deg));
+    transform: rotate(calc(9.72*21deg));
 }
 .wheel_casino ._22_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*22deg));
+    transform: rotate(calc(9.72*22deg));
 }
  .wheel_casino ._23_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*23deg));
+    transform: rotate(calc(9.72*23deg));
 } 
 .wheel_casino ._24_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*24deg));
+    transform: rotate(calc(9.72*24deg));
 }
 .wheel_casino ._25_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*25deg));
+    transform: rotate(calc(9.72*25deg));
 }
 .wheel_casino ._26_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*26deg));
+    transform: rotate(calc(9.72*26deg));
 }
 .wheel_casino ._27_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*27deg));
+    transform: rotate(calc(9.72*27deg));
 }
 .wheel_casino ._28_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*28deg));
+    transform: rotate(calc(9.72*28deg));
 }
 .wheel_casino ._29_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*29deg));
+    transform: rotate(calc(9.72*29deg));
 }
 .wheel_casino ._30_casino{
-    transform: rotate(calc(9.47*30deg));
+    transform: rotate(calc(9.72*30deg));
 }
 .wheel_casino ._31_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*31deg));
+    transform: rotate(calc(9.72*31deg));
 }
 .wheel_casino ._32_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*32deg));
+    transform: rotate(calc(9.72*32deg));
 }
  .wheel_casino ._33_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*33deg));
+    transform: rotate(calc(9.72*33deg));
 } 
 .wheel_casino ._34_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*34deg));
+    transform: rotate(calc(9.72*34deg));
 }
 .wheel_casino ._35_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*35deg));
+    transform: rotate(calc(9.72*35deg));
 }
 .wheel_casino ._36_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*36deg));
+    transform: rotate(calc(9.72*36deg));
 }
 .wheel_casino ._37_casino{
-    /* background: #88ff00; */
-    transform: rotate(calc(9.47*37deg));
+    transform: rotate(calc(9.72*37deg));
+} */
+.casino_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.casino_arrow {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 420px;
+    max-width: 40px;
+    max-height: 40px;
+    /* background: #7000cf; */
+    z-index: 5;
+}
+.casino_arrow svg{
+    max-width: 100%;
+    max-height: 100%;
+}
+.casino_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border:  10px solid #807a72;
+    font-size: 20px;
+    z-index: 5;
+    color: #fff;
+    font-weight: 500;
+    background: #592A18;
+    bottom: 44%;
+}
+.inner_circle{
+    display: flex;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border:  70px solid #0000003a;
+    bottom: 38%;
+}
+.outter_circle{
+    display: flex;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border:  10px solid #807a72;
+    bottom: 29.5%;
+}
+
+/* ФИШКИ */
+.chip_container{
+    display: flex;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 5;
+    align-items: center;
+    justify-content: center;
+    background: #1fa01f;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+.chip_inner_container{
+    display: flex;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 6;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+}
+.chip_cost{
+    position: absolute;
+    font-size: 10px;
+    font-weight: 500;
+    color: #000;
+    z-index: 7;
+}
+
+/* РИСОВАЛКА */
+.paint_container{
+    display: flex;
+    margin-top: 60px;
+    width: 100%;
+    justify-content: center;
+}
+.button_container_paint{
+    display: flex;
+    position: fixed;
+    width: 90%;
+    top: 45px;
+    padding-block: 5px;
+    align-items: center;
+    justify-content: flex-end;
+    gap:20px;
+    background: #13131F;
+}
+@media (min-width:700px){
+    .button_container_paint{
+        width: 60%;
+    }
+}
+.button_undo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+}
+.button_redo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+}
+.button_clear{
+    display: flex;
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    background: #13131F;
+    border: 1px solid #202033;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+.button_clear:hover{
+    border: 2px solid #27273d;
+}
+.button_save{
+    display: flex;
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    background: #202033;
+    border: none;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+.button_save:hover{
+    background:#27273d;
+}
+.drawing_board{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.paint_screen{
+    width: 100%;
+}
+/* .drawing_board{
+    background: #fff;
+    width: 100%;
+    height: 100%;
+} */
+.tools_content{
+    position: fixed;
+    display: flex;
+    z-index: 2;
+    width: 90%;
+    height: 100px;
+    background: #13131F;
+    bottom: 0;
+    justify-content: space-between;
+}
+@media (min-width:700px){
+    .tools_content{
+        width: 60%;
+    }
+}
+.tool_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap:5px;
+    cursor: pointer;
+}
+.tool_icon{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #191928;
+    transition: 0.5s;
+}
+.tool_icon svg{
+    max-width: 100%;
+    max-height: 100%;
+}
+.tool_title{
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+}
+.tool:is(:hover , .paint_active) .tool_icon{
+    background: #2B2B41;
+}
+
+.color_picker{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%; /* закруглите углы, если нужно */
+    outline: none; /* уберите рамку фокуса (если это приемлемо в вашем дизайне) */
+    cursor: pointer;
+    background: transparent;
+}
+.color_picker::-webkit-color-swatch{
+    border-radius: 50%;
+    border: none;
+}
+.paint_input_container{
+    position: fixed;
+    bottom: 115px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    padding-block: 10px;
+    background: #1A1A28;
+    border-radius: 200px;
+}
+
+/* INPUT RANGE */
+.paint_input {
+    -webkit-appearance: none;
+    appearance: none; 
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 10px;
+    background: #2B2B41;
+}
+  
+  /* Thumb: webkit */
+.paint_input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; 
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+.paint_input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; 
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #2400FF;
+    user-select: none;
+}
+.paint_shape_container{
+    display: none;
+    position: fixed;
+    bottom: 115px;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    padding-inline: 20px;
+    padding-block: 10px;
+    background: #13131F;
+    border-radius: 200px;
+}
+.shape_body{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: #191928;
+    transition: 0.5s;
+}
+.shape_body:is(:hover, .active_shape){
+    background: #2a2a42;
+}
+
+.hidden-checkbox {
+    display: none;
+}
+.custom-checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Изменение цвета SVG при активации чекбокса */
+#checkbox:checked + .custom-checkbox .svg_check{
+    fill: white; /* Цвет SVG при активации */
 }

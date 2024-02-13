@@ -43,8 +43,8 @@ function setGame(){
         for (let c = 0; c < 3; c++){
             let tile = document.createElement('div');
             tile.id = r.toString() + "-" + c.toString();
-            tile.classList.add('tile');
-            tile.classList.add('tile');
+            tile.classList.add('tic_tile');
+            tile.classList.add('tic_tile');
 
             if ( r === 0 || r === 1){
                 tile.classList.add("horizontal-line");
@@ -53,7 +53,7 @@ function setGame(){
                 tile.classList.add("vertical-line");
             }
             tile.addEventListener("click", setTile);
-            document.getElementById('board').appendChild(tile);
+            document.getElementById('tic_board').appendChild(tile);
 
         }
     }

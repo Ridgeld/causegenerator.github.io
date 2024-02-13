@@ -1,5 +1,21 @@
 [
     {
+        "spline": "https://my.spline.design/generyupdate-1c81e8724e6e13093723d23c10ab7468/ ",
+        "data": "08.02.2024",
+        "text": "Тест spline",
+        "like": 0,
+        "comment": 0,
+        "send": 0
+    },
+    {
+        "photo": "images/public/cls_mem.png",
+        "data": "08.02.2024",
+        "text": "А вы видите разницу?",
+        "like": 0,
+        "comment": 0,
+        "send": 0
+    },
+    {
         "photo": "images/public/cover_january.png",
         "data": "21.01.2023",
         "text": "Добавлена новая стартовая страница.\nДобавлено новое меню навигации.",

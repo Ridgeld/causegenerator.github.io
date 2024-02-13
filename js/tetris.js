@@ -1,8 +1,3 @@
-// License CC0 1.0 Universal 
-// https://gist.github.com/straker/3c98304f8a6a9174efd8292800891ea1
-// https://tetris.fandom.com/wiki/Tetris_Guideline
-
-// получаем доступ к холсту
 document.body.style.overflow = 'hidden';
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
@@ -16,9 +11,11 @@ const popup_title = document.getElementById("title");
 const svg_place = document.getElementById("svg");
 const gradient = document.getElementById("gradient");
 
+
 // размер квадратика
 const grid = 32;
 let score = 0;
+
 // массив с последовательностями фигур, на старте — пустой
 var tetrominoSequence = [];
 
@@ -39,7 +36,6 @@ const handleGameOver = () =>{
 // с помощью двумерного массива следим за тем, что находится в каждой клетке игрового поля
 // размер поля — 10 на 20, и несколько строк ещё находится за видимой областью
 var playfield = [];
-
 // заполняем сразу массив пустыми ячейками
 for (let row = -2; row < 18; row++) {
   playfield[row] = [];
@@ -49,8 +45,6 @@ for (let row = -2; row < 18; row++) {
   }
 }
 
-// как рисовать каждую фигуру
-// https://tetris.fandom.com/wiki/SRS
 const tetrominos = {
   'I': [
     [0,0,0,0],
@@ -110,8 +104,7 @@ let rAF = null;
 let gameOver = false;
 
 
-// Функция возвращает случайное число в заданном диапазоне
-// https://stackoverflow.com/a/1527820/2124254
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -119,8 +112,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// создаём последовательность фигур, которая появится в игре
-//https://tetris.fandom.com/wiki/Random_Generator
+
 function generateSequence() {
   // тут — сами фигуры
   const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
@@ -159,9 +151,6 @@ function getNextTetromino() {
     col: col         // текущий столбец
   };
 }
-
-// поворачиваем матрицу на 90 градусов
-// https://codereview.stackexchange.com/a/186834
 function rotate(matrix) {
   const N = matrix.length - 1;
   const result = matrix.map((row, i) =>
@@ -277,7 +266,7 @@ function loop() {
 
   // рисуем текущую фигуру
   if (tetromino) {
-
+    drawSilhouette();
     // фигура сдвигается вниз каждые 35 кадров
     if (++count > 35) {
       tetromino.row++;
@@ -304,6 +293,33 @@ function loop() {
       }
     }
   }
+}
+function drawSilhouette() {
+  let silhouetteRow = tetromino.row;
+
+  while (isValidMove(tetromino.matrix, silhouetteRow + 1, tetromino.col)) {
+    silhouetteRow++;
+  }
+
+  // Отрисовываем силуэт
+  context.save();
+  context.fillStyle = 'rgba(0, 0, 0, 0.3)';
+
+  for (let row = 0; row < tetromino.matrix.length; row++) {
+    for (let col = 0; col < tetromino.matrix[row].length; col++) {
+      if (tetromino.matrix[row][col]) {
+        // Отрисовываем силуэт на высоте silhouetteRow
+        context.fillRect(
+          (tetromino.col + col) * grid,
+          (silhouetteRow + row) * grid,
+          grid - 1,
+          grid - 1
+        );
+      }
+    }
+  }
+
+  context.restore();
 }
 
 // следим за нажатиями на клавиши

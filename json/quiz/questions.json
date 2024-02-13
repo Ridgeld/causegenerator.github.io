@@ -1,0 +1,13 @@
+[
+    {
+      "text": "Вопрос 1",
+      "points": 5,
+      "options": [
+        {"text": "Ответ A", "correct": false},
+        {"text": "Ответ B", "correct": false},
+        {"text": "Ответ C", "correct": true},
+        {"text": "Ответ D", "correct": false}
+      ]
+    }
+  ]
+  

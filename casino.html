@@ -23,14 +23,18 @@
                     </div>
                 </div>
                 <div class="page_name">Игры</div>
-                <a href="games_menu.html" target="_self" class="button_menu">
+                <a href="start.html" target="_self" class="button_menu">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="27" viewBox="0 0 16 27" fill="none">
                         <path d="M13.4056 2.59987L2.78213 13.05L13.16 23.5984" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
             </div>
-            <section class="item_container" id="swipe">
+            <section class="item_container_casino" id="swipe">
             <div class="table">
+                <section class="score_container_casino">
+                    <div class="score_title">Ваш баланс</div>
+                    <div class="score_count" id="score">0</div>
+                </section>
                 <div class="table_item">
                     <div class="click_item item_zero" id="item_zero">0</div>
                     <div class="item_numbers" id="item_numbers">
@@ -46,7 +50,7 @@
                         <div class="table_grid click_item" id="item_30">30<div class="number_circle_red"></div></div>
                         <div class="table_grid click_item" id="item_33">33<div class="number_circle_black"></div></div>
                         <div class="table_grid click_item" id="item_36">36<div class="number_circle_red"></div></div>
-                        <div class="table_grid item_3rd" id="item_3rd">3rd</div>
+                        <div class="table_grid item_3rd click_item" id="item_3rd">3rd</div>
                         <div class="table_grid click_item" id="item_1">2<div class="number_circle_black"></div></div>
                         <div class="table_grid click_item" id="item_5">5<div class="number_circle_red"></div></div>
                         <div class="table_grid click_item" id="item_8">8<div class="number_circle_black"></div></div>
@@ -59,7 +63,7 @@
                         <div class="table_grid click_item" id="item_29">29<div class="number_circle_black"></div></div>
                         <div class="table_grid click_item" id="item_32">32<div class="number_circle_red"></div></div>
                         <div class="table_grid click_item" id="item_35">35<div class="number_circle_black"></div></div>
-                        <div class="table_grid item_2nd" id="item_2nd">2nd</div>
+                        <div class="table_grid item_2nd click_item" id="item_2nd">2nd</div>
                         <div class="table_grid click_item" id="item_1">1<div class="number_circle_red"></div></div>
                         <div class="table_grid click_item" id="item_4">4<div class="number_circle_black"></div></div>
                         <div class="table_grid click_item" id="item_7">7<div class="number_circle_red"></div></div>
@@ -71,30 +75,49 @@
                         <div class="table_grid click_item" id="item_25">25<div class="number_circle_red"></div></div>
                         <div class="table_grid click_item" id="item_28">28<div class="number_circle_black"></div></div>
                         <div class="table_grid click_item" id="item_31">31<div class="number_circle_black"></div></div>
-                        <div class="table_grid click_item" id="item_34">34<div class="number_circle_red"></div></div>
-                        <div class="table_grid item_1st" id="item_1st">1st</div>
+                        <div class="table_grid click_item" id="item_34">
+                            <!-- <div class="chip_container">
+                                <div class="chip_cost">100</div>
+                                <div class="chip_inner_container"></div>
+                            </div> -->
+                            34<div class="number_circle_red"></div></div>
+                        <div class="table_grid item_1st click_item" id="item_1st">1st</div>
                     </div>
                 </div>
                 <div class="table_points">
                     <div class="from_to" id="from_to">
-                        <div class="from_1 table_grid">1 - 18</div>
-                        <div class="from_1 table_grid">19 - 36</div>
+                        <div class="from_1 table_grid click_item" >1 - 18</div>
+                        <div class="from_1 table_grid click_item">19 - 36</div>
                     </div>
                     <div class="numbers_prop" id="numbers_prop">
-                        <div class="prop_1 border_left table_grid">even</div>
-                        <div class="prop_1 table_grid">red<div class="prop_circle_red"></div></div>
-                        <div class="prop_1 table_grid">black<div class="prop_circle_black"></div></div>
-                        <div class="prop_1 border_right table_grid">odd</div>
+                        <div class="prop_1 border_left table_grid click_item">even</div>
+                        <div class="prop_1 table_grid click_item">red<div class="prop_circle_red"></div></div>
+                        <div class="prop_1 table_grid click_item">black<div class="prop_circle_black"></div></div>
+                        <div class="prop_1 border_right table_grid click_item">odd</div>
                     </div>
                 </div>
+                <button class="spin_button" id="show_wheel">Вращать</button>
             </div>
             <div class="wheel_content">
                 <!-- <div class="arrow">\/</div> -->
-                <div class="wheel_container_casino">
-                    <button class="spin_casino" id="spin">Вращать</button>
+                <div class="wheel_container_casino" id="wheel_container">
+                    <div class="casino_wrapper">
+                        <button class="casino_button" id="casino_button">Вращать</button>
+                        <div class="casino_arrow">
+                          <svg width="70" height="56" viewBox="0 0 70 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M69.0438 1.53L35.848 54.6432C35.4563 55.2699 34.5437 55.2699 34.152 54.6432L0.956249 1.53C0.539969 0.86395 1.01881 0 1.80425 0H68.1958C68.9812 0 69.46 0.86395 69.0438 1.53Z" fill="#592A18"/>
+                          </svg>   
+                        </div>
+                        <div class="inner_circle"></div>
+                        <div class="outter_circle"></div>
+                        <canvas id='canvas' height='500' width="500">
+                            Canvas not supported, use another browser.
+                        </canvas>
+                    </div>
+                    <!-- <button class="spin_casino" id="spin">Вращать</button>
                     <div class="wheel_casino_circle"></div>
-                    <div class="wheel_casino_border_circle"></div>
-                    <div class="wheel_casino" id="wheel">
+                    <div class="wheel_casino_border_circle"></div> -->
+                    <!-- <div class="wheel_casino" id="wheel">
                         <div class="_0_casino zero_casino">
                             <section class="inner_div">
                                 <p class="number_container">0</p>
@@ -107,185 +130,181 @@
                         </div>
                         <div class="_2_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">15</p>
                             </section>
                         </div>
                         <div class="_3_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">19</p>
                             </section>
                         </div>
                         <div class="_4_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">4</p>
                             </section>
                         </div>
                         <div class="_5_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">21</p>
                             </section>
                         </div>
                         <div class="_6_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">2</p>
                             </section>
                         </div>
                         <div class="_7_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">25</p>
                             </section>
                         </div>
                         <div class="_8_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">17</p>
                             </section>
                         </div>
                         <div class="_9_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">34</p>
                             </section>
                         </div>
                         <div class="_10_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">6</p>
                             </section>
                         </div>
                         <div class="_11_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">27</p>
                             </section>
                         </div>
                         <div class="_12_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">13</p>
                             </section>
                         </div>
                         <div class="_13_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">36</p>
                             </section>
                         </div>
                         <div class="_14_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">11</p>
                             </section>
                         </div>
                         <div class="_15_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">30</p>
                             </section>
                         </div>
                         <div class="_16_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">8</p>
                             </section>
                         </div>
                         <div class="_17_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">23</p>
                             </section>
                         </div>
                         <div class="_18_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">10</p>
                             </section>
                         </div>
                         <div class="_19_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">5</p>
                             </section>
                         </div>
                         <div class="_20_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">24</p>
                             </section>
                         </div>
                         <div class="_21_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">16</p>
                             </section>
                         </div>
                         <div class="_22_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">33</p>
                             </section>
                         </div>
                         <div class="_23_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">1</p>
                             </section>
                         </div>
                         <div class="_24_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">20</p>
                             </section>
                         </div>
                         <div class="_25_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">14</p>
                             </section>
                         </div>
                         <div class="_26_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">31</p>
                             </section>
                         </div>
                         <div class="_27_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">9</p>
                             </section>
                         </div>
                         <div class="_28_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">22</p>
                             </section>
                         </div>
                         <div class="_29_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">18</p>
                             </section>
                         </div>
                         <div class="_30_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">29</p>
                             </section>
                         </div>
                         <div class="_31_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">7</p>
                             </section>
                         </div>
                         <div class="_32_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">28</p>
                             </section>
                         </div>
                         <div class="_33_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">12</p>
                             </section>
                         </div>
                         <div class="_34_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">35</p>
                             </section>
                         </div>
                         <div class="_35_casino red_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">3</p>
                             </section>
                         </div>
                         <div class="_36_casino black_casino">
                             <section class="inner_div">
-                                <p class="number_container">32</p>
+                                <p class="number_container">26</p>
                             </section>
                         </div>
-                        <div class="_37_casino red_casino">
-                            <section class="inner_div">
-                                <p class="number_container">32</p>
-                            </section>
-                        </div>
-                    </div>
+                        <span class="casino_arrow" id="arrow"></span>
+                    </div> -->
                 </div>
             </div>
                 <!-- <section class="score_container">
@@ -319,6 +338,8 @@
             </div>
         </div>
     </div>
+    <script src="js/Winwheel.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <script src="js/casino.js"></script>
 </body>
 </html>

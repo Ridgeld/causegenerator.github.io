@@ -51,7 +51,7 @@ let doodler = {
 
 
 window.onload = function() {
-    board = document.getElementById("board");
+    board = document.getElementById("doodle_board");
     board.height = boardHeight;
     board.width = boardWidth;
     context = board.getContext("2d");
