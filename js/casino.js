@@ -91,7 +91,7 @@ const numberAttributes = {
 }
 let theWheel = new Winwheel({
   'outerRadius'     : 200,        
-  'innerRadius'     : 100,         
+  'innerRadius'     : 50,         
   'textFontSize'    : 20,        
   'textOrientation' : 'curved', 
   'textAlignment'   : 'outer',    
