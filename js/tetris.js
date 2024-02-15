@@ -303,7 +303,7 @@ function drawSilhouette() {
 
   // Отрисовываем силуэт
   context.save();
-  context.fillStyle = 'rgba(120, 120, 120, 0.3)';
+  context.fillStyle = 'rgba(200, 200, 200, 0.5)';
 
   for (let row = 0; row < tetromino.matrix.length; row++) {
     for (let col = 0; col < tetromino.matrix[row].length; col++) {
