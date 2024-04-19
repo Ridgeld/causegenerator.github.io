@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url("/pfp/movie-only-god-forgives-ryan-gosling-wallpaper-preview.jpg");
+    background-image: url("pfp/movie-only-god-forgives-ryan-gosling-wallpaper-preview.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -181,7 +181,7 @@ footer section a {
 }
 
 .searchButtonsContainer button{
-    background-image: url('/pfp/7c0e8u\ \(5\).png');
+    background-image: url('pfp/7c0e8u\ \(5\).png');
     background-position: center;
 }
 
